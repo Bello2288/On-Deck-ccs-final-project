@@ -13,8 +13,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class TokenSerializer(serializers.ModelSerializer):
     is_superuser = serializers.ReadOnlyField(source='user.is_superuser')
     id = serializers.ReadOnlyField(source='user.id')
-    avatar = serializers.ImageField(source='user.profile.avatar')
 
     class Meta:
         model = TokenModel
-        fields = ('key', 'is_superuser', 'id', 'avatar',)
+        fields = ('key', 'is_superuser', 'id',)

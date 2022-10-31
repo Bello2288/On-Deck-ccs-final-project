@@ -2,23 +2,82 @@ import logo from './logo.svg';
 import '../../styles/App.css';
 
 
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "../Layout/Layout";
+import LoginForm from "../Login/LoginForm";
+import HomePage from "../HomePage/HomePage";
+import RegistrationForm from "../Registration/RegistrationForm";
+import Cookies from "js-cookie";
+
+const INITIAL_STATE = {
+  auth: false,
+  admin: false,
+  userID: null,
+};
+
 function App() {
+  const [superState, setSuperState] = useState(INITIAL_STATE);
+
+  const newState = JSON.parse(window.localStorage.getItem("superState"));
+
+  useEffect(() => {
+    window.localStorage.setItem("superState", JSON.stringify(superState));
+  }, [superState]);
+
+  const handleError = (err) => {
+    console.warn(err);
+  };
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const response = await fetch("/dj-rest-auth/user/");
+      if (!response.ok) {
+        console.log("this", response.ok);
+        setSuperState(INITIAL_STATE);
+      } else {
+        setSuperState(newState);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const logoutUser = async (e) => {
+    e.preventDefault();
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": Cookies.get("csrftoken"),
+      },
+    };
+
+    const response = await fetch("/dj-rest-auth/logout/", options).catch(handleError);
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    } else {
+      Cookies.remove("Authorization");
+      window.localStorage.removeItem("superState");
+      setSuperState(INITIAL_STATE);
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout superState={superState} logoutUser={logoutUser} />}>
+            <Route index element={<HomePage />} />
+          </Route>
+          <Route
+            path="login"
+            element={<LoginForm superState={superState} setSuperState={setSuperState} />}
+          />
+          <Route
+            path="register"
+            element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
