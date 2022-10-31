@@ -1,0 +1,44 @@
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+
+    On Deck is an app I am developing that is geared towards any individual that has a busy schedule
+but would still love to play sports that fits their life style. I personally would have found this app 
+very helpful many years ago when my wife and I were starting our family. I was pretty involved in 
+playing multiple sports, but found that became more and more difficult as the kids were getting older. 
+I had to give up playing to focus more time with my family.
+
+
+    Due to the nature of being an adult, things just sometimes come up. An individual may find that 
+they are unable to make it to a scheduled game. Now the team organizer will find themselves scrambling 
+around trying to find someone to fill in so they do not have to play short handed or forfeit completely. 
+
+
+    So that is where On Deck comes in. Teams will be able to make a post about their game, and be able 
+to fill that empty spot with a person "on deck".
+
+
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+
+Standard User Account
+As a user, I want to create an account so that my preferences and sports criteria can be saved.
+As a user, I want to be able to log in so that I can use the site to view open games, and update / edit
+    my profile.
+As a user, I want to be able to filter posts/games by distance from ZIP code.
+As a user, I want to be able to confirm that I will be able to fill the open spot and attend the game.
+As a user, I want to be able to deselect a post on a event, so that I can drop out if my plans change.
+As a user, I want to be able to respond / talk with the team lead.
+As a user, I want to be able to log out so that my data stays secure.
+
+
+Team Lead Account
+As a team lead, I want to be able to create an account to save my preferences and team information.
+As a team lead, I want to post events so that I can find other players that could fill in for a game.
+As a team lead, I want to be able to receive notifications when somea user has responded to my request.
+As a team lead, I want to be able to edit / delete a post if the event changes.
+As a team lead, I want to be able to log out so that my data stays secure.
+
+
+Sports Organization Account
+As a sports organization user, I want to be able to approve team lead accounts. This will ensure that
+    only team leads are able to create posts.
