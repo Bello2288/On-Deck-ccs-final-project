@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@700&family=Kaushan+Script&family=Lobster&family=Playball&display=swap');
 
+.navbar{
+    border-bottom: 1px solid #000000;
+}
+
 .navbar-container {
     height: 50px;
     margin-bottom: 10px;

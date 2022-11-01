@@ -12,7 +12,39 @@ class Profile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
     avatar = models.ImageField(upload_to='profiles/', default='blank_avatar.jpeg')
-    # phone_number = PhoneNumberField(null=True)
+    first_name = models.CharField(max_length=225, null=True)
+    last_name = models.CharField(max_length=225, null=True)
+    email = models.EmailField(max_length=225, null=True)
+    # phone_number = models.PhoneNumberField(null=True)
 
     def __str__(self):
         return self.user.username
+
+
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(
+#         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
+#     avatar = models.ImageField(upload_to='profiles/', default='blank_avatar.jpeg')
+#     first_name = models.CharField(max_length=225)
+#     last_name = models.CharField(max_length=225)
+#     email = models.EmailField(max_length=225)
+#     # phone_number = models.PhoneNumberField(null=True)
+
+#     def __str__(self):
+#         return self.user.username
+
+
+# class TeamOrganizerProfile(models.Model):
+#     user = models.OneToOneField(
+#         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
+#     avatar = models.ImageField(upload_to='teamprofiles/', default='blank_avatar.jped')
+#     first_name = models.CharField(max_length=225)
+#     last_name = models.CharField(max_length=225)
+#     email = models.EmailField(max_length=225)
+#     # phone_number = models.PhoneNumberField(null=True)
+#     team_name = models.CharField(max_length=225)
+#     team_sport = models.CharField(max_length=225)
+#     sport_center = models.CharField(max_length=225)
+
+#     def __str__(self):
+#         return self.user.username

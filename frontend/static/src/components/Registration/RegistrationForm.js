@@ -56,7 +56,7 @@ function RegistrationForm({ superState, setSuperState}) {
         } else {
             const data = await response.json();
             Cookies.set("Authorization", `Token ${data.key}`);
-            navigate("/");
+            navigate("/posts");
             setSuperState({ ...superState, auth: true, admin: data.is_superuser, userID: data.id });
         }
     };
@@ -144,7 +144,7 @@ function RegistrationForm({ superState, setSuperState}) {
             </Form.Group>
             <div>
               <Button variant="primary" type="submit">
-                Create
+                Create Account
               </Button>
             </div>
           </Form>

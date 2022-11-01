@@ -42,7 +42,7 @@ function LoginForm({ superState, setSuperState }) {
         const data = await response.json();
         Cookies.set("Authorization", `Token ${data.key}`);
         console.log(data);
-        navigate("/");
+        navigate("/posts");
         setSuperState({
           ...superState,
           auth: true,
@@ -82,6 +82,9 @@ function LoginForm({ superState, setSuperState }) {
               </Button>
               <p>
                 Don't have an account? Click <Link to={"/register"}>here</Link> to create one.
+              </p>
+              <p>
+                Need a team account? Click <Link to={"/teamregister"}>here</Link> to create one.
               </p>
             </div>
           </Form>

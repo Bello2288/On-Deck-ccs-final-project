@@ -1,12 +1,16 @@
 import '../../styles/App.css';
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cookies from "js-cookie";
+
 import Layout from "../Layout/Layout";
-import LoginForm from "../Login/LoginForm";
 import HomePage from "../HomePage/HomePage";
+import LoginForm from "../Login/LoginForm";
 import RegistrationForm from "../Registration/RegistrationForm";
 import TeamRegistrationForm from "../TeamRegistrationForm/TeamRegistrationForm";
-import Cookies from "js-cookie";
+import Posts from '../Posts/Posts';
+
+
 
 const INITIAL_STATE = {
   auth: false,
@@ -59,25 +63,40 @@ function App() {
       setSuperState(INITIAL_STATE);
     }
   };
+
+  
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />}>
+          <Route
+            path="/"
+            element={
+              <Layout
+                superState={superState}
+                setSuperState={setSuperState}
+                logoutUser={logoutUser}
+              />
+            }
+          >
             <Route index element={<HomePage />} />
+            <Route
+              path="login"
+              element={<LoginForm superState={superState} setSuperState={setSuperState} />}
+            />
+            <Route
+              path="register"
+              element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
+            />
+            <Route
+              path="teamregister"
+              element={<TeamRegistrationForm superState={superState} setSuperState={setSuperState} />}
+            />
+            <Route
+              path="posts"
+              element={<Posts superState={superState} setSuperState={setSuperState} />}
+            />
           </Route>
-          <Route
-            path="login"
-            element={<LoginForm superState={superState} setSuperState={setSuperState} />}
-          />
-          <Route
-            path="register"
-            element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
-          />
-          <Route
-            path="teamregister"
-            element={<TeamRegistrationForm superState={superState} setSuperState={setSuperState} />}
-          />
         </Routes>
       </BrowserRouter>
     </div>

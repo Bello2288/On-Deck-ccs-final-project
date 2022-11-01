@@ -59,7 +59,7 @@ function TeamRegistrationForm({ superState, setSuperState}) {
         } else {
             const data = await response.json();
             Cookies.set("Authorization", `Token ${data.key}`);
-            navigate("/");
+            navigate("/posts");
             setSuperState({ ...superState, auth: true, admin: data.is_superuser, userID: data.id });
         }
     };
@@ -183,7 +183,7 @@ function TeamRegistrationForm({ superState, setSuperState}) {
             </Form.Group>
             <div>
               <Button variant="primary" type="submit">
-                Create
+                Create Team Account
               </Button>
             </div>
           </Form>

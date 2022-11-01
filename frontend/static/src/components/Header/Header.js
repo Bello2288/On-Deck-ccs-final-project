@@ -15,7 +15,7 @@ function Header({ superState, logoutUser }) {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="navbar" bg="light" expand="lg">
         <Container className="navbar-container">
           <Navbar.Brand className="app-name" href="/">
             On Deck
