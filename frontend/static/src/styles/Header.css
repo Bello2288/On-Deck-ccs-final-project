@@ -1,14 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@700&family=Kaushan+Script&family=Lobster&family=Playball&display=swap');
+
 .navbar-container {
     height: 50px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
-/* .app-name {
-    border: 2px solid red;
-} */
+.app-name {
+    /* font-family: 'Playball', Times, serif; */
+    /* font-family: 'Kaushan Script', Times, serif; */
+    /* font-family: 'Lobster', Times, serif; */
+    font-family: 'Caveat', Times, serif;
+    font-size: 45px;
+}
 
 .sport-icon {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     margin-left: 20px;
+    margin-bottom: 10px;
+}
+.app-name:hover {
+    color: #f20a0a;
+}
+
+
+.header-login, .header-logout {
+    /* font-family: 'Playball', Times, serif; */
+    /* font-family: 'Kaushan Script', Times, serif; */
+    /* font-family: 'Lobster', Times, serif; */
+    font-family: 'Caveat', Times, serif;
+    font-size: 30px;
+    color: #000000;
+}
+
+.header-login:hover, .header-logout:hover {
+    color: #f20a0a;
+}
+
+
+@media(max-width: 755px) {
+    .app-name {
+        font-size: 30px;
+    }
+
+    .sport-icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .header-login, .header-logout {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 550px) {
+    .app-name {
+        margin-left: 25px;
+    }
+
+    .header-login, .header-logout {
+        margin-right: 25px;
+    }
 }

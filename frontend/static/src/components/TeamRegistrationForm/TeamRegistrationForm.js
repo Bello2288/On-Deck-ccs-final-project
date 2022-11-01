@@ -1,4 +1,4 @@
-import "../../styles/Registration.css";
+import "../../styles/TeamRegistration.css";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import Button from "react-bootstrap/Button";
@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 
 
-function RegistrationForm({ superState, setSuperState}) {
+function TeamRegistrationForm({ superState, setSuperState}) {
     const [state, setState] = useState({
         username: "",
         email: "",
@@ -15,6 +15,9 @@ function RegistrationForm({ superState, setSuperState}) {
         phonenumber: "",
         password1: "",
         password2: "",
+        teamname: "",
+        teamsport: "",
+        sportscenter: "",
     });
 
     const navigate = useNavigate();
@@ -50,7 +53,7 @@ function RegistrationForm({ superState, setSuperState}) {
             },
             body: JSON.stringify(state),
         };
-        const response = await fetch("/dj-rest-auth/registration/", options).catch(handleError);
+        const response = await fetch("/dj-rest-auth/teamregistration/", options).catch(handleError);
         if (!response.ok) {
             throw new Error("Network response was not OK");
         } else {
@@ -142,6 +145,42 @@ function RegistrationForm({ superState, setSuperState}) {
                 onChange={handleInput}
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="teamname">
+              <Form.Label>Team Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter team name"
+                name="teamname"
+                autoComplete="False"
+                required
+                value={state.teamname}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="teamsport">
+              <Form.Label>Team Sport</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter team sport"
+                name="teamsport"
+                autoComplete="False"
+                required
+                value={state.teamsport}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="sportcenter">
+              <Form.Label>Sport Center</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter sport center"
+                name="sportcenter"
+                autoComplete="False"
+                required
+                value={state.sportcenter}
+                onChange={handleInput}
+              />
+            </Form.Group>
             <div>
               <Button variant="primary" type="submit">
                 Create
@@ -152,4 +191,4 @@ function RegistrationForm({ superState, setSuperState}) {
       );
     }
     
-    export default RegistrationForm;
+    export default TeamRegistrationForm;

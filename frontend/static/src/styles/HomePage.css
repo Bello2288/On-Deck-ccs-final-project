@@ -21,23 +21,13 @@ main {
     bottom: 120px;
     color: #f0eded;
     font-size: 53px;
-    padding: 0 80px 0 80px;
-    /* margin: 0 auto 0 auto; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    /* margin: 50px auto 0 auto; */
-    /* background-image: url("../images/homepic.jpeg"); */
-    /* border: 2px solid red;
-    width: 90%;
-    object-fit: cover;
-    object-position: center;
-    height: 500px; */
-}
+    padding: 0 150px;
 
-/* .homepic-img {
-    opt
-} */
+    /* font-family: 'Playball', Times, serif; */
+    /* font-family: 'Kaushan Script', Times, serif; */
+    /* font-family: 'Lobster', Times, serif; */
+    font-family: 'Caveat', Times, serif;
+}
 
 .home-lower-buttons{
     padding-top: 15px;
@@ -46,14 +36,7 @@ main {
     background-color: #ffffff;
 }
 
-.home-create-account {
-    color: #ffffff;
-    background-color: #000000;
-    padding: 5px 25px;
-    border-radius: 7px;
-}
-
-.home-login {
+.home-create-account, .home-create-team-account, .home-login {
     color: #ffffff;
     background-color: #000000;
     padding: 5px 25px;
@@ -63,4 +46,56 @@ main {
 .btn-hover:hover {
     color: #ffffff;
     background-color: #be691f;
+}
+
+@media(max-width: 1050px) {
+    .homepic {
+        height: 350px;
+    }
+    
+    .home-page-text {
+        position: absolute;
+        bottom: 80px;
+        font-size: 48px;
+        padding: 0 70px;
+    }
+}
+
+@media(max-width: 755px) {
+    .homepic {
+        height: 350px;
+    }
+    
+    .home-page-text {
+        position: absolute;
+        bottom: 80px;
+        font-size: 48px;
+        padding: 0 70px;
+    }
+}
+
+@media(max-width: 675px) {
+    .homepic {
+        height: 350px;
+    }
+
+    .home-page-text {
+        position: absolute;
+        bottom: 50px;
+        font-size: 43px;
+        padding: 0 70px;
+    }
+}
+
+@media(max-width: 505px) {
+    .homepic {
+        height: 320px;
+    }
+
+    .home-page-text {
+        position: absolute;
+        bottom: 45px;
+        font-size: 38px;
+        padding: 0 70px;
+    }
 }

@@ -1,12 +1,11 @@
 import '../../styles/App.css';
-
-
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import LoginForm from "../Login/LoginForm";
 import HomePage from "../HomePage/HomePage";
 import RegistrationForm from "../Registration/RegistrationForm";
+import TeamRegistrationForm from "../TeamRegistrationForm/TeamRegistrationForm";
 import Cookies from "js-cookie";
 
 const INITIAL_STATE = {
@@ -64,7 +63,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout superState={superState} logoutUser={logoutUser} />}>
+          <Route path="/" element={<Layout superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />}>
             <Route index element={<HomePage />} />
           </Route>
           <Route
@@ -74,6 +73,10 @@ function App() {
           <Route
             path="register"
             element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
+          />
+          <Route
+            path="teamregister"
+            element={<TeamRegistrationForm superState={superState} setSuperState={setSuperState} />}
           />
         </Routes>
       </BrowserRouter>

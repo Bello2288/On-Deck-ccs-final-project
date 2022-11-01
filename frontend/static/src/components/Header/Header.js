@@ -21,20 +21,16 @@ function Header({ superState, logoutUser }) {
             On Deck
             <img className="sport-icon" src={football} alt="chair" />
           </Navbar.Brand>
-          {/* <Link className="logo-link" to={'/'}>
-            OpenSeat
-            <img className="chair-icon" src={chair} alt="chair" />
-          </Link> */}
           <div id="basic-navbar-nav">
             <Nav className="me-auto">
               {!superState.auth && (
                 <>
-                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link className="header-login" href="/login">Login</Nav.Link>
                 </>
               )}
               {superState.auth && (
                 <>
-                  <Nav.Link href="/" onClick={(e) => logout(e)}>
+                  <Nav.Link className="header-logout" href="/" onClick={(e) => logout(e)}>
                     Logout
                   </Nav.Link>
                 </>

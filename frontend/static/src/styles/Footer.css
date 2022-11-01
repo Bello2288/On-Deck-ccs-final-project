@@ -1,9 +1,15 @@
 .footer-container {
     padding-top: 38px;
+    
 }
 
 .name-tag {
     color: #000000;
+    /* font-family: 'Playball', Times, serif; */
+    /* font-family: 'Kaushan Script', Times, serif; */
+    /* font-family: 'Lobster', Times, serif; */
+    font-family: 'Caveat', Times, serif;
+    font-size: 20px;
 }
 
 .copyright {
