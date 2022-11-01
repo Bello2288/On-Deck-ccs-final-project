@@ -67,7 +67,7 @@ function TeamRegistrationForm({ superState, setSuperState}) {
     return (
         <div>
           <Form onSubmit={checkSamePass}>
-            <h1>Create Account</h1>
+            <h1>Create Team Account</h1>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label>Username</Form.Label>
               <Form.Control
