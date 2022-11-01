@@ -1,6 +1,11 @@
-.app-name {
-    border: 2px solid red;
+.navbar-container {
+    height: 50px;
+    margin-bottom: 14px;
 }
+
+/* .app-name {
+    border: 2px solid red;
+} */
 
 .sport-icon {
     height: 20px;

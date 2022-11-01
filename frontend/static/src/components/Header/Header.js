@@ -16,7 +16,7 @@ function Header({ superState, logoutUser }) {
   return (
     <>
       <Navbar bg="light" expand="lg">
-        <Container>
+        <Container className="navbar-container">
           <Navbar.Brand className="app-name" href="/">
             On Deck
             <img className="sport-icon" src={football} alt="chair" />
