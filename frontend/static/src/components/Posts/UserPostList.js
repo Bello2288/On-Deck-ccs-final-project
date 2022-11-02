@@ -37,27 +37,28 @@ function UserPostList() {
   return (
     <>
       <div className="display">
-        <section className="post-container">This is a user post list page</section>
-        <section className="author-buttons">
-          <Button
-            className="author-button"
-            variant="primary"
-            value="DRA"
-            onClick={(e) => changeCategory(e.target.value)}
-          >
-            Saved Posts
-          </Button>
-          <Button
-            className="author-button"
-            variant="primary"
-            value="SUB"
-            onClick={(e) => changeCategory(e.target.value)}
-          >
-            Created Posts
-          </Button>
-        </section>
-        <section className="author-article-list margin-section">
-          <ul className="list-container">{filteredPosts}</ul>
+        <section className="post-container">
+          <section className="author-buttons">
+            <Button
+              className="author-button"
+              variant="primary"
+              value="DRA"
+              onClick={(e) => changeCategory(e.target.value)}
+            >
+              Saved Posts
+            </Button>
+            <Button
+              className="author-button"
+              variant="primary"
+              value="SUB"
+              onClick={(e) => changeCategory(e.target.value)}
+            >
+              Created Posts
+            </Button>
+          </section>
+          <section className="author-article-list margin-section">
+            <ul className="list-container">{filteredPosts}</ul>
+          </section>
         </section>
       </div>
     </>

@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@700&family=Kaushan+Script&family=Lobster&family=Playball&display=swap');
 
+
 .navbar{
     border-bottom: 1px solid #000000;
     background-color: #000000;
-    color: #ffffff;
+    color: #ffffff;    
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-container {
