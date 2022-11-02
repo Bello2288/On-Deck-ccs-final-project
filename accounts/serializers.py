@@ -17,7 +17,7 @@ class TokenSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TokenModel
-        fields = ('key', 'is_superuser', 'id', 'avatar')
+        fields = ('key', 'is_superuser', 'id', 'avatar',)
 
 
 
