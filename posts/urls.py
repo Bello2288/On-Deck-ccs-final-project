@@ -8,5 +8,5 @@ urlpatterns = [
     path('posts/', PostListAPIView.as_view(), name='posts_list'),
     path('posts/<int:pk>/', PostDetailAPIView.as_view(), name='posts_detail'),
     path('posts/user/', AuthorPostListAPIView.as_view(), name='user_posts'),
-    path('articles/admin/', AdminPostListAPIView.as_view(), name='admin_articles'),
+    path('posts/admin/', AdminPostListAPIView.as_view(), name='admin_posts'),
 ]

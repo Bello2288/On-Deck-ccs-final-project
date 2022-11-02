@@ -206,7 +206,7 @@ function EditPost({ state }) {
             value="SUB"
             onClick={(e) => handleSubmit(e)}
           >
-            Save & Submit
+            Submit Draft
           </Button>
           <Button
             className="create-button-pairs"
@@ -216,6 +216,15 @@ function EditPost({ state }) {
             onClick={(e) => handleSubmit(e)}
           >
             Save Draft
+          </Button>
+          <Button
+            className="create-button-pairs"
+            variant="dark"
+            type="submit"
+            value="REJ"
+            onClick={(e) => handleSubmit(e)}
+          >
+            Delete Draft
           </Button>
         </div>
       </Form>

@@ -8,6 +8,8 @@ class Post(models.Model):
     organization = models.CharField(max_length=225, null=True)
     location = models.CharField(max_length=255, null=True)
     # address_json = models.JSONField(null=True)
+    # date = models.DateField(input_formats=("%d-%m-%Y"))
+    # time = models.TimeField(input_formats=('%H:%M'))
     date = models.DateField()
     time = models.TimeField()
     notes = models.TextField()

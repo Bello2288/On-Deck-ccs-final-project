@@ -219,3 +219,10 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'accounts.serializers.TokenSerializer',
 }
+
+
+TIME_INPUT_FORMATS = ['%H:%M', # '14:30'
+]
+DATE_INPUT_FORMATS = ["%d-%m-%Y"]
+# DATE_INPUT_FORMATS = ['%B %d, %Y',  # 'October 25, 2006'
+# ]
