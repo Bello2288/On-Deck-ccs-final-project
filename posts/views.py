@@ -13,7 +13,7 @@ class PostListAPIView(generics.ListCreateAPIView):
     serializer_class = serializers.PostSerializer
 
     def get_queryset(self):
-        return models.Post.objects.filter(status='PUB')
+        return models.Post.objects.filter(status='PST')
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -36,13 +36,13 @@ class AuthorPostListAPIView(generics.ListCreateAPIView):
         serializer.save(author=self.request.user)
 
 
-# class AdminPostListAPIView(generics.ListCreateAPIView):
-#     permission_classes = (IsAdminUser,)
-#     queryset = models.Post.objects.order_by('-created_at')
-#     serializer_class = serializers.PostSerializer
+class AdminPostListAPIView(generics.ListCreateAPIView):
+    permission_classes = (IsAdminUser,)
+    queryset = models.Post.objects.order_by('-created_at')
+    serializer_class = serializers.PostSerializer
 
-#     def get_queryset(self):
-#         return models.Post.objects.filter(Q(status='CRE') | Q(status='SUB'))
+    def get_queryset(self):
+        return models.Post.objects.filter(Q(status='PST') | Q(status='SUB') | Q(status='ARC'))
 
-#     def perform_create(self, serializer):
-#         serializer.save(author=self.request.user)  
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)  

@@ -10,7 +10,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
             return True
 
         if request.method in ['PUT', 'PATCH']:
-            if obj.status in ['CRE', 'SUB']:
+            if obj.status in ['PST', 'SUB']:
                 if request.user.is_superuser:
                     return True
                 else:

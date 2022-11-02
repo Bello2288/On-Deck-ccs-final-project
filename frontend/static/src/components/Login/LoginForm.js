@@ -51,16 +51,17 @@ function LoginForm({ superState, setSuperState }) {
         });
       }
     };
+    // userStatus
 
     return (
-        <div>
-          <Form className="login-form" onSubmit={handleSubmit}>
-            <h1>Login</h1>
+        <div className="main-display-area">
+          <Form className="form" onSubmit={handleSubmit}>
+            <h1 className="form-title">Login</h1>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter username"
+                placeholder="Enter username" 
                 name="username"
                 value={state.username}
                 onChange={handleInput}
@@ -76,16 +77,18 @@ function LoginForm({ superState, setSuperState }) {
                 onChange={handleInput}
               />
             </Form.Group>
-            <div>
-              <Button variant="primary" type="submit">
+            <div className="form-footer">
+              <Button className="form-button" variant="dark" type="submit">
                 Login
               </Button>
-              <p>
-                Don't have an account? Click <Link to={"/register"}>here</Link> to create one.
-              </p>
-              <p>
-                Need a team account? Click <Link to={"/teamregister"}>here</Link> to create one.
-              </p>
+              <div className="create-link">
+                <p>
+                  Don't have an account? Click <Link className="link login-link" to={"/register"}>here</Link> to create one.
+                </p>
+                {/* <p>
+                  Need a team account? Click <Link className="link login-link" to={"/teamregister"}>here</Link> to create one.
+                </p> */}
+              </div>
             </div>
           </Form>
         </div>

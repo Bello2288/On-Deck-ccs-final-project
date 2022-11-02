@@ -1,3 +1,108 @@
-.login-form > h1 {
-    color: #2438f0;
+.main-display-area {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: calc(100vh - 201px);
+}
+
+.form {
+    border: 2px solid #000000;
+    border-radius: 7px;
+    padding: 20px 40px;
+    width: 37%;
+    text-align: left;
+    margin-top: 50px;
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.form-title {
+    font-family: 'Alfa Slab One', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.form-footer {
+    text-align: center;
+}
+
+.form-button {
+    margin-bottom: 10px;
+    background-color: #515151;
+}
+.form-button:hover {
+    background-color: #be691f;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+    overflow: hidden;
+    background-color: #bbb;
+}
+
+.form-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-button-pairs {
+    margin: 10px;
+    width: 100px;
+    background-color: #3e4348;
+}
+
+.form-button-pairs:hover {
+    background-color: #979797;
+}
+
+.edit-form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-button-edit {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.create-link {
+    margin-top: 25px;
+}
+
+.login-link {
+    color: #40be7b;
+}
+.login-link:hover {
+    color: #be691f;
+}
+
+@media (max-width: 992px) {
+    .form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 576px) {
+    .form {
+        width: 90%;
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
 }

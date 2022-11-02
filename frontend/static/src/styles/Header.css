@@ -2,11 +2,14 @@
 
 .navbar{
     border-bottom: 1px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .navbar-container {
     height: 50px;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .app-name {
@@ -15,6 +18,7 @@
     /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
     font-size: 45px;
+    color: #ffffff;
 }
 
 .sport-icon {
@@ -24,22 +28,51 @@
     margin-bottom: 10px;
 }
 .app-name:hover {
-    color: #f20a0a;
+    color: #be691f;
 }
 
 
-.header-login, .header-logout {
+.header-login {
     /* font-family: 'Playball', Times, serif; */
     /* font-family: 'Kaushan Script', Times, serif; */
     /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .header-login:hover, .header-logout:hover {
-    color: #f20a0a;
+    color: #be691f;
 }
+
+.header-text {
+    /* font-family: 'Playball', Times, serif; */
+    /* font-family: 'Kaushan Script', Times, serif; */
+    /* font-family: 'Lobster', Times, serif; */
+    font-family: 'Caveat', Times, serif;
+    font-size: 30px;
+    color: #ffffff;
+    margin-right: 25px;
+}
+.header-text:hover {
+    color: #be691f;
+}
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+/* ==================== media ==================== */
 
 
 @media(max-width: 755px) {

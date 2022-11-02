@@ -12,7 +12,6 @@ function Home() {
       </div>
       <div className="home-lower-buttons">
         <Nav.Link className="home-create-account btn-hover" href="/register">Create Account</Nav.Link>
-        <Nav.Link className="home-create-team-account btn-hover" href="/teamregister">Create Team Account</Nav.Link>
         <Nav.Link className="home-login btn-hover" href="/login">Login</Nav.Link>
       </div>
     </main>  

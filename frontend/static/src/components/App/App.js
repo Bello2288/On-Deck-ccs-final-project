@@ -7,9 +7,13 @@ import Layout from "../Layout/Layout";
 import HomePage from "../HomePage/HomePage";
 import LoginForm from "../Login/LoginForm";
 import RegistrationForm from "../Registration/RegistrationForm";
-import TeamRegistrationForm from "../TeamRegistrationForm/TeamRegistrationForm";
+// import TeamRegistrationForm from "../TeamRegistrationForm/TeamRegistrationForm";
 import Posts from '../Posts/Posts';
-
+import CreatePosts from '../Posts/CreatePost';
+import UserPostList from '../Posts/UserPostList';
+import UserPostDetailView from "../Posts/UserPostDetailView";
+import AdminPostList from '../Posts/AdminPostList';
+import AdminPostReview from '../Posts/AdminPostReview';
 
 
 const INITIAL_STATE = {
@@ -64,7 +68,7 @@ function App() {
     }
   };
 
-  
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -88,14 +92,23 @@ function App() {
               path="register"
               element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
             />
-            <Route
+            {/* <Route
               path="teamregister"
               element={<TeamRegistrationForm superState={superState} setSuperState={setSuperState} />}
-            />
+            /> */}
             <Route
               path="posts"
               element={<Posts superState={superState} setSuperState={setSuperState} />}
             />
+            {superState.auth && (
+              <>
+                <Route path="create" element={<CreatePosts superState={superState} setSuperState={setSuperState} />} />
+                <Route path="post/:id/*" element={<UserPostDetailView />} />
+                <Route path="posts/user/*" element={<UserPostList />} />
+                <Route path="posts/editor" element={<AdminPostList />} />
+                <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
+              </>
+            )}
           </Route>
         </Routes>
       </BrowserRouter>

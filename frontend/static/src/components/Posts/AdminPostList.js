@@ -4,14 +4,14 @@ import "../../styles/Posts.css";
 // import { useState, useCallback, useEffect } from "react";
 
 
-function Posts() {
+function AdminPostList() {
     return (
         <section>
             <div className="post-container">
-                This is the posts page
+                This is the admin post list page
             </div>
         </section>
     );
 }
 
-export default Posts;
+export default AdminPostList;

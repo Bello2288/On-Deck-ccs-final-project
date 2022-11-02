@@ -1,5 +1,5 @@
 main {
-    background-color: #000000;
+    background: transparent;
     text-align: center;
 }
 
@@ -13,7 +13,8 @@ main {
     object-fit: cover;
     object-position: center;
     height: 450px;
-    opacity: .5;
+    opacity: 1;
+    filter: brightness(50%)
 }
 
 .home-page-text {
@@ -33,12 +34,12 @@ main {
     padding-top: 15px;
     display: flex;
     justify-content: space-around;
-    background-color: #ffffff;
+    background: transparent;
 }
 
 .home-create-account, .home-create-team-account, .home-login {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #515151;
     padding: 5px 25px;
     border-radius: 7px;
 }
