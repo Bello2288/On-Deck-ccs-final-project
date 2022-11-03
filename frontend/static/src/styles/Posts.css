@@ -19,7 +19,8 @@
     width: 65%;
     text-align: left;
     margin-top: 50px;
-    background-color: #212121;
+    /* background-color: #212121; */
+    background-color: #5b5b5b;
     color: #ffffff;
     margin-top: 125px;
     margin-bottom: 45px;
@@ -42,13 +43,19 @@
 .create-button-pairs {
     margin: 10px;
     width: 100px;
-    background-color: #515151;
+    /* background-color: #515151; */
+    background-color: #252525;
     border-color: #515151;
 }
 
 .create-button-pairs:hover {
     background-color: #be691f;  
     border-color: #be691f;
+}
+
+.create-button-pairs:focus {
+    background-color: #be691f;
+    color: #fff;
 }
 
 
@@ -90,4 +97,27 @@
 }
 .form-control {
     background-color: #e0e0e0;
+}
+
+
+/* ===================== Admin Post List ===================== */
+
+.display {
+    padding-top: 100px;
+}
+
+.detail-view {
+    padding-top: 115px;
+}
+
+.article-view {
+    border: 2px solid #000000;
+    border-radius: 7px;
+    padding: 20px 40px;
+    width: 57%;
+    text-align: left;
+    margin-top: 30px;
+    background-color: #212121;
+    color: #ffffff;
+    margin-bottom: -28px;
 }
