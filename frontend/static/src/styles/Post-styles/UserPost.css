@@ -1,0 +1,29 @@
+.creator-list {
+    display: flex;
+    justify-content: center;
+}
+
+
+.user-post-data {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.view-link {
+    color: #40be7b;
+}
+.view-link:hover {
+    color: #be691f;
+}
+
+.edit-form {
+    border: 2px solid #000000;
+    border-radius: 7px;
+    width: 40%;
+    margin-top: 30px;
+    background-color: #212121;
+    color: #ffffff;
+}
+.form-control {
+    background-color: #e0e0e0;
+}

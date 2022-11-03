@@ -1,0 +1,19 @@
+.display {
+    padding-top: 100px;
+}
+
+.detail-view {
+    padding-top: 115px;
+}
+
+.article-view {
+    border: 2px solid #000000;
+    border-radius: 7px;
+    padding: 20px 40px;
+    width: 57%;
+    text-align: left;
+    margin-top: 30px;
+    background-color: #212121;
+    color: #ffffff;
+    margin-bottom: -28px;
+}

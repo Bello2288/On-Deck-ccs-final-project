@@ -1,3 +1,20 @@
+/* ============= Posts.js ============= */
+
+.main-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-view {
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* ============= Posts.js ============= */
+
+
 .post-container {
     font-size: 45px;
     color: white;
@@ -120,4 +137,33 @@
     background-color: #212121;
     color: #ffffff;
     margin-bottom: -28px;
+}
+
+
+/* =====================  Posts.js  ===================== */
+
+.sort-buttons {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    /* width: 70%; */
+}
+
+.sort-button {
+    color: #ffffff;
+    border-color: #515151;
+    background-color: #515151;
+    padding: 5px 25px;
+    border-radius: 7px;
+    margin: 0 10px;
+}
+.sort-button:hover {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
+}
+.sort-button:focus {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
 }

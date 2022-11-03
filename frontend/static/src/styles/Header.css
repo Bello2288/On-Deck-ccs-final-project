@@ -3,7 +3,8 @@
 
 .navbar{
     border-bottom: 1px solid #000000;
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-color: #cf720e;
     color: #ffffff;    
     position: fixed;
     width: 100%;
@@ -31,7 +32,8 @@
     margin-bottom: 10px;
 }
 .app-name:hover {
-    color: #be691f;
+    /* color: #be691f; */
+    color: #000000;
 }
 
 

@@ -1,9 +1,10 @@
-import "../../styles/Posts.css";
+import "../../styles/Post-styles/EditPost.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import moment from 'moment';
 
 function EditPost({ state }) {
   const [isEdit, setIsEdit] = useState(false);
@@ -82,8 +83,8 @@ function EditPost({ state }) {
       <h2 className="highlight-post">{state.teamname}</h2>
       <p className="highlight-post">{state.organization}</p>
       <p className="highlight-post">{state.location}</p>
-      <p className="highlight-post">{state.date}</p>
-      <p className="highlight-post">{state.time}</p>
+      <p>{moment(state.date).format('MMMM Do, YYYY')}</p>
+      <p>{moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
       <p className="highlight-post">{state.notes}</p>
       {state.status === "DRA" && (
         <div>
@@ -103,6 +104,28 @@ function EditPost({ state }) {
             onClick={() => setIsEdit(true)}
           >
             Edit
+          </Button>
+        </div>
+      )}
+      {state.status === "PST" && (
+        <div>
+          <Button
+            className="form-button-pairs"
+            variant="primary"
+            type="submit"
+            value="SUB"
+            onClick={(e) => handleSubmit(e)}
+          >
+            Take Spot
+          </Button>
+          <Button
+            className="form-button-pairs"
+            variant="primay"
+            type="button"
+            value="/"
+            onClick={() => setIsEdit(true)}
+          >
+            Back
           </Button>
         </div>
       )}

@@ -1,4 +1,4 @@
-import "../../styles/Posts.css";
+import "../../styles/Post-styles/UserPostList.css";
 import { useState, useCallback, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import UserPost from "./UserPost";
@@ -36,7 +36,7 @@ function UserPostList() {
 
   return (
     <>
-      <div className="display">
+      <div className="my-posts-display">
         <section className="post-container">
           <section className="author-buttons">
             <Button
@@ -45,7 +45,7 @@ function UserPostList() {
               value="DRA"
               onClick={(e) => changeCategory(e.target.value)}
             >
-              Saved Posts
+              Saved Game Posts
             </Button>
             <Button
               className="author-button"
@@ -53,7 +53,7 @@ function UserPostList() {
               value="SUB"
               onClick={(e) => changeCategory(e.target.value)}
             >
-              Created Posts
+              Created Game Posts
             </Button>
           </section>
           <section className="author-article-list margin-section">

@@ -1,0 +1,30 @@
+
+.my-posts-display {
+    padding-top: 25px;
+}
+
+.author-buttons {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.author-button {
+    color: #ffffff;
+    border-color: #515151;
+    background-color: #515151;
+    padding: 5px 25px;
+    border-radius: 7px;
+    margin: 0 10px;
+}
+
+.author-button:hover {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
+}
+
+.author-button:focus {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
+}

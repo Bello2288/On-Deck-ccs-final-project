@@ -1,4 +1,4 @@
-import "../../styles/Posts.css";
+import "../../styles/Post-styles/AdminPostList.css";
 import Button from "react-bootstrap/Button";
 import AdminPost from "./AdminPost";
 import { useState, useCallback, useEffect } from "react";
@@ -39,24 +39,24 @@ function AdminPostList() {
       <div className="display">
         <section className="admin-buttons">
           <Button
-            className="admin-button"
-            variant="outline-dark"
+            className="create-button-pairs"
+            variant="primary"
             value="PST"
             onClick={(e) => changeCategory(e.target.value)}
           >
             Posted Games
           </Button>
           <Button
-            className="admin-button"
-            variant="outline-dark"
+            className="create-button-pairs"
+            variant="primary"
             value="SUB"
             onClick={(e) => changeCategory(e.target.value)}
           >
             Submitted Games
           </Button>
           <Button
-            className="admin-button"
-            variant="outline-dark"
+            className="create-button-pairs"
+            variant="primary"
             value="ARC"
             onClick={(e) => changeCategory(e.target.value)}
           >

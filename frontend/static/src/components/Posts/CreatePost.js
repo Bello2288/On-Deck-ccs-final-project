@@ -1,4 +1,4 @@
-import "../../styles/Posts.css";
+import "../../styles/Post-styles/CreatePost.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
@@ -43,6 +43,7 @@ function CreatePost() {
       const formData = new FormData();
   
       // formData.append("image", state.image);
+      formData.append("title", state.title);
       formData.append("category", state.category);
       formData.append("teamname", state.teamname);
       formData.append("organization", state.organization);
@@ -85,6 +86,16 @@ function CreatePost() {
           <h1 className="form-title">Create New Post</h1>
           <section className="create-flex">
             <div className="create-groups">
+            <Form.Group className="mb-3" controlId="title">
+                <Form.Label>Post Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Post Title"
+                  name="title"
+                  value={state.title}
+                  onChange={handleInput}
+                />
+              </Form.Group>
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
                 <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>
