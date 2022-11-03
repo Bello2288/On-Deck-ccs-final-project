@@ -8,6 +8,7 @@ import moment from 'moment';
 
 function EditPost({ state }) {
   const [isEdit, setIsEdit] = useState(false);
+
   const [post, setPost] = useState({
     // image: state.image,
     category: "",
@@ -77,6 +78,11 @@ function EditPost({ state }) {
     }
   };
 
+  const handleClick = () => {
+    // 👇️ replace set to true
+    navigate('/posts', {replace: true});
+  };
+
   const nonEditHTML = (
     <div className="edit-form">
       {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
@@ -122,8 +128,7 @@ function EditPost({ state }) {
             className="form-button-pairs"
             variant="primay"
             type="button"
-            value="/"
-            onClick={() => setIsEdit(true)}
+            onClick={handleClick}
           >
             Back
           </Button>
