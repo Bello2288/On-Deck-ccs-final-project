@@ -15,7 +15,8 @@ main {
     object-position: center;
     height: 450px;
     opacity: 1;
-    filter: brightness(60%)
+    filter: brightness(60%);
+    z-index: -1;
 }
 
 .home-page-text {

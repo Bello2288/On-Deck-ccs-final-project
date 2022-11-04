@@ -1,14 +1,17 @@
 import "../../styles/Header.css"
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { Navigate, useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import football from "../../images/football.png";
+// import football from "../../images/football.png";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 function Header({ superState, logoutUser }) {
+  const [state, setState] = useState({
+    username: "",
+  });
   const navigate = useNavigate();
 
   const logout = (e) => {
@@ -22,7 +25,7 @@ function Header({ superState, logoutUser }) {
         <Container className="navbar-container">
           <Navbar.Brand className="app-name" href="/">
             On Deck
-            <img className="sport-icon" src={football} alt="chair" />
+            {/* <img className="sport-icon" src={football} alt="chair" /> */}
           </Navbar.Brand>
           <div id="basic-navbar-nav">
             <Nav className="me-auto">

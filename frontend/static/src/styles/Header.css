@@ -76,7 +76,7 @@
     color: #ffffff;
     font-size: 20px;
     margin-top: 9px;
-    
+    z-index: 2;
 }
 .dropdown-opt {
     background-color: #cf720e;
@@ -92,6 +92,7 @@
 
 .dropdown-toggle {
     color: #ffffff;
+    /* font-family: 'Caveat', Times, serif; */
 }
 .dropdown-toggle:focus {
     color: #ffffff;
