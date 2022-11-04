@@ -63,11 +63,13 @@
 .form-button-pairs {
     margin: 10px;
     width: 100px;
-    background-color: #3e4348;
+    background-color: #515151;
+    border-color: #515151;
 }
 
 .form-button-pairs:hover {
-    background-color: #979797;
+    background-color: #be691f;
+    border-color: #be691f;
 }
 
 .edit-form-footer {

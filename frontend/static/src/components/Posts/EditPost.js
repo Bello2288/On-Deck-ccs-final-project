@@ -95,7 +95,7 @@ function EditPost({ state }) {
         <div>
           <Button
             className="form-button-pairs"
-            variant="primary"
+            variant="secondary"
             type="submit"
             value="SUB"
             onClick={(e) => handleSubmit(e)}
@@ -104,7 +104,7 @@ function EditPost({ state }) {
           </Button>
           <Button
             className="form-button-pairs"
-            variant="primay"
+            variant="secondary"
             type="button"
             onClick={() => setIsEdit(true)}
           >
@@ -116,7 +116,7 @@ function EditPost({ state }) {
         <div>
           <Button
             className="form-button-pairs"
-            variant="primary"
+            variant="secondary"
             type="submit"
             value="SUB"
             onClick={(e) => handleSubmit(e)}
@@ -125,7 +125,7 @@ function EditPost({ state }) {
           </Button>
           <Button
             className="form-button-pairs"
-            variant="primay"
+            variant="secondary"
             type="button"
             onClick={handleClick}
           >

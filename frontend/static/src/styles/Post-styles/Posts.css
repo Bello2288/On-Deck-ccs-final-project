@@ -37,10 +37,13 @@
     text-align: left;
     margin-top: 50px;
     /* background-color: #212121; */
-    background-color: #5b5b5b;
+    background-color: #212121;
     color: #ffffff;
     margin-top: 125px;
     margin-bottom: 45px;
+}
+.create-form > h1 {
+    font-size: 30px;
 }
 
 .create-flex {
@@ -99,6 +102,8 @@
 
 .view-link {
     color: #40be7b;
+    text-decoration: none;
+
 }
 .view-link:hover {
     color: #be691f;

@@ -39,24 +39,24 @@ function AdminPostList() {
       <div className="display">
         <section className="admin-buttons">
           <Button
-            className="create-button-pairs"
-            variant="primary"
+            className="form-button-pairs"
+            variant="secondary"
             value="PST"
             onClick={(e) => changeCategory(e.target.value)}
           >
             Posted Games
           </Button>
           <Button
-            className="create-button-pairs"
-            variant="primary"
+            className="form-button-pairs"
+            variant="secondary"
             value="SUB"
             onClick={(e) => changeCategory(e.target.value)}
           >
             Submitted Games
           </Button>
           <Button
-            className="create-button-pairs"
-            variant="primary"
+            className="form-button-pairs"
+            variant="secondary"
             value="ARC"
             onClick={(e) => changeCategory(e.target.value)}
           >

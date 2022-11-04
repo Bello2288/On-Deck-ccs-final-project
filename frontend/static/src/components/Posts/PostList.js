@@ -12,7 +12,7 @@ function PostList({ updateDisplay, filteredPosts }) {
             <p>{post.location}</p>
             <p>{moment(post.date).format('MMMM Do, YYYY')}</p>
             <p>{moment(post.time, "HH:mm:ss").format('h:mm a')}</p>
-            <span>By {post.author_name}</span>
+            <span>By {post.author_name} : </span>
             <Link className="view-link" to={`/post/${post.id}`}>
             View Post
             </Link>

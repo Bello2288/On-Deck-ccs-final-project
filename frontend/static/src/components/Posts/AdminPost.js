@@ -11,12 +11,10 @@ function AdminPost({ post }) {
         <h3 className="user-post-data">{post.location}</h3>
         <p className="user-post-data">{moment(post.date).format('MMMM Do, YYYY')}</p>
         <p className="user-post-data">{moment(post.time, "HH:mm:ss").format('h:mm a')}</p>
-        <span>By {post.author_name}</span>
-        <div className="view-button">
+        <span>By {post.author_name} : </span>
           <Link className="view-link" to={`/posts/editor/${post.id}`}>
             View Post
           </Link>
-        </div>
       </div>
       {/* <img className="aside-image" src={post.image} alt="post" /> */}
     </li>

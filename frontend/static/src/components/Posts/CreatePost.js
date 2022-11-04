@@ -181,8 +181,8 @@ function CreatePost() {
           </section>
           <div className="form-footer">
             <Button
-              className="create-button-pairs"
-              variant="primary"
+              className="form-button-pairs"
+              variant="secondary"
               type="submit"
               value="DRA"
               onClick={handleSubmit}
@@ -190,8 +190,8 @@ function CreatePost() {
               Save
             </Button>
             <Button
-              className="create-button-pairs"
-              variant="primary"
+              className="form-button-pairs"
+              variant="secondary"
               type="submit"
               value="SUB"
               onClick={handleSubmit}

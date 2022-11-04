@@ -39,6 +39,7 @@ function Header({ superState, logoutUser }) {
                   <Nav.Link className="header-text" href="/posts"> Game Posts</Nav.Link>
                   <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
                   <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
+                  {/* <div>Username</div> */}
                 </>
               )}
               {superState.admin && (
@@ -51,13 +52,13 @@ function Header({ superState, logoutUser }) {
               //     Logout
               //   </Nav.Link>
               // )}
+              
               <NavDropdown className="dropdown" title="Username" id="nav-dropdown" variant="primary">
                 <NavDropdown.Item className="dropdown-opt" href="/user/profile">Edit Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
               </NavDropdown>
               )}
-              {/* <div>User name</div> */}
               {/* {superState.avatar && (
               <img className="profile-picture" src={superState.avatar} alt="profile img" />
             )}  */}

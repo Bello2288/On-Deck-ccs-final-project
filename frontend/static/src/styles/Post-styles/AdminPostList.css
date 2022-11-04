@@ -3,19 +3,20 @@
 }
 
 .detail-view {
+    display: flex;
+    justify-content: center ;
     padding-top: 115px;
 }
 
-.article-view {
+.postlist-review-view {
     border: 2px solid #000000;
     border-radius: 7px;
-    padding: 20px 40px;
-    width: 57%;
-    text-align: left;
-    margin-top: 30px;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 40px;
     background-color: #212121;
     color: #ffffff;
-    margin-bottom: -28px;
+    font-size: 15px;
 }
 
 .list-container {

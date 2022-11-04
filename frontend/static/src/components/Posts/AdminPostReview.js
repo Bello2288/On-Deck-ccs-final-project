@@ -61,7 +61,7 @@ function AdminPostReview() {
     return (
     <article className="detail-view">
         {state && (
-        <div className="article-view">
+        <div className="postlist-review-view">
             {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
             <h2 className="highlight-post">{state.teamname}</h2>
             <p className="highlight-post">{state.organization}</p>
@@ -73,7 +73,7 @@ function AdminPostReview() {
             <>
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="submit"
                 value="PST"
                 onClick={(e) => handleSubmit(e)}
@@ -82,16 +82,16 @@ function AdminPostReview() {
                 </Button>
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="submit"
                 value="REJ"
                 onClick={(e) => handleSubmit(e)}
                 >
-                Reject
+                Decline
                 </Button>
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="button"
                 onClick={handleClick}
                 >
@@ -103,7 +103,7 @@ function AdminPostReview() {
             <>
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="submit"
                 value="ARC"
                 onClick={(e) => handleSubmit(e)}
@@ -112,7 +112,7 @@ function AdminPostReview() {
                 </Button>
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="button"
                 onClick={handleClick}
                 >
@@ -122,7 +122,7 @@ function AdminPostReview() {
             )}
             {state.status === "ARC" && (
             <>
-                <Button
+                {/* <Button
                 className="form-button-pairs"
                 variant="dark"
                 type="submit"
@@ -130,10 +130,10 @@ function AdminPostReview() {
                 onClick={(e) => handleSubmit(e)}
                 >
                 Re-Post
-                </Button>
+                </Button> */}
                 <Button
                 className="form-button-pairs"
-                variant="dark"
+                variant="secondary"
                 type="button"
                 onClick={handleClick}
                 >

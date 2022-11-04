@@ -41,14 +41,13 @@ function LoginForm({ superState, setSuperState }) {
       } else {
         const data = await response.json();
         Cookies.set("Authorization", `Token ${data.key}`);
-        console.log(data);
-        navigate("/posts");
-        setSuperState({
-          ...superState,
-          auth: true,
-          admin: data.is_superuser,
-          userID: data.id,
-        });
+        // navigate("/posts");
+        setSuperState({...superState, auth: true, admin: data.is_superuser, userID: data.id,});
+        if (state.is_superuser === true) {
+          navigate("/posts/editor")
+      } else if (state.is_superuser !== true) {
+          navigate("/posts")
+      }
       }
     };
     // userStatus
