@@ -60,7 +60,7 @@ function AdminPostList() {
             value="ARC"
             onClick={(e) => changeCategory(e.target.value)}
           >
-            Archived Games
+            Past Games
           </Button>
         </section>
         <section className="author-article-list margin-section">

@@ -72,7 +72,30 @@
     object-position: center;
 }
 
+.dropdown {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 9px;
+    
+}
+.dropdown-opt {
+    background-color: #cf720e;
+    color: #ffffff;
+    
+}
+.show {
+    background-color: #cf720e;
+}
+.dropdown-opt:hover {
+    background-color: #cf720e;
+}
 
+.dropdown-toggle {
+    color: #ffffff;
+}
+.dropdown-toggle:focus {
+    color: #ffffff;
+}
 
 
 

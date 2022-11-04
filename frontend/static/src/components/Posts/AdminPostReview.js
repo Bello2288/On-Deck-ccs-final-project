@@ -54,6 +54,10 @@ function AdminPostReview() {
     }
     };
 
+    const handleClick = () => {
+        navigate('/posts/editor');
+      };
+
     return (
     <article className="detail-view">
         {state && (
@@ -85,6 +89,14 @@ function AdminPostReview() {
                 >
                 Reject
                 </Button>
+                <Button
+                className="form-button-pairs"
+                variant="dark"
+                type="button"
+                onClick={handleClick}
+                >
+                Back
+                </Button>
             </>
             )}
             {state.status === "PST" && (
@@ -98,6 +110,14 @@ function AdminPostReview() {
                 >
                 Archive
                 </Button>
+                <Button
+                className="form-button-pairs"
+                variant="dark"
+                type="button"
+                onClick={handleClick}
+                >
+                Back
+                </Button>
             </>
             )}
             {state.status === "ARC" && (
@@ -109,7 +129,15 @@ function AdminPostReview() {
                 value="PST"
                 onClick={(e) => handleSubmit(e)}
                 >
-                Re-Publish
+                Re-Post
+                </Button>
+                <Button
+                className="form-button-pairs"
+                variant="dark"
+                type="button"
+                onClick={handleClick}
+                >
+                Back
                 </Button>
             </>
             )}

@@ -17,3 +17,11 @@
     color: #ffffff;
     margin-bottom: -28px;
 }
+
+.list-container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 15px;
+}

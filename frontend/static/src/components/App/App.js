@@ -15,6 +15,7 @@ import UserPostDetailView from "../Posts/UserPostDetailView";
 import AdminPostList from '../Posts/AdminPostList';
 import AdminPostReview from '../Posts/AdminPostReview';
 import UserProfile from '../Profile/UserProfile';
+import AdminProfile from '../Profile/AdminProfile';
 
 
 const INITIAL_STATE = {
@@ -104,11 +105,14 @@ function App() {
             {superState.auth && (
               <>
                 <Route path="create" element={<CreatePosts superState={superState} setSuperState={setSuperState} />} />
-                <Route path="user/profile" element={<UserProfile />} />
                 <Route path="post/:id/*" element={<UserPostDetailView />} />
                 <Route path="posts/user/*" element={<UserPostList />} />
                 <Route path="posts/editor" element={<AdminPostList />} />
                 <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
+
+                <Route path="user/profile" element={<UserProfile />} />
+                <Route path="admin/profile" element={<AdminProfile />} />
+
               </>
             )}
           </Route>

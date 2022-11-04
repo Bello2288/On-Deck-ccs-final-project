@@ -5,6 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 // import { Navigate, useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import football from "../../images/football.png";
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 function Header({ superState, logoutUser }) {
   const navigate = useNavigate();
@@ -42,14 +44,20 @@ function Header({ superState, logoutUser }) {
                 </>
               )}
               {superState.auth && (
-                <Nav.Link className="header-login" href="/" onClick={(e) => logout(e)}>
-                  Logout
-                </Nav.Link>
+              //   <Nav.Link className="header-login" href="/" onClick={(e) => logout(e)}>
+              //     Logout
+              //   </Nav.Link>
+              // )}
+              <NavDropdown className="dropdown" title="Username" id="nav-dropdown" variant="primary">
+                <NavDropdown.Item className="dropdown-opt" href="/user/profile">Edit Profile</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
+              </NavDropdown>
               )}
               {/* <div>User name</div> */}
-              {superState.avatar && (
+              {/* {superState.avatar && (
               <img className="profile-picture" src={superState.avatar} alt="profile img" />
-            )} 
+            )}  */}
             </Nav>
           </div>
         </Container>

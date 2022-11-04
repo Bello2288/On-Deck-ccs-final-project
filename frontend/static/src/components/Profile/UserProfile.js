@@ -1,8 +1,10 @@
-
+import "../../styles/Profile.css";
 
 function UserProfile() {
   return (
-    <div>This is a user profile page</div>
+    <div className="profile-container">
+      <p>This is a user profile page</p>
+    </div>
   );
 }
 

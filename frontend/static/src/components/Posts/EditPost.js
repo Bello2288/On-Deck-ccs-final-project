@@ -79,8 +79,7 @@ function EditPost({ state }) {
   };
 
   const handleClick = () => {
-    // 👇️ replace set to true
-    navigate('/posts', {replace: true});
+    navigate('/posts');
   };
 
   const nonEditHTML = (
