@@ -17,7 +17,7 @@ function PostList({ updateDisplay, filteredPosts }) {
             View Post
             </Link>
         </div>
-        <img src={post.image} />
+        {/* <img src={post.image} /> */}
       </li>
     ));
   return <ul className="pst-list">{postList}</ul>;

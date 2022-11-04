@@ -1,14 +1,12 @@
 import "../../styles/Post-styles/Posts.css";
 import { useState, useCallback, useEffect } from "react";
-// import PostDisplay from "./PostDisplay";
 import PostList from "./PostList";
 import Button from "react-bootstrap/Button";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 function Posts() {
   const [posts, setPosts] = useState([]);
-  const [activePost, setActivePost] = useState();
+  // const [activePost, setActivePost] = useState();
   const [filter, setFilter] = useState("");
 
   const handleError = (err) => {
@@ -22,7 +20,7 @@ function Posts() {
     } else {
       const data = await response.json();
       setPosts(data);
-      setActivePost(data[0]);
+      // setActivePost(data[0]);
     }
   }, []);
 
@@ -30,15 +28,15 @@ function Posts() {
     getPosts();
   }, [getPosts]);
 
-  const updateDisplay = (id) => {
-    const index = posts.findIndex((post) => post.id === id);
-    const postAtIndex = posts[index];
-    setActivePost(postAtIndex);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const updateDisplay = (id) => {
+  //   const index = posts.findIndex((post) => post.id === id);
+  //   // const postAtIndex = posts[index];
+  //   // setActivePost(postAtIndex);
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   const filteredPosts = posts.filter((post) =>
-    filter ? post.category == filter : post
+    filter ? post.category === filter : post
   );
 
   const changeCategory = (value) => {
@@ -47,7 +45,7 @@ function Posts() {
   };
 
   useEffect(() => {
-    setActivePost(filteredPosts[0]);
+    // setActivePost(filteredPosts[0]);
   }, [filter]);
 
   return (
@@ -99,7 +97,7 @@ function Posts() {
           <PostList
            className="post-info"
             posts={posts}
-            updateDisplay={updateDisplay}
+            // updateDisplay={updateDisplay}
             filteredPosts={filteredPosts}
           />
       </section>
