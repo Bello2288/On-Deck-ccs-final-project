@@ -10,9 +10,9 @@ function RegistrationForm({ superState, setSuperState}) {
     const [state, setState] = useState({
         username: "",
         email: "",
-        firstname: "",
-        lastname: "",
-        phonenumber: "",
+        // firstname: "",
+        // lastname: "",
+        // phonenumber: "",
         password1: "",
         password2: "",
     });
@@ -56,7 +56,7 @@ function RegistrationForm({ superState, setSuperState}) {
         } else {
             const data = await response.json();
             Cookies.set("Authorization", `Token ${data.key}`);
-            navigate("/posts");
+            navigate("/user/profile-create");
             setSuperState({ ...superState, auth: true, admin: data.is_superuser, userID: data.id });
         }
     };
@@ -79,17 +79,6 @@ function RegistrationForm({ superState, setSuperState}) {
                     onChange={handleInput}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="email">
-                  <Form.Label>Email Address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    name="email"
-                    required
-                    value={state.email}
-                    onChange={handleInput}
-                  />
-                </Form.Group>
                 <Form.Group className="mb-3" controlId="password1">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
@@ -98,6 +87,19 @@ function RegistrationForm({ superState, setSuperState}) {
                     name="password1"
                     required
                     value={state.password1}
+                    onChange={handleInput}
+                  />
+                </Form.Group>
+              </div>
+              <div>
+              <Form.Group className="mb-3" controlId="email">
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    name="email"
+                    required
+                    value={state.email}
                     onChange={handleInput}
                   />
                 </Form.Group>
@@ -113,7 +115,7 @@ function RegistrationForm({ superState, setSuperState}) {
                   />
                 </Form.Group>
               </div>
-              <div>
+              {/* <div>
                 <Form.Group className="mb-3" controlId="firstname">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control
@@ -158,7 +160,7 @@ function RegistrationForm({ superState, setSuperState}) {
                     onChange={handleInput}
                     />
                 </Form.Group>
-              </div>
+              </div> */}
             </section>
             <div className="form-footer">
               <Button className="form-button" variant="dark" type="submit">

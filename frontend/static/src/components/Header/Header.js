@@ -48,10 +48,6 @@ function Header({ superState, logoutUser }) {
                 </>
               )}
               {superState.auth && (
-              //   <Nav.Link className="header-login" href="/" onClick={(e) => logout(e)}>
-              //     Logout
-              //   </Nav.Link>
-              // )}
               
               <NavDropdown className="dropdown" title="Username" id="nav-dropdown" variant="primary">
                 <NavDropdown.Item className="dropdown-opt" href="/user/profile">Edit Profile</NavDropdown.Item>

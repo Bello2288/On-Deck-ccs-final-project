@@ -63,60 +63,85 @@ function ClientProfileCreate() {
       },
       body: formData,
     };
-    const response = await fetch("/api/v1/profiles/clients/", options).catch(handleError);
+    const response = await fetch("/api/v1/profiles/", options).catch(handleError);
     if (!response.ok) {
       throw new Error("Network response was not OK");
     } else {
       const data = await response.json();
       console.log(data);
       setState(INITIAL_CLIENT_PROFILE_STATE);
-      navigate("/");
+      navigate("/posts");
     }
   };
 
   return (
     <section className="form-display">
-      <Form className="form-box" onSubmit={handleSubmit}>
+      <Form className="profile-create-container" onSubmit={handleSubmit}>
         <div className="form-head">
           <h1>Create Profile</h1>
           <div className="image-container">
-            <img className="form-image" src={preview} alt="" />
+            <img className="profile-image" src={preview} alt="" />
           </div>
         </div>
-        <Form.Group className="mb-3" controlId="image">
-          <Form.Label>Choose a profile picture</Form.Label>
-          <Form.Control required type="file" name="avatar" onChange={handleImage} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="first-name">
-          <Form.Label>First name</Form.Label>
-          <Form.Control
-            required
-            placeholder="First name..."
-            type="text"
-            name="first_name"
-            value={state.first_name}
-            onChange={handleInput}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="last-name">
-          <Form.Label>Last name</Form.Label>
-          <Form.Control
-            required
-            placeholder="Last name..."
-            type="text"
-            name="last_name"
-            value={state.last_name}
-            onChange={handleInput}
-          />
-        </Form.Group>
-
-        <div>
-          <Button className="form-button" type="submit" variant="dark">
-            Save
-          </Button>
-        </div>
+        <section className="profile-create-inputs">
+            <div>
+                <Form.Group className="mb-3" controlId="image">
+                <Form.Label>Choose a profile picture</Form.Label>
+                <Form.Control required type="file" name="avatar" onChange={handleImage} />
+                </Form.Group>
+            </div>
+            <div>
+                <Form.Group className="mb-3" controlId="first_name">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                    type="text"
+                    placeholder="Enter first name"
+                    name="first_name"
+                    required
+                    value={state.first_name}
+                    onChange={handleInput}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="last_name">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                    type="text"
+                    placeholder="Enter last name"
+                    name="last_name"
+                    required
+                    value={state.last_name}
+                    onChange={handleInput}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="phone_number">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                    type="tel"
+                    placeholder="Enter phone # - Only for notifications"
+                    name="phone_number"
+                    required
+                    value={state.phone_number}
+                    onChange={handleInput}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="zipcode">
+                    <Form.Label>Zip Code</Form.Label>
+                    <Form.Control
+                    type="number"
+                    placeholder="Enter zip code"
+                    name="zipcode"
+                    required
+                    value={state.zipcode}
+                    onChange={handleInput}
+                    />
+                </Form.Group>
+                <div>
+                    <Button className="form-button" type="submit" variant="dark">
+                        Save
+                    </Button>
+                </div>
+            </div>
+        </section>
       </Form>
     </section>
   );
