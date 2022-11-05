@@ -1,7 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
-# from phonenumber_field.modelfields import PhoneNumberField
+from phone_field import PhoneField
+from localflavor.us.models import USZipCodeField
 
 
 class User(AbstractUser):
@@ -15,7 +16,8 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=225, null=True)
     last_name = models.CharField(max_length=225, null=True)
     email = models.EmailField(max_length=225, null=True)
-    # phone_number = models.PhoneNumberField(null=True)
+    phone_number = PhoneField(blank=True, help_text='Contact phone number')
+    zipcode = USZipCodeField(blank=True)
 
     def __str__(self):
         return self.user.username

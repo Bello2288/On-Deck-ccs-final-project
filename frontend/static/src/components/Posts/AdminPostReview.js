@@ -63,7 +63,8 @@ function AdminPostReview() {
         {state && (
         <div className="postlist-review-view">
             {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
-            <h2 className="highlight-post">{state.teamname}</h2>
+            <h2 className="highlight-post">{state.title}</h2>
+            <p className="highlight-post">{state.teamname}</p>
             <p className="highlight-post">{state.organization}</p>
             <p className="highlight-post">{state.location}</p>
             <p className="highlight-post">{state.date}</p>

@@ -84,9 +84,6 @@ function LoginForm({ superState, setSuperState }) {
                 <p>
                   Don't have an account? Click <Link className="link login-link" to={"/register"}>here</Link> to create one.
                 </p>
-                {/* <p>
-                  Need a team account? Click <Link className="link login-link" to={"/teamregister"}>here</Link> to create one.
-                </p> */}
               </div>
             </div>
           </Form>

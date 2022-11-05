@@ -14,7 +14,7 @@ function PostList({ updateDisplay, filteredPosts }) {
             <p>{moment(post.time, "HH:mm:ss").format('h:mm a')}</p>
             <span>By {post.author_name} : </span>
             <Link className="view-link" to={`/post/${post.id}`}>
-            View Post
+              View Post
             </Link>
         </div>
         {/* <img src={post.image} /> */}

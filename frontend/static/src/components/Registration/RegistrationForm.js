@@ -3,7 +3,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 function RegistrationForm({ superState, setSuperState}) {
@@ -164,6 +164,11 @@ function RegistrationForm({ superState, setSuperState}) {
               <Button className="form-button" variant="dark" type="submit">
                 Create Account
               </Button>
+              <div className="create-link">
+                <p>
+                  Already have an account? Click <Link className="link login-link" to={"/login"}> here </Link> to login.
+                </p>
+              </div>
             </div>
           </Form>
         </div>

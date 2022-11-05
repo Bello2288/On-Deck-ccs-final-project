@@ -7,6 +7,7 @@ function AdminPost({ post }) {
   return (
     <li key={post.id} className="list creator-list">
       <div className="post-info">
+        <h3 className="user-post-data">{post.title}</h3>
         <h3 className="user-post-data">{post.teamname}</h3>
         <h3 className="user-post-data">{post.location}</h3>
         <p className="user-post-data">{moment(post.date).format('MMMM Do, YYYY')}</p>

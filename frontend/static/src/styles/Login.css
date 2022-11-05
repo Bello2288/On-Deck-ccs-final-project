@@ -90,6 +90,7 @@
 
 .login-link {
     color: #40be7b;
+    text-decoration: none;
 }
 .login-link:hover {
     color: #be691f;

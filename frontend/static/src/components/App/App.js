@@ -14,6 +14,7 @@ import UserPostDetailView from "../Posts/UserPostDetailView";
 import AdminPostList from '../Posts/AdminPostList';
 import AdminPostReview from '../Posts/AdminPostReview';
 import UserProfile from '../Profile/UserProfile';
+import ProfileCreate from '../Profile/ProfileCreate';
 
 
 const INITIAL_STATE = {
@@ -107,6 +108,7 @@ function App() {
                 <Route path="posts/user/*" element={<UserPostList />} />
                 <Route path="posts/editor" element={<AdminPostList />} />
                 <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
+                <Route path="user/profile-create" element={<ProfileCreate />} />
                 <Route path="user/profile" element={<UserProfile />} />
               </>
             )}
