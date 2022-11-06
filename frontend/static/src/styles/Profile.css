@@ -1,15 +1,6 @@
 
 
-.profile-container {
-    padding-top: 185px;
-    color: aliceblue;
-}
-
-
-
-
-
-/* ====================  Profile Create ==================== */
+/* =============== vvvv  Profile Create vvvv ==================== */
  
 .profile-create-container {
     padding-top: 125px;
@@ -36,3 +27,32 @@
     object-fit: cover;
     object-position: center;
 }
+
+/* =============== ^^^^  Profile Create ^^^^ ==================== */
+
+
+
+
+
+/* =============== vvvv  Profile Edit vvvv ==================== */
+
+
+.profile-container {
+    padding-top: 185px;
+    color: aliceblue;
+}
+
+
+/* =============== ^^^^  Profile Edit ^^^^ ==================== */
+
+
+
+
+
+/* =============== vvvv  User Profile vvvv ==================== */
+
+.profile-view {
+    padding-top: 200px;
+}
+
+/* =============== ^^^^  User Profile ^^^^ ==================== */

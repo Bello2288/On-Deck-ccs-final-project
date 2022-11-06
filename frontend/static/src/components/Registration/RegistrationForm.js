@@ -56,8 +56,16 @@ function RegistrationForm({ superState, setSuperState}) {
         } else {
             const data = await response.json();
             Cookies.set("Authorization", `Token ${data.key}`);
+            // navigate("/user/profile-create");
+            setSuperState({ 
+              ...superState, 
+              auth: true, 
+              admin: data.is_superuser, 
+              userID: data.id, 
+              avatar: data.avatar,
+              profile: data.profile,
+            });
             navigate("/user/profile-create");
-            setSuperState({ ...superState, auth: true, admin: data.is_superuser, userID: data.id });
         }
     };
 
@@ -79,6 +87,19 @@ function RegistrationForm({ superState, setSuperState}) {
                     onChange={handleInput}
                   />
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="email">
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    name="email"
+                    required
+                    value={state.email}
+                    onChange={handleInput}
+                  />
+                </Form.Group>
+              </div>
+              <div>
                 <Form.Group className="mb-3" controlId="password1">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
@@ -87,19 +108,6 @@ function RegistrationForm({ superState, setSuperState}) {
                     name="password1"
                     required
                     value={state.password1}
-                    onChange={handleInput}
-                  />
-                </Form.Group>
-              </div>
-              <div>
-              <Form.Group className="mb-3" controlId="email">
-                  <Form.Label>Email Address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    name="email"
-                    required
-                    value={state.email}
                     onChange={handleInput}
                   />
                 </Form.Group>

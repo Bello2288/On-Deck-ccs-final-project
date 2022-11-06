@@ -21,6 +21,7 @@ const INITIAL_STATE = {
   auth: false,
   admin: false,
   userID: null,
+  avatar: null,
 };
 
 function App() {
@@ -108,8 +109,8 @@ function App() {
                 <Route path="posts/user/*" element={<UserPostList />} />
                 <Route path="posts/editor" element={<AdminPostList />} />
                 <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
-                <Route path="user/profile-create" element={<ProfileCreate />} />
-                <Route path="user/profile" element={<UserProfile />} />
+                <Route path="user/profile-create" element={<ProfileCreate superState={superState} setSuperState={setSuperState} />} />
+                <Route path="user/profile/*" element={<UserProfile superState={superState} />} />
               </>
             )}
           </Route>

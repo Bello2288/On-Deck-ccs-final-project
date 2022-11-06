@@ -78,7 +78,7 @@ function EditPost({ state }) {
     }
   };
 
-  const handleClick = () => {
+  const handleClick = () => { 
     navigate('/posts');
   };
 
@@ -229,31 +229,31 @@ function EditPost({ state }) {
           <div className="form-footer">
             <Button
               className="create-button-pairs"
-            variant="dark"
-            type="submit"
-            value="SUB"
-            onClick={(e) => handleSubmit(e)}
-          >
+              variant="dark"
+              type="submit"
+              value="SUB"
+              onClick={(e) => handleSubmit(e)}
+            >
             Submit Draft
-          </Button>
-          <Button
-            className="create-button-pairs"
-            variant="dark"
-            type="submit"
-            value="DRA"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Save Draft
-          </Button>
-          <Button
-            className="create-button-pairs"
-            variant="dark"
-            type="submit"
-            value="REJ"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Delete Draft
-          </Button>
+            </Button>
+            <Button
+              className="create-button-pairs"
+              variant="dark"
+              type="submit"
+              value="DRA"
+              onClick={(e) => handleSubmit(e)}
+            >
+              Save Draft
+            </Button>
+            <Button
+              className="create-button-pairs"
+              variant="dark"
+              type="submit"
+              value="REJ"
+              onClick={(e) => handleSubmit(e)}
+            >
+              Delete Draft
+            </Button>
         </div>
       </Form>
     </div>

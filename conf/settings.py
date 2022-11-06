@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
 ]
 
 
-# Application definition
+# Application definition 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
-    'allauth',
+    'allauth', 
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
@@ -172,7 +172,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Substituting a custom User model
 # https://docs.djangoproject.com/en/3.1/topics/auth/customizing/#substituting-a-custom-user-model
 
-AUTH_USER_MODEL = 'accounts.User' # accouts is the name of the app, User is the model we built
+AUTH_USER_MODEL = 'accounts.User' 
 
 
 

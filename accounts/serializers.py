@@ -21,8 +21,6 @@ class TokenSerializer(serializers.ModelSerializer):
 
 
 
-
-
 # class UserProfileSerializer(serializers.ModelSerializer):
 #     username = serializers.ReadOnlyField(source='user.username')
 

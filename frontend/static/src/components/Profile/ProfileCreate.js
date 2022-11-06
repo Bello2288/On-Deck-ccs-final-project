@@ -6,7 +6,8 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import defaultProfileImage from "../../images/blank_avatar.jpeg";
 
-const INITIAL_CLIENT_PROFILE_STATE = {
+
+const INITIAL_USER_PROFILE_STATE = {
   avatar: null,
   first_name: "",
   last_name: "",
@@ -15,8 +16,8 @@ const INITIAL_CLIENT_PROFILE_STATE = {
   zipcode: "",
 };
 
-function ClientProfileCreate() {
-  const [state, setState] = useState(INITIAL_CLIENT_PROFILE_STATE);
+function ProfileCreate(superState, setSuperState) {
+  const [state, setState] = useState(INITIAL_USER_PROFILE_STATE);
   const [preview, setPreview] = useState(defaultProfileImage);
 
   const navigate = useNavigate();
@@ -55,6 +56,9 @@ function ClientProfileCreate() {
     formData.append("avatar", state.avatar);
     formData.append("first_name", state.first_name);
     formData.append("last_name", state.last_name);
+    formData.append("email", state.email);
+    formData.append("phone_number", state.phone_number);
+    formData.append("zipcode", state.zipcode);
 
     const options = {
       method: "POST",
@@ -69,7 +73,12 @@ function ClientProfileCreate() {
     } else {
       const data = await response.json();
       console.log(data);
-      setState(INITIAL_CLIENT_PROFILE_STATE);
+      setState(INITIAL_USER_PROFILE_STATE);
+      // setSuperState({
+      //   ...superState,
+      //   avatar: data.avatar,
+      //   profile: data.id,
+      // });
       navigate("/posts");
     }
   };
@@ -147,4 +156,4 @@ function ClientProfileCreate() {
   );
 }
 
-export default ClientProfileCreate;
+export default ProfileCreate;
