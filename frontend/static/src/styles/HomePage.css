@@ -16,7 +16,7 @@ main {
     height: 450px;
     opacity: 1;
     filter: brightness(60%);
-    /* z-index: -1; */
+    z-index: 1;
 }
 
 .home-page-text {

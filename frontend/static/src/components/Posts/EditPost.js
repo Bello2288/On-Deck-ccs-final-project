@@ -11,6 +11,7 @@ function EditPost({ state }) {
 
   const [post, setPost] = useState({
     // image: state.image,
+    title: "",
     category: "",
     teamname: "",
     organization: "",
@@ -51,6 +52,7 @@ function EditPost({ state }) {
       formData.append("image", post.image);
     }
 
+    formData.append("title", state.title);
     formData.append("category", state.category);
     formData.append("teamname", state.teamname);
     formData.append("organization", state.organization);
@@ -91,7 +93,7 @@ function EditPost({ state }) {
       <p className="highlight-post">{state.location}</p>
       <p>{moment(state.date).format('MMMM Do, YYYY')}</p>
       <p>{moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
-      <p className="highlight-post">{state.notes}</p>
+      <p className="highlight-post-notes">{state.notes}</p>
       {state.status === "DRA" && (
         <div>
           <Button
@@ -114,7 +116,7 @@ function EditPost({ state }) {
         </div>
       )}
       {state.status === "PST" && (
-        <div>
+        <div className="takeseat-buttons">
           <Button
             className="form-button-pairs"
             variant="secondary"

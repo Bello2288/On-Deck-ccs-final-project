@@ -9,6 +9,7 @@ function CreatePost() {
     
     const [state, setState] = useState({
       // image: null,
+      title: "",
       category: "",
       teamname: "",
       organization: "",
@@ -69,6 +70,7 @@ function CreatePost() {
         console.log(data);
         setState({
           // image: null,
+          title: "",
           category: "",
           teamname: "",
           organization: "",

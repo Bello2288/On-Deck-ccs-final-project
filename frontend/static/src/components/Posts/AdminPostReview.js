@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Cookies from "js-cookie";
+import moment from 'moment';
 
 
 function AdminPostReview() {
@@ -63,13 +64,16 @@ function AdminPostReview() {
         {state && (
         <div className="postlist-review-view">
             {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
-            <h2 className="highlight-post">{state.title}</h2>
-            <p className="highlight-post">{state.teamname}</p>
-            <p className="highlight-post">{state.organization}</p>
-            <p className="highlight-post">{state.location}</p>
-            <p className="highlight-post">{state.date}</p>
-            <p className="highlight-post">{state.time}</p>
-            <p className="highlight-post">{state.notes}</p>
+            <h2 className="review-post-title">{state.title}</h2>
+            <section className="review-layout">
+                <div>
+                    <p className="review-post">{state.teamname}</p>
+                    <p className="review-post">{state.organization}</p>
+                    <p className="review-post">{state.location}</p>
+                    <p className="user-post-data">{moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
+                </div>
+                <p className="review-post">{state.notes}</p>
+            </section>
             {state.status === "SUB" && (
             <>
                 <Button

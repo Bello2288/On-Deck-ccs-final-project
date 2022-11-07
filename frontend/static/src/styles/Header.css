@@ -3,11 +3,11 @@
 
 .navbar{
     border-bottom: 1px solid #000000;
-    /* background-color: #000000; */
     background-color: #cf720e;
     color: #ffffff;    
     position: fixed;
     width: 100%;
+    z-index: 3;
 }
 
 .navbar-container {
@@ -78,14 +78,17 @@
     font-size: 20px;
     margin-top: 9px;
     margin-left: 20px;
-    /* z-index: 2; */
+    z-index: 2;
 }
 .dropdown-opt {
     background-color: #cf720e;
     color: #ffffff;
+    z-index: 2;
 }
+
 .show {
     background-color: #cf720e;
+    z-index: 2;
 }
 .dropdown-opt:hover {
     background-color: #cf720e;

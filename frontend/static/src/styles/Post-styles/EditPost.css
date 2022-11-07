@@ -1,0 +1,17 @@
+.edit-form {
+    border: 2px solid #000000;
+    border-radius: 7px;
+    width: 80%;
+    margin-top: 30px;
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.highlight-post-notes {
+    width: 80%;
+    margin: auto;
+}
+
+.takeseat-buttons {
+    margin: 35px 0 10px 0;
+}

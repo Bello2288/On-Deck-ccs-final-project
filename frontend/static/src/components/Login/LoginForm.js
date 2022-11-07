@@ -51,9 +51,9 @@ function LoginForm({ superState, setSuperState }) {
         });
         if (state.is_superuser === true) {
           navigate("/posts/editor")
-      } else if (state.is_superuser !== true) {
+        } else if (state.is_superuser !== true) {
           navigate("/posts")
-      }
+        }
       }
     };
     // userStatus

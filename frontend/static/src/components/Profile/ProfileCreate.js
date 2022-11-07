@@ -84,6 +84,8 @@ function ProfileCreate(superState, setSuperState) {
         ...superState,
         user_avatar: data.avatar,
         user_profile: data.id,
+        first_name: data.first_name,
+        last_name: data.last_name,
       });
       navigate("/posts");
     }

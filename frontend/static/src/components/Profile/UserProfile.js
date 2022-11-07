@@ -20,11 +20,11 @@ function UserProfile({ superState }) {
       setUserProfile(data);
     };
 
-    getUserProfile(superState.user_profile);
+    getUserProfile(superState.userID);
   }, [superState]);
 
   return (
-    <section className="profile-view">{userProfile && <ProfileEdit userProfile={userProfile} />}</section>
+    <section className="editprofile-view">{userProfile && <ProfileEdit userProfile={userProfile} />}</section>
   );
 }
 

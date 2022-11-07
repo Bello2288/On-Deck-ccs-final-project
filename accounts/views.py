@@ -1,6 +1,9 @@
 from rest_framework import generics
 from . import models
 from . import serializers
+from .permissions import IsUserOrReadOnly
+
+
 
 class ProfileListAPIView(generics.ListCreateAPIView):
     queryset = models.Profile.objects.all()
@@ -11,6 +14,7 @@ class ProfileListAPIView(generics.ListCreateAPIView):
 
 
 class ProfileDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsUserOrReadOnly,)
     queryset = models.Profile.objects.all()
     serializer_class = serializers.ProfileSerializer
 
