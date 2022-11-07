@@ -10,9 +10,6 @@ function RegistrationForm({ superState, setSuperState}) {
     const [state, setState] = useState({
         username: "",
         email: "",
-        // firstname: "",
-        // lastname: "",
-        // phonenumber: "",
         password1: "",
         password2: "",
     });
@@ -62,8 +59,8 @@ function RegistrationForm({ superState, setSuperState}) {
               auth: true, 
               admin: data.is_superuser, 
               userID: data.id, 
-              avatar: data.avatar,
-              profile: data.profile,
+              user_avatar: data.avatar,
+              user_profile: data.profile,
             });
             navigate("/user/profile-create");
         }
@@ -123,52 +120,6 @@ function RegistrationForm({ superState, setSuperState}) {
                   />
                 </Form.Group>
               </div>
-              {/* <div>
-                <Form.Group className="mb-3" controlId="firstname">
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter first name"
-                    name="firstname"
-                    required
-                    value={state.firstname}
-                    onChange={handleInput}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="lastname">
-                  <Form.Label>Last Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter last name"
-                    name="lastname"
-                    required
-                    value={state.lastname}
-                    onChange={handleInput}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="phonenumber">
-                  <Form.Label>Phone Number</Form.Label>
-                  <Form.Control
-                    type="tel"
-                    placeholder="Enter phone # - Only used to send notifications"
-                    name="phonenumber"
-                    required
-                    value={state.phonenumber}
-                    onChange={handleInput}
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="zipcode">
-                  <Form.Label>Zip Code</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter zip code"
-                    name="zipcode"
-                    required
-                    value={state.zipcode}
-                    onChange={handleInput}
-                    />
-                </Form.Group>
-              </div> */}
             </section>
             <div className="form-footer">
               <Button className="form-button" variant="dark" type="submit">

@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import defaultProfileImage from "../../images/blank_avatar.jpeg";
-
+ 
 
 const INITIAL_USER_PROFILE_STATE = {
   avatar: null,
@@ -53,12 +53,17 @@ function ProfileCreate(superState, setSuperState) {
     e.preventDefault();
     const formData = new FormData();
 
-    formData.append("avatar", state.avatar);
-    formData.append("first_name", state.first_name);
-    formData.append("last_name", state.last_name);
-    formData.append("email", state.email);
-    formData.append("phone_number", state.phone_number);
-    formData.append("zipcode", state.zipcode);
+    // formData.append("avatar", state.avatar);
+    // formData.append("first_name", state.first_name);
+    // formData.append("last_name", state.last_name);
+    // formData.append("email", state.email);
+    // formData.append("phone_number", state.phone_number);
+    // formData.append("zipcode", state.zipcode);
+    for (const key in state) {
+      if (state[key]) {
+        formData.append(key, state[key]);
+      }
+    }
 
     const options = {
       method: "POST",
@@ -74,11 +79,12 @@ function ProfileCreate(superState, setSuperState) {
       const data = await response.json();
       console.log(data);
       setState(INITIAL_USER_PROFILE_STATE);
-      // setSuperState({
-      //   ...superState,
-      //   avatar: data.avatar,
-      //   profile: data.id,
-      // });
+      navigate("/posts");
+      setSuperState({
+        ...superState,
+        user_avatar: data.avatar,
+        user_profile: data.id,
+      });
       navigate("/posts");
     }
   };

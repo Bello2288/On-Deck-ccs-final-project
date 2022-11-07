@@ -42,7 +42,7 @@ function App() {
       const response = await fetch("/dj-rest-auth/user/");
       if (!response.ok) {
         console.log("this", response.ok);
-        setSuperState(INITIAL_STATE);
+        // setSuperState(INITIAL_STATE);
       } else {
         setSuperState(newState);
       }
@@ -50,7 +50,7 @@ function App() {
     checkAuth();
   }, []);
 
-  const logoutUser = async (e) => {
+  const logoutUser = async (e) => { 
     e.preventDefault();
     const options = {
       method: "POST",
@@ -75,33 +75,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout
-                superState={superState}
-                setSuperState={setSuperState}
-                logoutUser={logoutUser}
-              />
-            }
-          >
+          <Route path="/" element={<Layout superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />} >
             <Route index element={<HomePage />} />
-            <Route
-              path="login"
-              element={<LoginForm superState={superState} setSuperState={setSuperState} />}
-            />
-            <Route
-              path="register"
-              element={<RegistrationForm superState={superState} setSuperState={setSuperState} />}
-            />
-            {/* <Route
-              path="teamregister"
-              element={<TeamRegistrationForm superState={superState} setSuperState={setSuperState} />}
-            /> */}
-            <Route
-              path="posts"
-              element={<Posts superState={superState} setSuperState={setSuperState} />}
-            />
+            <Route path="login" element={<LoginForm superState={superState} setSuperState={setSuperState} />} />
+            <Route path="register" element={<RegistrationForm superState={superState} setSuperState={setSuperState} />} />
+            <Route path="posts" element={<Posts superState={superState} setSuperState={setSuperState} />} />
             {superState.auth && (
               <>
                 <Route path="create" element={<CreatePosts superState={superState} setSuperState={setSuperState} />} />
@@ -110,7 +88,7 @@ function App() {
                 <Route path="posts/editor" element={<AdminPostList />} />
                 <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
                 <Route path="user/profile-create" element={<ProfileCreate superState={superState} setSuperState={setSuperState} />} />
-                <Route path="user/profile/*" element={<UserProfile superState={superState} />} />
+                <Route path="user/profile" element={<UserProfile superState={superState} />} />
               </>
             )}
           </Route>

@@ -57,7 +57,7 @@ function Header({ superState, logoutUser }) {
             </Nav>
             {superState.avatar && (
               <Nav.Link href="/profile">
-                <img className="profile-picture" src={superState.avatar} alt="profile picture" />
+                <img className="profile-picture" src={superState.avatar} alt="profile pic" />
               </Nav.Link>
             )}
           </div>

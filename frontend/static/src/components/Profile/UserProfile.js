@@ -1,12 +1,10 @@
 import "../../styles/Profile.css";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+// import Button from "react-bootstrap/esm/Button";
 import ProfileEdit from "./ProfileEdit";
 
-function UserProfile() {
+function UserProfile({ superState }) {
   const [userProfile, setUserProfile] = useState();
-
-  const { id } = useParams();
 
   const handleError = (err) => {
     console.warn(err);
@@ -14,17 +12,16 @@ function UserProfile() {
 
   useEffect(() => {
     const getUserProfile = async (id) => {
-      const response = await fetch(`/api/v1/profiles/${id}`).catch(handleError);
+      const response = await fetch(`/api/v1/profiles/${id}/`).catch(handleError);
       if (!response.ok) {
         throw new Error("Network response was not ok!");
-      }
-      
+      }     
       const data = await response.json();
       setUserProfile(data);
     };
 
-    getUserProfile(id);
-  }, []);
+    getUserProfile(superState.user_profile);
+  }, [superState]);
 
   return (
     <section className="profile-view">{userProfile && <ProfileEdit userProfile={userProfile} />}</section>
@@ -32,3 +29,29 @@ function UserProfile() {
 }
 
 export default UserProfile;
+
+
+
+
+
+
+
+// function UserProfile({ superState }) {
+//   return (
+//     // <div className="profile-view">This is the profile page</div>
+//       <li>
+//         <div className="post-info"> 
+//             <h2>{post.title}</h2>
+//             <p>{post.location}</p>
+//             <p>{post.date}</p>
+//             <p>{post.time}</p>
+//             <span>By {post.author_name} : </span>
+//             {/* <Button className="view-link" to={/user/profile/edit}>
+//               Edit Profile
+//             </Button> */}
+//         </div>
+//       </li> 
+//     );
+// }
+
+// export default UserProfile;

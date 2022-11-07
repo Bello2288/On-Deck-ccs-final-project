@@ -3,10 +3,10 @@ import moment from 'moment';
 import { Link } from "react-router-dom";
 
 
-function PostList({ updateDisplay, filteredPosts }) {
+function PostList({ filteredPosts }) {
   const postList = filteredPosts
     .map((post) => (
-      <li key={post.id} onClick={() => updateDisplay(post.id)}>
+      <li>
         <div className="post-info"> 
             <h2>{post.title}</h2>
             <p>{post.location}</p>
@@ -17,8 +17,7 @@ function PostList({ updateDisplay, filteredPosts }) {
               View Post
             </Link>
         </div>
-        {/* <img src={post.image} /> */}
-      </li>
+      </li> 
     ));
   return <ul className="pst-list">{postList}</ul>;
 }

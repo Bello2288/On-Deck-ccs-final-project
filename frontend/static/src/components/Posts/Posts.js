@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
-  // const [activePost, setActivePost] = useState();
   const [filter, setFilter] = useState("");
 
   const handleError = (err) => {
@@ -20,20 +19,12 @@ function Posts() {
     } else {
       const data = await response.json();
       setPosts(data);
-      // setActivePost(data[0]);
     }
   }, []);
 
   useEffect(() => {
     getPosts();
   }, [getPosts]);
-
-  // const updateDisplay = (id) => {
-  //   const index = posts.findIndex((post) => post.id === id);
-  //   // const postAtIndex = posts[index];
-  //   // setActivePost(postAtIndex);
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
 
   const filteredPosts = posts.filter((post) =>
     filter ? post.category === filter : post
@@ -43,10 +34,6 @@ function Posts() {
     setFilter(value);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    // setActivePost(filteredPosts[0]);
-  }, [filter]);
 
   return (
     <div className="display">
@@ -93,13 +80,7 @@ function Posts() {
         </Button>
       </section> 
       <section className="main-display">
-        {/* {activePost && <PostDisplay activePost={activePost} />} */}
-          <PostList
-           className="post-info"
-            posts={posts}
-            // updateDisplay={updateDisplay}
-            filteredPosts={filteredPosts}
-          />
+          <PostList className="post-info" posts={posts} filteredPosts={filteredPosts} />
       </section>
     </div>
   );

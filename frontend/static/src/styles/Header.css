@@ -78,7 +78,7 @@
     font-size: 20px;
     margin-top: 9px;
     margin-left: 20px;
-    z-index: 2;
+    /* z-index: 2; */
 }
 .dropdown-opt {
     background-color: #cf720e;
