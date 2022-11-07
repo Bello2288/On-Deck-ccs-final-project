@@ -59,7 +59,7 @@ function RegistrationForm({ superState, setSuperState}) {
               auth: true, 
               admin: data.is_superuser, 
               userID: data.id, 
-              user_avatar: data.avatar,
+              avatar: data.avatar,
               user_profile: data.profile,
             });
             navigate("/user/profile-create");

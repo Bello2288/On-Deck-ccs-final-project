@@ -48,10 +48,12 @@ function LoginForm({ superState, setSuperState }) {
           admin: data.is_superuser, 
           userID: data.id, 
           avatar: data.avatar,
+          userProfileId: data.user_profile_id
         });
         if (state.is_superuser === true) {
           navigate("/posts/editor")
         } else if (state.is_superuser !== true) {
+          console.log(data.id)
           navigate("/posts")
         }
       }

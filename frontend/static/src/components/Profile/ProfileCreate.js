@@ -52,13 +52,7 @@ function ProfileCreate(superState, setSuperState) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-
-    // formData.append("avatar", state.avatar);
-    // formData.append("first_name", state.first_name);
-    // formData.append("last_name", state.last_name);
-    // formData.append("email", state.email);
-    // formData.append("phone_number", state.phone_number);
-    // formData.append("zipcode", state.zipcode);
+    
     for (const key in state) {
       if (state[key]) {
         formData.append(key, state[key]);
@@ -82,8 +76,8 @@ function ProfileCreate(superState, setSuperState) {
       navigate("/posts");
       setSuperState({
         ...superState,
-        user_avatar: data.avatar,
-        user_profile: data.id,
+        avatar: data.avatar,
+        userID: data.id,
         first_name: data.first_name,
         last_name: data.last_name,
       });

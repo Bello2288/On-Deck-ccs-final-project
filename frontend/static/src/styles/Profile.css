@@ -18,7 +18,6 @@
     height: 300px;
     border-radius: 50%;
     border: 5px solid #565759;
-    overflow: hidden;
 }
 
 .profile-image {
@@ -36,11 +35,55 @@
 
 /* =============== vvvv  Profile Edit vvvv ==================== */
 
-
-.profile-container {
-    padding-top: 185px;
-    color: aliceblue;
+.edit-profile {
+    display: flex;
+    justify-content: center;
 }
+
+.main-profile-container {
+    padding-top: 150px;
+    color: #ffffff;
+    margin-bottom: 55px;
+}
+.profile-view-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    margin: 25px;
+}
+.profile-content {
+    align-self: center;
+    text-align: left;
+    font-size: 20px;
+}
+
+.main-edit-container {
+    /* width: 100%; */
+    padding-top: 150px;
+    color: #ffffff;
+    margin-bottom: 55px;
+    /* width: 80%; */
+}
+.edit-view-container {
+    /* width: 100%; */
+    display: flex;
+    color: #ffffff;
+    margin: 25px;
+}
+
+.profile-content {
+    align-self: center;
+    text-align: left;
+}
+
+.form-button {
+    margin-bottom: 10px;
+    background-color: #212121;
+}
+.form-button:hover {
+    background-color: #be691f;
+}   
 
 
 /* =============== ^^^^  Profile Edit ^^^^ ==================== */
