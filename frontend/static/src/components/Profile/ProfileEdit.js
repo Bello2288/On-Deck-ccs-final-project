@@ -149,7 +149,10 @@ function ProfileEdit({ superState, userProfile }) {
                             required
                             placeholder="Enter phone # - Only for notifications"
                             type="tel"
+                            minLength="10"
+                            maxLength="10"
                             name="phone_number"
+                            format="+1 (###) ###-####"
                             value={state.phone_number}
                             onChange={handleInput}
                         />
@@ -160,6 +163,8 @@ function ProfileEdit({ superState, userProfile }) {
                             required
                             placeholder="Enter zip code"
                             type="number"
+                            minLength="5"
+                            maxLength="5"
                             name="zipcode"
                             value={state.zipcode}
                             onChange={handleInput}

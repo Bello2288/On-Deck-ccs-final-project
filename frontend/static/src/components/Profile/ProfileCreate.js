@@ -128,6 +128,9 @@ function ProfileCreate(superState, setSuperState) {
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control
                     type="tel"
+                    minLength="10"
+                    maxLength="10"
+                    format="+1 (###) ###-####"
                     placeholder="Enter phone # - Only for notifications"
                     name="phone_number"
                     required
@@ -139,6 +142,8 @@ function ProfileCreate(superState, setSuperState) {
                     <Form.Label>Zip Code</Form.Label>
                     <Form.Control
                     type="number"
+                    minLength="5"
+                    maxLength="5"
                     placeholder="Enter zip code"
                     name="zipcode"
                     required
