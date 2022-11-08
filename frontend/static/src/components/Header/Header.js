@@ -47,7 +47,7 @@ function Header({ superState, logoutUser }) {
               {superState.auth && (
               <>
                 <NavDropdown className="dropdown" title="" id="nav-dropdown" variant="primary">
-                  <NavDropdown.Item className="dropdown-opt" href="/user/profile">Edit Profile</NavDropdown.Item>
+                  <NavDropdown.Item className="dropdown-opt" href="/user/profile">View Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                 </NavDropdown>
@@ -56,11 +56,6 @@ function Header({ superState, logoutUser }) {
               </>
               )}
             </Nav>
-            {/* {superState.avatar && (
-              <Nav.Link href="/profile">
-                <img className="profile-picture" src={superState.userProfileId} alt="profile pic" />
-              </Nav.Link>
-            )} */}
           </div>
         </Container>
       </Navbar>

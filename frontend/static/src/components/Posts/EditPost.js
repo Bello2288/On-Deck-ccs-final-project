@@ -84,6 +84,10 @@ function EditPost({ state, filteredPosts }) {
     navigate('/posts');
   };
 
+  const handleBack = () => { 
+    navigate('/posts/user');
+  };
+
   const nonEditHTML = (
     <div className="edit-form">
       {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
@@ -122,29 +126,45 @@ function EditPost({ state, filteredPosts }) {
           >
             Edit
           </Button>
+          <Button
+              className="form-button-pairs"
+              variant="secondary"
+              type="button"
+              onClick={handleBack}
+            >
+              Back
+            </Button>
         </div>
       )}
-      {state.status === "PST" && (
-        <div className="takeseat-buttons">
-          <Button
-            className="form-button-pairs"
-            variant="secondary"
-            type="submit"
-            value="TKS"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Take Spot
-          </Button>
-          <Button
-            className="form-button-pairs"
-            variant="secondary"
-            type="button"
-            onClick={handleClick}
-          >
-            Back
-          </Button>
-        </div>
-      )}
+
+
+      {state.status === "PST" &&
+          // <div>
+          //   The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+          // </div> 
+            <div className="takeseat-buttons">
+              <Button
+                className="form-button-pairs"
+                variant="secondary"
+                type="submit"
+                value="TKS"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Take Spot
+              </Button>
+              <Button
+                className="form-button-pairs"
+                variant="secondary"
+                type="button"
+                onClick={handleClick}
+              >
+                Back
+              </Button>
+            </div>
+      }
+
+
+
       {state.status === "TKS" && (
         <div className="takeseat-buttons">
           <Button
@@ -160,7 +180,7 @@ function EditPost({ state, filteredPosts }) {
             className="cancel-seat-buttons"
             variant="secondary"
             type="button"
-            onClick={handleClick}
+            onClick={handleBack}
           >
             Back
           </Button>

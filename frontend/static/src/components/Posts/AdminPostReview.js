@@ -127,22 +127,13 @@ function AdminPostReview() {
             )}
             {state.status === "ARC" && (
             <>
-                {/* <Button
-                className="form-button-pairs"
-                variant="dark"
-                type="submit"
-                value="PST"
-                onClick={(e) => handleSubmit(e)}
-                >
-                Re-Post
-                </Button> */}
                 <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="button"
-                onClick={handleClick}
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    onClick={handleClick}
                 >
-                Back
+                    Back
                 </Button>
             </>
             )}

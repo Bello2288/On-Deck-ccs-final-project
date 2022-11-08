@@ -22,6 +22,12 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
                 else:
                     return False
 
+            if obj.status in ['TKS']:
+                if request.user != obj.author:
+                    return True
+                else:
+                    return False
+
         return False
 
 
