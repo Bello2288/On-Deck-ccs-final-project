@@ -1,17 +1,79 @@
 .edit-form {
     border: 2px solid #000000;
     border-radius: 7px;
-    width: 80%;
-    margin-top: 30px;
+    /* width: 100%; */
+    width: 600px;
+    margin-top: 5px;
     background-color: #212121;
     color: #ffffff;
+    
+} 
+
+.edit-form-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.highlight-post-notes {
+.content-box {
+    width: 50%;
+    text-align: left;
+    border-right: 2px solid #be691f;
+    border-radius: 3%;
+    line-height: 2.5rem;
+    padding-left: 25px;
+}
+
+.highlight-title {
+    width: 80%;
+    margin: 10px auto 20px auto;
+    border-bottom: 2px solid #be691f;
+    border-radius: 30%;
+}
+
+h2 {
+    font-size: 45px;
+    font-family: 'Caveat', Times, serif;
+}
+
+.highlight-post {
+    width: 80%;
+    margin: 0;
+}
+
+.highlight-date {
+    width: 80%;
+    margin: 0;
+}
+
+.notes-box {
+    /* border: 3px solid red; */
+    border-left: 2px solid #be691f;
+    border-radius: 3%;
+    width: 50%;
+    padding: 0 35px;
+    text-align: left;
+
+}
+
+.highlight-notes {
     width: 80%;
     margin: auto;
 }
 
 .takeseat-buttons {
-    margin: 35px 0 10px 0;
+    margin: 30px 0 10px 0;
+    width: 100%;
+}
+
+.cancel-seat-buttons {
+    margin: 10px;
+    width: 180px;
+    background-color: #515151;
+    border-color: #515151;
+}
+
+.cancel-seat-buttons:hover {
+    background-color: #be691f;
+    border-color: #be691f;
 }

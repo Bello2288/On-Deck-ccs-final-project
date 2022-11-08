@@ -1,6 +1,7 @@
 from rest_framework import permissions
 import datetime
 
+
 class IsAuthorOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
@@ -15,7 +16,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
                     return True
                 else:
                     return False
-            if obj.status in ['DRA']:
+            if obj.status in ['DRA', 'TKS']:
                 if request.user == obj.author:
                     return True
                 else:

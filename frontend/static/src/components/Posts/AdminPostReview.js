@@ -83,7 +83,7 @@ function AdminPostReview() {
                 value="PST"
                 onClick={(e) => handleSubmit(e)}
                 >
-                Post
+                Approve
                 </Button>
                 <Button
                 className="form-button-pairs"

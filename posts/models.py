@@ -35,12 +35,14 @@ class Post(models.Model):
     DRAFT = 'DRA'
     SUBMITTED = 'SUB'
     POST = 'PST'
+    TAKESPOT = 'TKS'
     REJECTED = 'REJ'
     ARCHIVED = 'ARC'
     STATUS_OF_POST = [
         (DRAFT, 'Draft'),
         (SUBMITTED, 'Submitted'),
         (POST, 'Post'),
+        (TAKESPOT, 'Take Spot'),
         (REJECTED, 'Rejected'),
         (ARCHIVED, 'Archived'),
     ]

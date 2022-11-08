@@ -71,6 +71,7 @@ function ProfileEdit({ superState, userProfile }) {
             const data = await response.json();
             console.log(data);
             setIsEdit(false);
+            
         }
     };
     
@@ -81,11 +82,11 @@ function ProfileEdit({ superState, userProfile }) {
                     <img className="profile-image" src={state.avatar} alt="" />
                 </div>
                 <div className="profile-content">
-                    <p>Username:    {state.username}</p>
-                    <p>Name:    {state.first_name} {state.last_name}</p>
-                    <p>Email:    {state.email}</p>
-                    <p>Phone #:    {state.phone_number}</p>
-                    <p>Zipcode:    {state.zipcode}</p>
+                    <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>
+                    <p>Name:&nbsp;&nbsp;&nbsp;    {state.first_name} {state.last_name}</p>
+                    <p>Email:&nbsp;&nbsp;&nbsp;    {state.email}</p>
+                    <p>Phone #:&nbsp;&nbsp;&nbsp;    {state.phone_number}</p>
+                    <p>Zipcode:&nbsp;&nbsp;&nbsp;    {state.zipcode}</p>
                 </div>
             </section>
             <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>

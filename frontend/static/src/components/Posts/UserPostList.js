@@ -41,7 +41,7 @@ function UserPostList() {
           <section className="author-buttons">
             <Button
               className="author-button"
-              variant="primary"
+              variant="secondary"
               value="DRA"
               onClick={(e) => changeCategory(e.target.value)}
             >
@@ -49,11 +49,19 @@ function UserPostList() {
             </Button>
             <Button
               className="author-button"
-              variant="primary"
+              variant="secondary"
               value="SUB"
               onClick={(e) => changeCategory(e.target.value)}
             >
               Created Game Posts
+            </Button>
+            <Button
+              className="author-button"
+              variant="secondary"
+              value="TKS"
+              onClick={(e) => changeCategory(e.target.value)}
+            >
+              Take Spot Game Posts
             </Button>
           </section>
           <section className="author-article-list margin-section">

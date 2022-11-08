@@ -10,9 +10,9 @@ function PostList({ filteredPosts }) {
         <div className="post-info"> 
             <h2 className="post-list-title">{post.title}</h2>
             <p>{post.location}</p>
-            <p>{post.organization}</p>
+            {/* <p>{post.organization}</p> */}
             <p>{moment(post.date).format('MMM Do, YYYY')} at {moment(post.time, "HH:mm:ss").format('h:mm a')}</p>
-            <span>By {post.author_name} : </span>
+            {/* <span>By {post.author_name} : </span> */}
             <Link className="view-link" to={`/post/${post.id}`}>
               View Post
             </Link>

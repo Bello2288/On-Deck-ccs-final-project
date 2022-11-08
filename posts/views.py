@@ -42,7 +42,7 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
     serializer_class = serializers.PostSerializer
 
     def get_queryset(self):
-        return models.Post.objects.filter(Q(status='PST') | Q(status='SUB') | Q(status='ARC'))
+        return models.Post.objects.filter(Q(status='PST') | Q(status='SUB') | Q(status='ARC') | Q(status='TKS'))
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)  

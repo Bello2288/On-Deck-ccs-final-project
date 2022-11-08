@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import moment from 'moment';
 
-function EditPost({ state }) {
+function EditPost({ state, filteredPosts }) {
   const [isEdit, setIsEdit] = useState(false);
 
   const [post, setPost] = useState({
@@ -87,13 +87,22 @@ function EditPost({ state }) {
   const nonEditHTML = (
     <div className="edit-form">
       {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
-      <h2 className="highlight-post">{state.title}</h2>
-      <p className="highlight-post">{state.teamname}</p>
-      <p className="highlight-post">{state.organization}</p>
-      <p className="highlight-post">{state.location}</p>
-      <p>{moment(state.date).format('MMMM Do, YYYY')}</p>
-      <p>{moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
-      <p className="highlight-post-notes">{state.notes}</p>
+      <section className="highlight-title">
+        <h2>{state.title}</h2>
+        <p>By {state.author_name}</p>
+      </section>
+      <section className="edit-form-content">
+        <div className="content-box">
+          <p className="highlight-post">{state.teamname}</p>
+          <p className="highlight-post">{state.organization}</p>
+          <address className="highlight-post">{state.location}</address>
+          <time className="highlight-date">
+            {moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+        </div>
+        <div className="notes-box">
+          <p className="highlight-post-notes">{state.notes}</p>
+        </div>
+      </section>
       {state.status === "DRA" && (
         <div>
           <Button
@@ -121,13 +130,34 @@ function EditPost({ state }) {
             className="form-button-pairs"
             variant="secondary"
             type="submit"
-            value="SUB"
+            value="TKS"
             onClick={(e) => handleSubmit(e)}
           >
             Take Spot
           </Button>
           <Button
             className="form-button-pairs"
+            variant="secondary"
+            type="button"
+            onClick={handleClick}
+          >
+            Back
+          </Button>
+        </div>
+      )}
+      {state.status === "TKS" && (
+        <div className="takeseat-buttons">
+          <Button
+            className="cancel-seat-buttons"
+            variant="secondary"
+            type="submit"
+            value="PST"
+            onClick={(e) => handleSubmit(e)}
+          >
+            Cancel Taken Spot
+          </Button>
+          <Button
+            className="cancel-seat-buttons"
             variant="secondary"
             type="button"
             onClick={handleClick}
