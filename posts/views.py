@@ -5,6 +5,8 @@ from . import serializers
 from django.db.models import Q
 from .permissions import IsAdminOrReadOnly, IsAuthorOrReadOnly
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
 class PostListAPIView(generics.ListCreateAPIView):
@@ -46,3 +48,11 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)  
+
+@api_view(['POST'])
+def post_reserve(request, pk):
+    post = models.Post.objects.get(id=pk)
+    post.reserved_by = request.user
+    post.save()
+    serializer = serializers.PostSerializer(post)
+    return Response(serializer.data)

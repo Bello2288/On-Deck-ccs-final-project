@@ -48,7 +48,7 @@ function LoginForm({ superState, setSuperState }) {
           admin: data.is_superuser, 
           userID: data.id, 
           avatar: data.user_avatar,
-          username: data.username,
+          username: data.user_name,
           userProfileId: data.user_profile_id,
           // phonenumber: data.phone_number,
         });
@@ -56,8 +56,6 @@ function LoginForm({ superState, setSuperState }) {
           navigate("/posts/editor")
         } else if (state.is_superuser !== true) {
           console.log(data)
-          // console.log(data.user_avatar)
-          // console.log(data.user_username)
           navigate("/posts")
         }
       }

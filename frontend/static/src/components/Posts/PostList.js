@@ -22,4 +22,5 @@ function PostList({ filteredPosts }) {
   return <ul className="pst-list">{postList}</ul>;
 }
 
+
 export default PostList;

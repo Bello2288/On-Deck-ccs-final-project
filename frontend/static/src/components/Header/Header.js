@@ -36,7 +36,6 @@ function Header({ superState, logoutUser }) {
                   <Nav.Link className="header-text" href="/posts"> Game Posts</Nav.Link>
                   <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
                   <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
-                  {/* <Nav.Link className="header-text" href="/user/profile">My Profile</Nav.Link> */}
                 </>
               )}
               {superState.admin && (

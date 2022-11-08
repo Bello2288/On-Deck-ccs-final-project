@@ -14,6 +14,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     is_highlighted = models.BooleanField(default=False)
+    reserved_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name="post_reserver")
 
 
     FLAGFOOTBALL = 'FB'
@@ -53,4 +54,4 @@ class Post(models.Model):
     )  
 
     def __str__(self):
-        return self.name
+        return self.title

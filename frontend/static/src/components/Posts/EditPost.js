@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import moment from 'moment';
 
-function EditPost({ state, filteredPosts }) {
+function EditPost({ state, superState, filteredPosts }) {
   const [isEdit, setIsEdit] = useState(false);
 
   const [post, setPost] = useState({
@@ -20,6 +20,9 @@ function EditPost({ state, filteredPosts }) {
     time: "",
     notes: "",
     status: state.status,
+    author: state.author, 
+    userID: state.user_avatar,
+    userProfileId: state.user_profile_id,
   });
   
 
@@ -139,19 +142,20 @@ function EditPost({ state, filteredPosts }) {
 
 
       {state.status === "PST" &&
-          // <div>
-          //   The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
-          // </div> 
-            <div className="takeseat-buttons">
+        <div className="takeseat-buttons">        
+            {/* {state.userID === state.author &&  */}
+            {/* // false &&  */}
               <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="submit"
-                value="TKS"
-                onClick={(e) => handleSubmit(e)}
-              >
-                Take Spot
-              </Button>
+                  className="form-button-pairs"
+                  variant="secondary"
+                  type="submit"
+                  value="TKS"
+                  onClick={(e) => handleSubmit(e)}
+                >
+                  Take Spot
+                </Button>
+             {/* } */}
+              
               <Button
                 className="form-button-pairs"
                 variant="secondary"
@@ -160,7 +164,7 @@ function EditPost({ state, filteredPosts }) {
               >
                 Back
               </Button>
-            </div>
+        </div>
       }
 
 
