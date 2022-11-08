@@ -22,6 +22,7 @@ const INITIAL_STATE = {
   admin: false,
   userID: null,
   id: null,
+  username: "",
   avatar: null,
 };
 

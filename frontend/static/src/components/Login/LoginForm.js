@@ -47,13 +47,17 @@ function LoginForm({ superState, setSuperState }) {
           auth: true, 
           admin: data.is_superuser, 
           userID: data.id, 
-          avatar: data.avatar,
-          userProfileId: data.user_profile_id
+          avatar: data.user_avatar,
+          username: data.username,
+          userProfileId: data.user_profile_id,
+          // phonenumber: data.phone_number,
         });
         if (state.is_superuser === true) {
           navigate("/posts/editor")
         } else if (state.is_superuser !== true) {
-          console.log(data.user_profile_id)
+          console.log(data)
+          // console.log(data.user_avatar)
+          // console.log(data.user_username)
           navigate("/posts")
         }
       }

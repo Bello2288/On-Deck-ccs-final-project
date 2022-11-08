@@ -51,15 +51,16 @@ function Header({ superState, logoutUser }) {
                   <NavDropdown.Divider />
                   <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link className="header-text" href="/user/profile">My Profile</Nav.Link> 
+                <img className="profile-picture" src={superState.avatar} alt="profile pic" />
+                {/* <Nav.Link className="header-text" href="/user/profile">My Profile</Nav.Link>  */}
               </>
               )}
             </Nav>
-            {superState.avatar && (
+            {/* {superState.avatar && (
               <Nav.Link href="/profile">
-                <img className="profile-picture" src={superState.avatar} alt="profile pic" />
+                <img className="profile-picture" src={superState.userProfileId} alt="profile pic" />
               </Nav.Link>
-            )}
+            )} */}
           </div>
         </Container>
       </Navbar>

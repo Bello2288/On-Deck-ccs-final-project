@@ -43,7 +43,7 @@
 .main-profile-container {
     padding-top: 150px;
     color: #ffffff;
-    margin-bottom: 55px;
+    margin-bottom: 45px;
 }
 .profile-view-container {
     width: 100%;
@@ -51,30 +51,49 @@
     justify-content: space-around;
     color: #ffffff;
     margin: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #565759;
 }
 .profile-content {
     align-self: center;
     text-align: left;
     font-size: 20px;
+    padding: 10px 20px 0 20px;
+    background-color: #565759;
+    border: 2px solid #212121;
+}
+
+/* ========= Edit button vvv ======================== */
+
+h1 {
+    font-size: 30px;
+    font-family: 'Caveat', Times, serif;
 }
 
 .main-edit-container {
-    /* width: 100%; */
-    padding-top: 150px;
+    padding-top: 110px;
     color: #ffffff;
     margin-bottom: 55px;
     /* width: 80%; */
+    /* border: 2px solid #e90e0e; */
+    /* border: 2px solid #212121; */
 }
 .edit-view-container {
     /* width: 100%; */
     display: flex;
     color: #ffffff;
     margin: 25px;
+    /* border: 2px solid #450ee9; */
 }
 
-.profile-content {
+.edit-profile-content {
     align-self: center;
     text-align: left;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+    background-color: #565759;
+    border: 2px solid #212121;
+    width: 35%;
 }
 
 .form-button {

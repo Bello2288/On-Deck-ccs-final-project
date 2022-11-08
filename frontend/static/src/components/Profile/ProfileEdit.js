@@ -102,7 +102,7 @@ function ProfileEdit({ superState, userProfile }) {
                 <div className="image-container">
                     <img className="profile-image" src={state.avatar} alt="" />                    
                 </div>
-                <div>
+                <div className="edit-profile-content">
                     <Form.Group className="mb-3" controlId="image">
                         <Form.Label>Choose a profile picture</Form.Label>
                         <Form.Control type="file" name="avatar" onChange={handleImage} />
@@ -131,7 +131,7 @@ function ProfileEdit({ superState, userProfile }) {
                         />
                     </Form.Group>
                 </div>
-                <div>
+                <div className="edit-profile-content">
                     <Form.Group className="mb-3" controlId="email">
                         <Form.Label>Preferred email</Form.Label>
                         <Form.Control
