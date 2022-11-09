@@ -10,20 +10,21 @@ function EditPost({ state }) {
   const [isEdit, setIsEdit] = useState(false);
 
   const { superState } = useOutletContext();
-  console.log('superState', superState)
-  console.log('state', state)
+  // console.log('superState', superState)
+  // console.log('state', state)
 
   const [post, setPost] = useState({
+    ... state,
     // image: state.image,
-    title: "",
-    category: "",
-    teamname: "",
-    organization: "",
-    location: "",
-    date: "",
-    time: "",
-    notes: "",
-    reserved: "",
+    // title: state.title,
+    // category: "",
+    // teamname: "",
+    // organization: "",
+    // location: "",
+    // date: "",
+    // time: "",
+    // notes: "",
+    // reserved: "",
   });
 
 
@@ -52,19 +53,19 @@ function EditPost({ state }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    if (post.image instanceof File) {
-      formData.append("image", post.image);
-    }
+    // if (post.image instanceof File) {
+    //   formData.append("image", post.image);
+    // }
 
-    formData.append("title", state.title);
-    formData.append("category", state.category);
-    formData.append("teamname", state.teamname);
-    formData.append("organization", state.organization);
-    formData.append("location", state.location);
-    formData.append("date", state.date);
-    formData.append("time", state.time);
-    formData.append("notes", state.notes);
-    formData.append("reserved", state.reserved_by);
+    formData.append("title", post.title);
+    formData.append("category", post.category);
+    formData.append("teamname", post.teamname);
+    formData.append("organization", post.organization);
+    formData.append("location", post.location);
+    formData.append("date", post.date);
+    formData.append("time", post.time);
+    formData.append("notes", post.notes);
+    formData.append("reserved", post.reserved_by);
     formData.append("status", e.target.value);
 
     const options = {
@@ -82,6 +83,30 @@ function EditPost({ state }) {
       const data = await response.json();
       console.log(data);
       navigate("/posts/user/*");
+    }
+  };
+
+  const handleTakeSpot = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("status", e.target.value);
+
+    const options = {
+      method: "PUT",
+      headers: {
+        "X-CSRFToken": Cookies.get("csrftoken"),
+      },
+      body: formData,
+    };
+
+    const response = await fetch(`/api/v1/posts/${state.id}/reserve/`, options).catch(handleError);
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    } else {
+      const data = await response.json();
+      console.log(data);
+      navigate("/posts/user/");
     }
   };
 
@@ -163,7 +188,7 @@ function EditPost({ state }) {
                 variant="secondary"
                 type="submit"
                 value="TKS"
-                onClick={(e) => handleSubmit(e)}
+                onClick={(e) => handleTakeSpot(e)}
               >
                 Take Spot
             </Button>
@@ -177,6 +202,7 @@ function EditPost({ state }) {
             </Button>
         </div>
       )}
+
       {state.status === "PST" && superState.userID === state.author && (  
         <div className="takeseat-buttons">  
             <Button
@@ -229,13 +255,13 @@ function EditPost({ state }) {
                   type="text"
                   placeholder="Post Title"
                   name="title"
-                  value={state.title}
+                  value={post.title}
                   onChange={handleInput}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
-                <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>
+                <Form.Select className="form-control" name="category" value={post.category} onChange={handleInput}>
                   <option value="Flag-Football">Flag Football</option>
                   <option value="Hockey">Hockey</option>
                   <option value="Softball">Softball</option>
@@ -257,7 +283,7 @@ function EditPost({ state }) {
                   type="text"
                   placeholder="Team Name"
                   name="teamname"
-                  value={state.teamname}
+                  value={post.teamname}
                   onChange={handleInput}
                 />
               </Form.Group>
@@ -267,7 +293,7 @@ function EditPost({ state }) {
                   type="text"
                   placeholder="Sport Organization"
                   name="organization"
-                  value={state.organization}
+                  value={post.organization}
                   onChange={handleInput}
                 />
               </Form.Group>
@@ -279,7 +305,7 @@ function EditPost({ state }) {
                   type="text"
                   placeholder="Location / Field"
                   name="location"
-                  value={state.location}
+                  value={post.location}
                   onChange={handleInput}
                 />
               </Form.Group>
@@ -289,7 +315,7 @@ function EditPost({ state }) {
                   type="date"
                   placeholder="Date"
                   name="date"
-                  value={state.date}
+                  value={post.date}
                   onChange={handleInput}
                 />
               </Form.Group>
@@ -299,7 +325,7 @@ function EditPost({ state }) {
                   type="time"
                   placeholder="Time"
                   name="time"
-                  value={state.time}
+                  value={post.time}
                   onChange={handleInput}
                 />
               </Form.Group>
@@ -311,7 +337,7 @@ function EditPost({ state }) {
                 className="form-control"
                 placeholder="Notes..."
                 name="notes"
-                value={state.notes}
+                value={post.notes}
                 onChange={handleInput}
               />
             </Form.Group>

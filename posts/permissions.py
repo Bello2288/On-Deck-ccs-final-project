@@ -16,13 +16,14 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
                     return True
                 else:
                     return False
+            # if obj.status in ['DRA', 'TKS']:
             if obj.status in ['DRA', 'TKS']:
                 if request.user == obj.author:
                     return True
                 else:
                     return False
 
-            if obj.status in ['TKS']:
+            if obj.status in ['PST', 'TSK']:
                 if request.user != obj.author:
                     return True
                 else:

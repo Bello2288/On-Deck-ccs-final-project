@@ -12,7 +12,7 @@ function ProfileEdit({ superState, userProfile }) {
     const [preview, setPreview] = useState(state.avatar);
 
       
-    const handleInput = (e) => {
+    const handleInput = (e) => { 
         const { name, value } = e.target;
         setState((prevState) => ({
         ...prevState,
@@ -79,7 +79,7 @@ function ProfileEdit({ superState, userProfile }) {
         <div className="main-profile-container">
             <section className="profile-view-container">
                 <div className="image-container">
-                    <img className="profile-image" src={state.avatar} alt="" />
+                    <img className="profile-image" src={preview} alt="" />
                 </div>
                 <div className="profile-content">
                     <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>

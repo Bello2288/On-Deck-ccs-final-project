@@ -55,9 +55,9 @@ function LoginForm({ superState, setSuperState }) {
         if (state.is_superuser === true) {
           navigate("/posts/editor")
         } else if (state.is_superuser !== true) {
-          console.log(data)
-          console.log(state)
-          console.log(superState)
+          // console.log('data', data)
+          // console.log('state', state)
+          // console.log('superState', superState)
           navigate("/posts")
         }
       }

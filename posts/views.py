@@ -38,7 +38,7 @@ class AuthorPostListAPIView(generics.ListCreateAPIView):
         serializer.save(author=self.request.user)
 
 
-class AdminPostListAPIView(generics.ListCreateAPIView):
+class AdminPostListAPIView(generics.ListCreateAPIView): 
     permission_classes = (IsAdminUser,)
     queryset = models.Post.objects.order_by('-created_at')
     serializer_class = serializers.PostSerializer
@@ -49,7 +49,7 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)  
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def post_reserve(request, pk):
     post = models.Post.objects.get(id=pk)
     post.reserved_by = request.user
