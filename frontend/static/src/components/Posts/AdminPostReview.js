@@ -1,4 +1,5 @@
 import "../../styles/Post-styles/AdminPostReview.css";
+import"../../styles/Post-styles/EditPost.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -63,8 +64,25 @@ function AdminPostReview() {
     <article className="detail-view">
         {state && (
         <div className="postlist-review-view">
+            <section className="highlight-title">
+                <h2>{state.title}</h2>
+                <p>By {state.author_name}</p>
+                <p> {state.reversed_by}</p>
+            </section>
+            <section className="review-form-content">
+                <div className="content-box">
+                    <p className="highlight-post">{state.teamname}</p>
+                    <p className="highlight-post">{state.organization}</p>
+                    <address className="highlight-post">{state.location}</address>
+                    <time className="highlight-date">
+                        {moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+                </div>
+                <div className="notes-box">
+                    <p className="highlight-post-notes">{state.notes}</p>
+                </div>
+            </section>
             {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
-            <h2 className="review-post-title">{state.title}</h2>
+            {/* <h2 className="review-post-title">{state.title}</h2>
             <section className="review-layout">
                 <div>
                     <p className="review-post">{state.teamname}</p>
@@ -73,7 +91,7 @@ function AdminPostReview() {
                     <p className="user-post-data">{moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
                 </div>
                 <p className="review-post">{state.notes}</p>
-            </section>
+            </section> */}
             {state.status === "SUB" && (
             <>
                 <Button

@@ -9,14 +9,54 @@
     font-size: 15px;
 }
 
-/* .review-layout {
-    display: flex;
-} */
+.highlight-title {
+    width: 80%;
+    margin: 10px auto 20px auto;
+    border-bottom: 2px solid #be691f;
+    border-radius: 30%;
+}
 
-/* .review-post {
+h2 {
+    font-size: 45px;
+    font-family: 'Caveat', Times, serif;
+}
+
+.review-form-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+}
+
+.content-box {
+    width: 50%;
+    text-align: left;
+    border-right: 2px solid #be691f;
+    border-radius: 3%;
+    line-height: 2.5rem;
+    padding-left: 25px;
+}
+
+.highlight-post {
+    width: 80%;
+    margin: 0;
+}
+
+.highlight-date {
+    width: 80%;
+    margin: 0;
+}
+
+.notes-box {
+    /* border: 3px solid red; */
+    border-left: 2px solid #be691f;
+    border-radius: 3%;
+    width: 50%;
+    padding: 0 35px;
+    text-align: left;
 
 }
 
-.review-post-title {
-
-} */
+.highlight-notes {
+    width: 80%;
+    margin: auto;
+}
