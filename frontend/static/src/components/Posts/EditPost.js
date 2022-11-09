@@ -142,6 +142,18 @@ function EditPost({ state }) {
             </Button>
         </div>
       )}
+      {state.status === "SUB" && superState.userID === state.author && (
+        <div>
+          <Button
+              className="form-button-pairs"
+              variant="secondary"
+              type="button"
+              onClick={handleBack}
+            >
+              Back
+            </Button>
+        </div>
+      )}
 
 
       {state.status === "PST" && superState.userID !== state.author && (  
