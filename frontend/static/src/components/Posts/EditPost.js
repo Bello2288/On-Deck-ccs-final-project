@@ -3,11 +3,15 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import moment from 'moment';
 
-function EditPost({ state, superState, filteredPosts }) {
+function EditPost({ state }) {
   const [isEdit, setIsEdit] = useState(false);
+
+  const { superState } = useOutletContext();
+  console.log('superState', superState)
+  console.log('state', state)
 
   const [post, setPost] = useState({
     // image: state.image,
@@ -20,12 +24,8 @@ function EditPost({ state, superState, filteredPosts }) {
     time: "",
     notes: "",
     reserved: "",
-    status: state.status,
-    author: state.author, 
-    userID: state.user_avatar,
-    userProfileId: state.user_profile_id,
   });
-  
+
 
   const navigate = useNavigate();
 
@@ -107,7 +107,7 @@ function EditPost({ state, superState, filteredPosts }) {
           <p className="highlight-post">{state.organization}</p>
           <address className="highlight-post">{state.location}</address>
           <time className="highlight-date">
-            {moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+            {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
         </div>
         <div className="notes-box">
           <p className="highlight-post-notes">{state.notes}</p>
@@ -144,9 +144,8 @@ function EditPost({ state, superState, filteredPosts }) {
       )}
 
 
-      {/* {state.status === "PST" && state.userID !== state.author && ( */}
-      {state.status === "PST" && (
-        <div className="takeseat-buttons">  
+      {state.status === "PST" && superState.userID !== state.author && (  
+        <div className="takeseat-buttons">
             <Button
                 className="form-button-pairs"
                 variant="secondary"
@@ -156,6 +155,18 @@ function EditPost({ state, superState, filteredPosts }) {
               >
                 Take Spot
             </Button>
+            <Button
+              className="form-button-pairs"
+              variant="secondary"
+              type="button"
+              onClick={handleClick}
+            >
+              Back
+            </Button>
+        </div>
+      )}
+      {state.status === "PST" && superState.userID === state.author && (  
+        <div className="takeseat-buttons">  
             <Button
               className="form-button-pairs"
               variant="secondary"
@@ -195,11 +206,21 @@ function EditPost({ state, superState, filteredPosts }) {
   );
 
   const editHTML = (
-    <div className="main-create-area">
+      <div className="main-create-area">
         <Form className="create-form">
-          <h1 className="form-title">Create New Post</h1>
+          <h1 className="form-title">Edit Saved Post</h1>
           <section className="create-flex">
             <div className="create-groups">
+            <Form.Group className="mb-3" controlId="title">
+                <Form.Label>Post Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Post Title"
+                  name="title"
+                  value={state.title}
+                  onChange={handleInput}
+                />
+              </Form.Group>
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
                 <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>

@@ -82,7 +82,7 @@ function CreatePost() {
       }
     };
   
-    return (
+    return ( 
       <div className="main-create-area">
         <Form className="create-form">
           <h1 className="form-title">Create New Post</h1>

@@ -10,18 +10,29 @@
     border: 2px solid #000000;
     border-radius: 7px;
     width: 300px;
-    height: 220px;
+    height: 93%;
+    /* height: 250px; */
     margin: 30px 10px 0 10px;
     background-color: #212121;
     color: #ffffff;
     font-size: 15px;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .post-list-title {
     font-size: 27px;
     padding: 0 10px 10px 10px;
+    margin-bottom: 30px;
     border-bottom: 2px solid #be691f;
     border-radius: 90%;
     font-family: 'Caveat', Times, serif;
+}
+
+.post-list-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
