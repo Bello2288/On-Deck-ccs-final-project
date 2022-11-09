@@ -64,21 +64,14 @@
     color: #343434;
 }
 
-.profile-picture {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1px solid #212529;
-    object-fit: cover;
-    object-position: center;
-}
-
 .dropdown {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 23px;
     margin-top: 9px;
     margin-left: 20px;
     z-index: 2;
+    font-family: 'Caveat', Times, serif;
+    
 }
 .dropdown-opt {
     background-color: #cf720e;
@@ -100,6 +93,19 @@
 }
 .dropdown-toggle:focus {
     color: #ffffff;
+}
+.username {
+    font-family: 'Caveat', Times, serif;
+}
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+    object-fit: cover;
+    object-position: center;
+    margin-left: 10px;
 }
 
 

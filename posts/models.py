@@ -17,10 +17,10 @@ class Post(models.Model):
     reserved_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name="post_reserver")
 
 
-    FLAGFOOTBALL = 'FB'
-    HOCKEY = 'HK'
-    SOFTBALL = 'SB'
-    BASKETBALL = 'BK'
+    FLAGFOOTBALL = 'Flag-football'
+    HOCKEY = 'Hockey'
+    SOFTBALL = 'Softball'
+    BASKETBALL = 'Basketball'
     CATEGORY_CHOICES = [
         (FLAGFOOTBALL, 'Flag-football'),
         (HOCKEY, 'Hockey'),
@@ -28,7 +28,7 @@ class Post(models.Model):
         (BASKETBALL, 'Basketball'),
     ]
     category = models.CharField(
-        max_length=2,
+        max_length=13,
         choices=CATEGORY_CHOICES,
         default=FLAGFOOTBALL,
     )

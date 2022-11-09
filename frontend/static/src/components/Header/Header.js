@@ -41,17 +41,18 @@ function Header({ superState, logoutUser }) {
               {superState.admin && (
                 <>
                   <Nav.Link className="header-text" href="/posts/editor">Review Posts</Nav.Link>
+                  <Nav.Link className="header-text" href="/" onClick={(e) => logout(e)}>Logout</Nav.Link>
                 </>
               )}
-              {superState.auth && (
+              {superState.auth && !superState.admin && (
               <>
-                <NavDropdown className="dropdown" title="" id="nav-dropdown" variant="primary">
+                {/* <p className="username">{superState.username}</p> */}
+                <NavDropdown className="dropdown" title={superState.username} id="nav-dropdown" variant="primary">
                   <NavDropdown.Item className="dropdown-opt" href="/user/profile">View Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                 </NavDropdown>
                 <img className="profile-picture" src={superState.avatar} alt="profile pic" />
-                {/* <Nav.Link className="header-text" href="/user/profile">My Profile</Nav.Link>  */}
               </>
               )}
             </Nav>

@@ -19,6 +19,7 @@ function EditPost({ state, superState, filteredPosts }) {
     date: "",
     time: "",
     notes: "",
+    reserved: "",
     status: state.status,
     author: state.author, 
     userID: state.user_avatar,
@@ -63,6 +64,7 @@ function EditPost({ state, superState, filteredPosts }) {
     formData.append("date", state.date);
     formData.append("time", state.time);
     formData.append("notes", state.notes);
+    formData.append("reserved", state.reserved_by);
     formData.append("status", e.target.value);
 
     const options = {
@@ -97,6 +99,7 @@ function EditPost({ state, superState, filteredPosts }) {
       <section className="highlight-title">
         <h2>{state.title}</h2>
         <p>By {state.author_name}</p>
+        <p> {state.reversed_by}</p>
       </section>
       <section className="edit-form-content">
         <div className="content-box">
@@ -141,43 +144,41 @@ function EditPost({ state, superState, filteredPosts }) {
       )}
 
 
-      {state.status === "PST" &&
-        <div className="takeseat-buttons">        
-            {/* {state.userID === state.author &&  */}
-            {/* // false &&  */}
-              <Button
-                  className="form-button-pairs"
-                  variant="secondary"
-                  type="submit"
-                  value="TKS"
-                  onClick={(e) => handleSubmit(e)}
-                >
-                  Take Spot
-                </Button>
-             {/* } */}
-              
-              <Button
+      {/* {state.status === "PST" && state.userID !== state.author && ( */}
+      {state.status === "PST" && (
+        <div className="takeseat-buttons">  
+            <Button
                 className="form-button-pairs"
                 variant="secondary"
-                type="button"
-                onClick={handleClick}
+                type="submit"
+                value="TKS"
+                onClick={(e) => handleSubmit(e)}
               >
-                Back
-              </Button>
+                Take Spot
+            </Button>
+            <Button
+              className="form-button-pairs"
+              variant="secondary"
+              type="button"
+              onClick={handleClick}
+            >
+              Back
+            </Button>
         </div>
-      }
-
-
+      )}
 
       {state.status === "TKS" && (
         <div className="takeseat-buttons">
+          <div>
+            <p>{state.reserved_by}</p>
+          </div>
           <Button
             className="cancel-seat-buttons"
             variant="secondary"
             type="submit"
             value="PST"
             onClick={(e) => handleSubmit(e)}
-          >
+          > 
             Cancel Taken Spot
           </Button>
           <Button
@@ -202,10 +203,10 @@ function EditPost({ state, superState, filteredPosts }) {
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
                 <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>
-                  <option value="FB">Flag Football</option>
-                  <option value="HK">Hockey</option>
-                  <option value="SB">Softball</option>
-                  <option value="BK">Basketball</option>
+                  <option value="Flag-Football">Flag Football</option>
+                  <option value="Hockey">Hockey</option>
+                  <option value="Softball">Softball</option>
+                  <option value="Basketball">Basketball</option>
                 </Form.Select>
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="image">

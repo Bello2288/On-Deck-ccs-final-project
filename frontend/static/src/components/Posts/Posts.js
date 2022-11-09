@@ -49,7 +49,7 @@ function Posts() {
         <Button
           className="sort-button"
           variant="secondary"
-          value="FB"
+          value="Flag-Football"
           onClick={(e) => changeCategory(e.target.value)}
         >
           Flag-Football
@@ -57,7 +57,7 @@ function Posts() {
         <Button
           className="sort-button"
           variant="secondary"
-          value="HK"
+          value="Hockey"
           onClick={(e) => changeCategory(e.target.value)}
         >
           Hockey
@@ -65,7 +65,7 @@ function Posts() {
         <Button
           className="sort-button"
           variant="secondary"
-          value="SB"
+          value="Softball"
           onClick={(e) => changeCategory(e.target.value)}
         >
           Softball
@@ -73,7 +73,7 @@ function Posts() {
         <Button
           className="sort-button"
           variant="secondary"
-          value="BK"
+          value="Basketball"
           onClick={(e) => changeCategory(e.target.value)}
         >
           Basketball

@@ -101,10 +101,10 @@ function CreatePost() {
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
                 <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>
-                  <option value="FB">Flag Football</option>
-                  <option value="HK">Hockey</option>
-                  <option value="SB">Softball</option>
-                  <option value="BK">Basketball</option>
+                  <option value="Flag-Football">Flag Football</option>
+                  <option value="Hockey">Hockey</option>
+                  <option value="Softball">Softball</option>
+                  <option value="Basketball">Basketball</option>
                 </Form.Select>
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="image">

@@ -45,7 +45,7 @@ function LoginForm({ superState, setSuperState }) {
         setSuperState({
           ...superState, 
           auth: true, 
-          admin: data.is_superuser, 
+          admin: data.is_superuser,  
           userID: data.id, 
           avatar: data.user_avatar,
           username: data.user_name,
