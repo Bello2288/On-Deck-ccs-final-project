@@ -106,7 +106,7 @@ function EditPost({ state }) {
     } else {
       const data = await response.json();
       console.log(data);
-      navigate("/posts/user/");
+      navigate("/posts/user/*");
     }
   };
 

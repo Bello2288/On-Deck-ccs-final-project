@@ -53,6 +53,7 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
 def post_reserve(request, pk):
     post = models.Post.objects.get(id=pk)
     post.reserved_by = request.user
+    post.status = "TKS"
     post.save()
     serializer = serializers.PostSerializer(post)
     return Response(serializer.data)

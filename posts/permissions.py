@@ -11,19 +11,18 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
             return True
 
         if request.method in ['PUT', 'PATCH']:
-            if obj.status in ['PST', 'SUB']:
+            if obj.status in ['PST', 'SUB', 'TKS']:
                 if request.user.is_superuser:
                     return True
                 else:
                     return False
-            # if obj.status in ['DRA', 'TKS']:
             if obj.status in ['DRA', 'TKS']:
                 if request.user == obj.author:
                     return True
                 else:
                     return False
 
-            if obj.status in ['PST', 'TSK']:
+            if obj.status in ['PST', 'TKS']:
                 if request.user != obj.author:
                     return True
                 else:
