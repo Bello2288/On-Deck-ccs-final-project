@@ -48,7 +48,7 @@ function Header({ superState, logoutUser }) {
               <>
                 {/* <p className="username">{superState.username}</p> */}
                 <NavDropdown className="dropdown" title={superState.username} id="nav-dropdown" variant="primary">
-                  <NavDropdown.Item className="dropdown-opt" href="/user/profile">View Profile</NavDropdown.Item>
+                  <NavDropdown.Item className="dropdown-opt" href={`/user/profile/${superState.userID}`}>View Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                 </NavDropdown>

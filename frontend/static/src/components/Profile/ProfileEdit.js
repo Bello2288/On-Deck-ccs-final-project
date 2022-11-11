@@ -100,7 +100,7 @@ function ProfileEdit({ superState, userProfile }) {
             <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
                 Edit
             </Button>
-            <Button className="form-button" type="button" variant="secondary" onClick={() => handleBack()}>
+            <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
                 Back
             </Button>
         </div>

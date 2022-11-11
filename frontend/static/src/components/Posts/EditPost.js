@@ -104,7 +104,7 @@ function EditPost({ state, userProfile }) {
       body: formData,
     };
 
-    const response = await fetch(`/api/v1/posts/${state.id}/reserve/`, options).catch(handleError);
+    const response = await fetch(`/api/v1/posts/${state.author}/reserve/`, options).catch(handleError);
     if (!response.ok) {
       throw new Error("Network response was not OK");
     } else {
@@ -125,14 +125,11 @@ function EditPost({ state, userProfile }) {
 
   const nonEditHTML = (
     <div className="edit-form">
-      {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
       <section className="highlight-title">
         <h2>{state.title}</h2>
         <p>
-          {/* `/api/v1/posts/${state.id}/reserve/` */}
           By <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}</Link>
         </p>
-        {/* <p> {state.reversed_by}</p>  */}
       </section>
       <section className="edit-form-content">
         <div className="content-box">
@@ -251,7 +248,7 @@ function EditPost({ state, userProfile }) {
             className="cancel-seat-buttons"
             variant="secondary"
             type="submit"
-            value="PST"
+            value="REJ"
             onClick={(e) => handleSubmit(e)}
           > 
             Cancel Game Post
