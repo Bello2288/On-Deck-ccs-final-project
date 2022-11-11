@@ -48,6 +48,7 @@ function UserPostList() {
               Saved Game Posts
             </Button>
             <Button
+              autoFocus
               className="author-button"
               variant="secondary"
               value="SUB"

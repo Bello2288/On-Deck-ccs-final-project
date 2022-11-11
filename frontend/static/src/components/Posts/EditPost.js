@@ -7,15 +7,18 @@ import Cookies from "js-cookie";
 import { useNavigate, useOutletContext, Link } from "react-router-dom";
 import moment from 'moment';
 
-function EditPost({ state }) {
+function EditPost({ state, userProfile }) {
+  const [profile, setProfile] = useState(userProfile);
+  console.log('userProfile', userProfile)
+  console.log('state', state)
   
-
+  // const [state, setState] = useState(getUserProfile);
   const [isEdit, setIsEdit] = useState(false);
   const [show, setShow] = useState(false);
 
   const { superState } = useOutletContext();
-    console.log('superState', superState)
-    console.log('state', state)
+    // console.log('superState', superState)
+    // console.log('state', state)
 
   const [post, setPost] = useState({
     ... state,
@@ -126,9 +129,10 @@ function EditPost({ state }) {
       <section className="highlight-title">
         <h2>{state.title}</h2>
         <p>
-          By <Link className="link login-link" to={"/user/profile"}>&nbsp; {state.author_name}</Link>
+          {/* `/api/v1/posts/${state.id}/reserve/` */}
+          By <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}</Link>
         </p>
-        <p> {state.reversed_by}</p> 
+        {/* <p> {state.reversed_by}</p>  */}
       </section>
       <section className="edit-form-content">
         <div className="content-box">
@@ -241,7 +245,6 @@ function EditPost({ state }) {
       {state.status === "TKS" && superState.userID === state.author && (
         <div className="takeseat-buttons">
           <div>
-            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by}   </p>
             <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
           </div>
           <Button
@@ -266,7 +269,6 @@ function EditPost({ state }) {
       {state.status === "TKS" && superState.userID === state.reserved_by && (
         <div className="takeseat-buttons">
           <div>
-            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by}   </p>
             <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
           </div>
           <Button

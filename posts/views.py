@@ -32,7 +32,7 @@ class AuthorPostListAPIView(generics.ListCreateAPIView):
     serializer_class = serializers.PostSerializer
 
     def get_queryset(self):
-        return models.Post.objects.filter(author=self.request.user)
+        return models.Post.objects.filter(Q(author=self.request.user) | Q(reserved_by=self.request.user))
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)

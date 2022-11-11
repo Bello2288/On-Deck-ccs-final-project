@@ -1,9 +1,12 @@
 import "../../styles/Profile.css";
 import { useState, useEffect } from "react";
+import {useParams} from 'react-router-dom'
 import ProfileEdit from "./ProfileEdit";
 
 function UserProfile({ superState }) {
   const [userProfile, setUserProfile] = useState();
+  const [profileId, setProfileId] = useState();
+  const { id } = useParams()
 
   const handleError = (err) => {
     console.warn(err);
@@ -19,11 +22,12 @@ function UserProfile({ superState }) {
       setUserProfile(data);
     };
     
-    getUserProfile(superState.userProfileId);
+    const profileId = id ? id : superState.userProfileId
+    getUserProfile(profileId);
   }, [superState]);
 
   return (
-    <section>{userProfile && <ProfileEdit userProfile={userProfile} />}</section>
+    <section>{userProfile && <ProfileEdit userProfile={userProfile} profileId={profileId} />}</section>
   );
 }
 

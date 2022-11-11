@@ -91,7 +91,8 @@ function App() {
                 <Route path="posts/editor" element={<AdminPostList />} />
                 <Route path="posts/editor/:id/*" element={<AdminPostReview />} />
                 <Route path="user/profile-create" element={<ProfileCreate superState={superState} setSuperState={setSuperState} />} />
-                <Route path="user/profile" element={<UserProfile superState={superState} />} />
+                <Route path="user/profile/:id" element={<UserProfile superState={superState} />} />
+                <Route path="user/profile/" element={<UserProfile superState={superState} />} />
               </>
             )}
           </Route>

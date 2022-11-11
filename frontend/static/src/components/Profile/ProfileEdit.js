@@ -4,6 +4,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 
 function ProfileEdit({ superState, userProfile }) {
@@ -19,6 +20,8 @@ function ProfileEdit({ superState, userProfile }) {
         [name]: value,
         }));
     };
+
+    const navigate = useNavigate();
 
     const handleError = (err) => {
         console.warn(err);
@@ -74,6 +77,11 @@ function ProfileEdit({ superState, userProfile }) {
             
         }
     };
+
+    const handleBack = () => { 
+        navigate('/posts/user');
+      };
+
     
     const previewHTML = (
         <div className="main-profile-container">
@@ -91,6 +99,9 @@ function ProfileEdit({ superState, userProfile }) {
             </section>
             <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
                 Edit
+            </Button>
+            <Button className="form-button" type="button" variant="secondary" onClick={() => handleBack()}>
+                Back
             </Button>
         </div>
     );
