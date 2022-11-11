@@ -38,7 +38,7 @@ h2 {
 
 .highlight-post {
     width: 80%;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .highlight-date {
@@ -51,7 +51,7 @@ h2 {
     border-left: 2px solid #be691f;
     border-radius: 3%;
     width: 50%;
-    padding: 5px 35px 0 35px;
+    padding: 0 35px 0 35px;
     text-align: left;
     line-height: 1.6rem;
 }

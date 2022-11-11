@@ -3,12 +3,14 @@ import"../../styles/Post-styles/EditPost.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Modal from 'react-bootstrap/Modal';  
 import Cookies from "js-cookie";
 import moment from 'moment';
 
 
 function AdminPostReview() {
     const [state, setState] = useState(null);
+    const [show, setShow] = useState(false);
 
     const handleError = (err) => {
     console.warn(err);
@@ -60,6 +62,14 @@ function AdminPostReview() {
         navigate('/posts/editor');
       };
 
+      const handleClose = () => {
+        handleSubmit();
+        setShow(false);
+        // handleSubmit();
+      };
+  
+      const handleShow = () => setShow(true);
+
     return (
     <article className="detail-view">
         {state && (
@@ -95,51 +105,66 @@ function AdminPostReview() {
             {state.status === "SUB" && (
             <>
                 <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="submit"
-                value="PST"
-                onClick={(e) => handleSubmit(e)}
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    value="PST"
+                    // onClick={(e) => handleSubmit(e)}
+                    onClick={handleShow}
                 >
-                Approve
+                    Approve
+                </Button>
+                <Modal className="create-post-modal" show={show} onHide={handleClose}>
+                    <Modal.Body>The post has been approved and sent for viewing</Modal.Body>
+                    <Modal.Footer>
+                      <Button 
+                        className="modal-button-close" 
+                        type="submit" 
+                        value="PST" 
+                        variant="secondary" 
+                        onClick={handleSubmit}>
+                            Close
+                      </Button> 
+                    </Modal.Footer>
+                  </Modal>
+
+                <Button
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="submit"
+                    value="REJ"
+                    onClick={(e) => handleSubmit(e)}
+                >
+                    Decline
                 </Button>
                 <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="submit"
-                value="REJ"
-                onClick={(e) => handleSubmit(e)}
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    onClick={handleClick}
                 >
-                Decline
-                </Button>
-                <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="button"
-                onClick={handleClick}
-                >
-                Back
+                    Back
                 </Button>
             </>
             )}
             {state.status === "PST" && (
             <>
                 <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="submit"
-                value="ARC"
-                onClick={(e) => handleSubmit(e)}
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="submit"
+                    value="ARC"
+                    onClick={(e) => handleSubmit(e)}
                 >
-                Archive
+                    Archive
                 </Button>
                 <Button
-                className="form-button-pairs"
-                variant="secondary"
-                type="button"
-                onClick={handleClick}
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    onClick={handleClick}
                 >
-                Back
+                    Back
                 </Button>
             </>
             )}

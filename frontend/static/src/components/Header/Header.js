@@ -33,7 +33,7 @@ function Header({ superState, logoutUser }) {
               )}
               {superState.auth && !superState.admin && (
                 <>
-                  <Nav.Link className="header-text" href="/posts">Game Posts</Nav.Link>
+                  <Nav.Link autoFocus className="header-text" href="/posts">Game Posts</Nav.Link>
                   <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
                   <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
                 </>

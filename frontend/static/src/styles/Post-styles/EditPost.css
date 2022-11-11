@@ -38,7 +38,7 @@ h2 {
 
 .highlight-post {
     width: 80%;
-    margin: 0;
+    margin: 0 0 40px 0;
 }
 
 .highlight-date {
@@ -153,4 +153,18 @@ h2 {
     margin: 10px auto 20px auto;
     border-bottom: 2px solid #be691f;
     border-radius: 30%;
+}
+
+.post-captions {
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #be691f;
+    font-style: italic;
+    margin: 0;
+}
+.post-notes-caption {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: #be691f;
+    font-style: italic;
 }

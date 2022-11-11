@@ -132,14 +132,19 @@ function EditPost({ state }) {
       </section>
       <section className="edit-form-content">
         <div className="content-box">
-          <p className="highlight-post">{state.teamname}</p>
-          <p className="highlight-post">{state.organization}</p>
-          <address className="highlight-post">{state.location}</address>
-          <time className="highlight-date">
-            {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+          <h2 className="post-captions">Team Name & Sports Type</h2>
+            <p className="highlight-post">{state.teamname} &nbsp;&nbsp;--&nbsp;&nbsp; {state.category}</p>
+          <h2 className="post-captions">Sport Organization</h2>
+            <p className="highlight-post">{state.organization}</p>
+          <h2 className="post-captions">Game Location</h2>
+            <address className="highlight-post">{state.location}</address>
+          <h2 className="post-captions">Game Date & Time</h2>
+            <time className="highlight-date">
+              {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
         </div>
         <div className="notes-box">
-          <p className="highlight-post-notes">{state.notes}</p>
+          <h2 className="post-notes-caption">Notes Section</h2>
+            <p className="highlight-post-notes">{state.notes}</p>
         </div>
       </section>
       {state.status === "DRA" && (

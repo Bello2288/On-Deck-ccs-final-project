@@ -39,6 +39,7 @@ function Posts() {
     <div className="display">
       <section className="sort-buttons">
         <Button
+          autoFocus
           className="sort-button"
           variant="secondary"
           value=""

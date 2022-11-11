@@ -44,7 +44,7 @@ function AdminPostList() {
             value="PST"
             onClick={(e) => changeCategory(e.target.value)}
           >
-            Posted Games
+            Posted Games for Users
           </Button>
           <Button
             className="form-button-pairs"
@@ -52,7 +52,7 @@ function AdminPostList() {
             value="SUB"
             onClick={(e) => changeCategory(e.target.value)}
           >
-            Submitted Games
+            Submitted Games for Approval
           </Button>
           <Button
             className="form-button-pairs"

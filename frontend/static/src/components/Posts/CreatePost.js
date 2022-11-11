@@ -21,6 +21,7 @@ function CreatePost() {
     });
 
     const [show, setShow] = useState(false);
+    const [showSave, setShowSave] = useState(false);
 
     const navigate = useNavigate();
   
@@ -93,10 +94,12 @@ function CreatePost() {
     const handleClose = () => {
       handleSubmit();
       setShow(false);
+      setShowSave(false);
       // handleSubmit();
     };
 
     const handleShow = () => setShow(true);
+    const handleShowSave = () => setShowSave(true);
   
     return ( 
       <div className="main-create-area">
@@ -193,12 +196,27 @@ function CreatePost() {
                 <Button
                   className="form-button-pairs"
                   variant="secondary"
-                  type="submit"
+                  // type="submit"
+                  type="button"
                   value="DRA"
-                  onClick={handleSubmit}
+                  // onClick={handleSubmit}
+                  onClick={handleShowSave}
                 >
                   Save
                 </Button>
+                <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
+                    <Modal.Body>Your post has been saved</Modal.Body>
+                    <Modal.Footer>
+                      <Button 
+                      className="modal-button-close" 
+                      type="submit" 
+                      value="DRA" 
+                      variant="secondary" 
+                      onClick={handleSubmit}>
+                        Close
+                      </Button> 
+                    </Modal.Footer>
+                  </Modal>
 
                 <Button
                   className="form-button-pairs"
@@ -219,7 +237,7 @@ function CreatePost() {
                       variant="secondary" 
                       onClick={handleSubmit}>
                         Close
-                      </Button>
+                      </Button> 
                     </Modal.Footer>
                   </Modal>
               </div>
