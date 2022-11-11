@@ -8,6 +8,8 @@ import { useNavigate, useOutletContext, Link } from "react-router-dom";
 import moment from 'moment';
 
 function EditPost({ state }) {
+  
+
   const [isEdit, setIsEdit] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -146,22 +148,24 @@ function EditPost({ state }) {
             className="form-button-pairs"
             variant="secondary"
             type="button"
-            // value="SUB"
+            value="SUB"
             onClick={handleShow}
           >
             Submit
           </Button>
-            <Modal className="create-post-modal" show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Thank you</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
-              <Modal.Footer>
-                <Button className="submit-btn" type="submit" value="SUB" variant="primary" onClick={handleClose}>
-                  Close
-                </Button>
-              </Modal.Footer>
-            </Modal>
+          <Modal className="create-post-modal" show={show} onHide={handleClose}>
+            <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+            <Modal.Footer>
+              <Button 
+              className="modal-button-close" 
+              type="submit" 
+              value="SUB" 
+              variant="secondary" 
+              onClick={handleSubmit}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Button
             className="form-button-pairs"
             variant="secondary"
@@ -254,11 +258,11 @@ function EditPost({ state }) {
           </Button>
         </div>
       )}
-      {state.status === "TKS" && superState.userID !== state.author && (
+      {state.status === "TKS" && superState.userID === state.reserved_by && (
         <div className="takeseat-buttons">
           <div>
-            <p>{state.reserved_by}</p>
-            <p>{state.reserved_by_username}</p>
+            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by}   </p>
+            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
           </div>
           <Button
             className="cancel-seat-buttons"

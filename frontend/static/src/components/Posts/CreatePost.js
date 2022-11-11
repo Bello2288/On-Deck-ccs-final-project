@@ -29,7 +29,6 @@ function CreatePost() {
     };
 
   
-    const handleShow = () => setShow(true);
   
     const handleInput = (e) => {
       const { name, value } = e.target;
@@ -48,7 +47,7 @@ function CreatePost() {
     // };
   
     const handleSubmit = async (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       const formData = new FormData();
   
       // formData.append("image", state.image);
@@ -92,9 +91,12 @@ function CreatePost() {
     };
 
     const handleClose = () => {
-      setShow(false);
       handleSubmit();
+      setShow(false);
+      // handleSubmit();
     };
+
+    const handleShow = () => setShow(true);
   
     return ( 
       <div className="main-create-area">
@@ -168,6 +170,7 @@ function CreatePost() {
               <Form.Group className="mb-3" controlId="date">
                 <Form.Label>Game Date</Form.Label>
                 <Form.Control
+                  required
                   type="date"
                   placeholder="Date"
                   name="date"
@@ -178,6 +181,7 @@ function CreatePost() {
               <Form.Group className="mb-3" controlId="time">
                 <Form.Label>Game Time</Form.Label>
                 <Form.Control
+                  required
                   type="time"
                   placeholder="Time"
                   name="time"
@@ -195,26 +199,29 @@ function CreatePost() {
                 >
                   Save
                 </Button>
+
                 <Button
                   className="form-button-pairs"
                   variant="secondary"
                   type="button"
                   value="SUB"
-                  onClick={handleSubmit}
+                  onClick={handleShow}
                 >
                   Submit
                 </Button>
-                  {/* <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Thank you</Modal.Title>
-                    </Modal.Header>
+                  <Modal className="create-post-modal" show={show} onHide={handleClose}>
                     <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
                     <Modal.Footer>
-                      <Button className="submit-btn" type="submit" value="SUB" variant="primary" onClick={handleClose}>
+                      <Button 
+                      className="modal-button-close" 
+                      type="submit" 
+                      value="SUB" 
+                      variant="secondary" 
+                      onClick={handleSubmit}>
                         Close
                       </Button>
                     </Modal.Footer>
-                  </Modal> */}
+                  </Modal>
               </div>
             </div>
             <Form.Group className="mb-3" controlId="notes">

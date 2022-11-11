@@ -15,8 +15,9 @@ main {
     object-position: center;
     height: 450px;
     opacity: 1;
-    filter: brightness(60%);
+    filter: brightness(70%);
     z-index: 1;
+    margin-left: 160px
 }
 
 .home-page-text {
@@ -30,6 +31,9 @@ main {
     /* font-family: 'Kaushan Script', Times, serif; */
     /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
+}
+.center {
+    margin: 0 auto 0 auto;
 }
 
 .home-lower-buttons{

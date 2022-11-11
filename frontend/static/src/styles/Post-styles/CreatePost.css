@@ -61,3 +61,20 @@
     padding-top: 170px;
     
 }
+
+.modal-content {
+    background-color: #212121;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+.modal-footer, .modal-body {
+    display: flex;
+    justify-content: center;
+}
+.modal-button-close {
+    background-color: #515151;
+    border-color: #515151;
+}
+.modal-button-close:hover {
+    background-color: #be691f;
+}
