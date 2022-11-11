@@ -41,8 +41,7 @@ function LoginForm({ superState, setSuperState }) {
       } else {
         const data = await response.json();
         Cookies.set("Authorization", `Token ${data.key}`);
-        // navigate("/posts");
-        setSuperState({
+        setSuperState({ 
           ...superState, 
           auth: true, 
           admin: data.is_superuser,  
@@ -53,7 +52,7 @@ function LoginForm({ superState, setSuperState }) {
           // phonenumber: data.phone_number,
         });
         if (state.is_superuser === true) {
-          navigate("/posts/editor")
+          navigate("/posts/editor") 
         } else if (state.is_superuser !== true) {
           // console.log('data', data)
           // console.log('state', state)

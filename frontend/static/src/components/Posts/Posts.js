@@ -49,7 +49,7 @@ function Posts() {
         <Button
           className="sort-button"
           variant="secondary"
-          value="Flag-Football"
+          value="Flag-football"
           onClick={(e) => changeCategory(e.target.value)}
         >
           Flag-Football

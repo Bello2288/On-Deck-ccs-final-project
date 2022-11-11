@@ -75,7 +75,7 @@ function AdminPostReview() {
                     <p className="highlight-post">{state.organization}</p>
                     <address className="highlight-post">{state.location}</address>
                     <time className="highlight-date">
-                        {moment(state.date).format('MMM Do, YYYY')} at {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+                        {moment(state.date).format('MMM Do, YYYY')}&nbsp; at&nbsp; {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
                 </div>
                 <div className="notes-box">
                     <p className="highlight-post-notes">{state.notes}</p>

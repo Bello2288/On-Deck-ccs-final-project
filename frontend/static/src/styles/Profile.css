@@ -17,7 +17,8 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 5px solid #565759;
+    border: 5px solid #be691f;
+    margin-top: 40px;
 }
 
 .profile-image {
@@ -25,6 +26,13 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.form-head-title {
+    color: #be691f;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #be691f;
+    border-radius: 5%;
 }
 
 /* =============== ^^^^  Profile Create ^^^^ ==================== */
@@ -41,7 +49,7 @@
 }
 
 .main-profile-container {
-    padding-top: 150px;
+    padding-top: 100px;
     color: #ffffff;
     margin-bottom: 45px;
 }
@@ -52,7 +60,8 @@
     color: #ffffff;
     margin: 25px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #565759;
+    border-bottom: 2px solid #be691f;
+    border-radius: 3%;
 }
 .profile-content {
     align-self: center;

@@ -7,7 +7,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     username = serializers.ReadOnlyField(source='user.username')
 
     class Meta:
-        model = models.Profile
+        model = models.Profile 
         fields = '__all__'
  
 

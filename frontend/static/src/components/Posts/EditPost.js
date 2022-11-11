@@ -1,32 +1,30 @@
 import "../../styles/Post-styles/EditPost.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Cookies from "js-cookie";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, Link } from "react-router-dom";
 import moment from 'moment';
 
 function EditPost({ state }) {
   const [isEdit, setIsEdit] = useState(false);
+  const [show, setShow] = useState(false);
 
   const { superState } = useOutletContext();
-  // console.log('superState', superState)
-  // console.log('state', state)
+    console.log('superState', superState)
+    console.log('state', state)
 
   const [post, setPost] = useState({
     ... state,
-    // image: state.image,
-    // title: state.title,
-    // category: "",
-    // teamname: "",
-    // organization: "",
-    // location: "",
-    // date: "",
-    // time: "",
-    // notes: "",
-    // reserved: "",
   });
 
+  const handleClose = () => {
+    setShow(false);
+    handleSubmit();
+  };
+
+  const handleShow = () => setShow(true);
 
   const navigate = useNavigate();
 
@@ -57,7 +55,7 @@ function EditPost({ state }) {
     //   formData.append("image", post.image);
     // }
 
-    formData.append("title", post.title);
+    formData.append("title", post.title); 
     formData.append("category", post.category);
     formData.append("teamname", post.teamname);
     formData.append("organization", post.organization);
@@ -66,6 +64,7 @@ function EditPost({ state }) {
     formData.append("time", post.time);
     formData.append("notes", post.notes);
     formData.append("reserved", post.reserved_by);
+    formData.append("reserved_username", post.reserved_by_username);
     formData.append("status", e.target.value);
 
     const options = {
@@ -118,13 +117,16 @@ function EditPost({ state }) {
     navigate('/posts/user');
   };
 
+
   const nonEditHTML = (
     <div className="edit-form">
       {/* <img className="highlight-img" src={state.image} alt="news article image" /> */}
       <section className="highlight-title">
         <h2>{state.title}</h2>
-        <p>By {state.author_name}</p>
-        <p> {state.reversed_by}</p>
+        <p>
+          By <Link className="link login-link" to={"/user/profile"}>&nbsp; {state.author_name}</Link>
+        </p>
+        <p> {state.reversed_by}</p> 
       </section>
       <section className="edit-form-content">
         <div className="content-box">
@@ -143,12 +145,23 @@ function EditPost({ state }) {
           <Button
             className="form-button-pairs"
             variant="secondary"
-            type="submit"
-            value="SUB"
-            onClick={(e) => handleSubmit(e)}
+            type="button"
+            // value="SUB"
+            onClick={handleShow}
           >
             Submit
           </Button>
+            <Modal className="create-post-modal" show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Thank you</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+              <Modal.Footer>
+                <Button className="submit-btn" type="submit" value="SUB" variant="primary" onClick={handleClose}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
           <Button
             className="form-button-pairs"
             variant="secondary"
@@ -216,10 +229,36 @@ function EditPost({ state }) {
         </div>
       )}
 
-      {state.status === "TKS" && (
+      {state.status === "TKS" && superState.userID === state.author && (
+        <div className="takeseat-buttons">
+          <div>
+            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by}   </p>
+            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
+          </div>
+          <Button
+            className="cancel-seat-buttons"
+            variant="secondary"
+            type="submit"
+            value="PST"
+            onClick={(e) => handleSubmit(e)}
+          > 
+            Cancel Game Post
+          </Button>
+          <Button
+            className="cancel-seat-buttons"
+            variant="secondary"
+            type="button"
+            onClick={handleBack}
+          >
+            Back
+          </Button>
+        </div>
+      )}
+      {state.status === "TKS" && superState.userID !== state.author && (
         <div className="takeseat-buttons">
           <div>
             <p>{state.reserved_by}</p>
+            <p>{state.reserved_by_username}</p>
           </div>
           <Button
             className="cancel-seat-buttons"
@@ -244,20 +283,20 @@ function EditPost({ state }) {
   );
 
   const editHTML = (
-      <div className="main-create-area">
-        <Form className="create-form">
-          <h1 className="form-title">Edit Saved Post</h1>
-          <section className="create-flex">
+      <div className="main-edit-author-area">
+        <Form className="edit-author-form">
+          <h1 className="edit-author-form-title">Edit Saved Post</h1>
+          <section className="edit-author-flex">
             <div className="create-groups">
-            <Form.Group className="mb-3" controlId="title">
-                <Form.Label>Post Title</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Post Title"
-                  name="title"
-                  value={post.title}
-                  onChange={handleInput}
-                />
+              <Form.Group className="mb-3" controlId="title">
+                  <Form.Label>Post Title</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Post Title"
+                    name="title"
+                    value={post.title}
+                    onChange={handleInput}
+                  />
               </Form.Group>
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
@@ -289,25 +328,27 @@ function EditPost({ state }) {
               </Form.Group>
               <Form.Group className="mb-3" controlId="organization">
                 <Form.Label>Sports Organization</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Sport Organization"
-                  name="organization"
-                  value={post.organization}
-                  onChange={handleInput}
-                />
+                <Form.Select className="form-control" name="organization" value={post.organization} onChange={handleInput}>
+                  <option value="">Choose a Sports Organization</option>
+                  <option value="ACMY">ACMY of Greenville </option>
+                  <option value="ABC">ABC Sports Center</option>
+                </Form.Select>
               </Form.Group>
             </div>
             <div>
               <Form.Group className="mb-3" controlId="location">
                 <Form.Label>Location / Field</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Location / Field"
-                  name="location"
-                  value={post.location}
-                  onChange={handleInput}
-                />
+                <Form.Select className="form-control" placeholder="location" name="location" value={post.location} onChange={handleInput}>
+                  <option value="">Choose a location / field</option>
+                  <option value="NWP">Northwest Park (FB)</option>
+                  <option value="GPK">Gary L. Pittman Park (FB)</option>
+                  <option value="PVC">Pavilion Recreation Complex (HO)</option>
+                  <option value="GWP">Gower Park (SB)</option>
+                  <option value="STF">Stevens Field (SB)</option>
+                  <option value="LSP">Lakeside Park (SB)</option>
+                  <option value="ABC">ABC Sports Center (BB)</option>
+                  <option value="NSP">Northside Park (BB)</option>
+                </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3" controlId="date">
                 <Form.Label>Game Date</Form.Label>
@@ -329,6 +370,35 @@ function EditPost({ state }) {
                   onChange={handleInput}
                 />
               </Form.Group>
+              <div className="form-footer">
+                <Button
+                  className="form-button-pairs"
+                  variant="dark"
+                  type="submit"
+                  value="SUB"
+                  onClick={(e) => handleSubmit(e)}
+                >
+                Submit Draft
+                </Button>
+                <Button
+                  className="form-button-pairs"
+                  variant="dark"
+                  type="submit"
+                  value="DRA"
+                  onClick={(e) => handleSubmit(e)}
+                >
+                  Save Draft
+                </Button>
+                <Button
+                  className="form-button-pairs"
+                  variant="dark"
+                  type="submit"
+                  value="REJ"
+                  onClick={(e) => handleSubmit(e)}
+                >
+                  Delete Draft
+                </Button>
+              </div>
             </div>
             <Form.Group className="mb-3" controlId="notes">
               <Form.Label>Additional Notes</Form.Label>
@@ -342,35 +412,6 @@ function EditPost({ state }) {
               />
             </Form.Group>
           </section>
-          <div className="form-footer">
-            <Button
-              className="create-button-pairs"
-              variant="dark"
-              type="submit"
-              value="SUB"
-              onClick={(e) => handleSubmit(e)}
-            >
-            Submit Draft
-            </Button>
-            <Button
-              className="create-button-pairs"
-              variant="dark"
-              type="submit"
-              value="DRA"
-              onClick={(e) => handleSubmit(e)}
-            >
-              Save Draft
-            </Button>
-            <Button
-              className="create-button-pairs"
-              variant="dark"
-              type="submit"
-              value="REJ"
-              onClick={(e) => handleSubmit(e)}
-            >
-              Delete Draft
-            </Button>
-        </div>
       </Form>
     </div>
   );

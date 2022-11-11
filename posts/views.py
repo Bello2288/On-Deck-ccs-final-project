@@ -49,10 +49,11 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)  
 
-@api_view(['PUT'])
+@api_view(['PUT']) 
 def post_reserve(request, pk):
     post = models.Post.objects.get(id=pk)
     post.reserved_by = request.user
+    # post.reserved_by_username = request.user
     post.status = "TKS"
     post.save()
     serializer = serializers.PostSerializer(post)

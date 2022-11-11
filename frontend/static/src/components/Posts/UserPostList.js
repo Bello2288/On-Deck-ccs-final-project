@@ -53,7 +53,7 @@ function UserPostList() {
               value="SUB"
               onClick={(e) => changeCategory(e.target.value)}
             >
-              Created Game Posts
+              Posts Waiting on Approval
             </Button>
             <Button
               className="author-button"

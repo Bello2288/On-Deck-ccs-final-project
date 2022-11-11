@@ -15,6 +15,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
     is_highlighted = models.BooleanField(default=False)
     reserved_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name="post_reserver")
+    # reserved_by_username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name="post_reserver_username")
 
 
     FLAGFOOTBALL = 'Flag-football'
@@ -31,6 +32,42 @@ class Post(models.Model):
         max_length=13,
         choices=CATEGORY_CHOICES,
         default=FLAGFOOTBALL,
+    )
+
+    ACMY_OF_GREENVILLE = 'ACMY'
+    ABC_SPORTS_CENTER = 'ABC'
+    ORGANIZATION_CHOICES = [
+        (ACMY_OF_GREENVILLE, 'ACMY of Greenville'),
+        (ABC_SPORTS_CENTER, 'ABC Sports Center'),
+    ]
+    organization = models.CharField(
+        max_length=4,
+        choices=ORGANIZATION_CHOICES,
+        default=ACMY_OF_GREENVILLE,
+    )
+
+    NORTHWEST_PARK = 'Northwest Park'
+    GARY_PARK = 'Gary L. Pittman Park'
+    PAVILION_COMPLEX = 'Pavilion Recreation Complex'
+    GOWER_PARK = 'Gower Park'
+    STEVENS_FIELD = 'Stevens Field'
+    LAKESIDE_PARK= 'Lakeside Park'
+    ABC_SPORTS_CENTER = 'ABC Sports Center'
+    NORTHSIDE_PARK = 'Northside Park'
+    LOCATION_CHOICES = [
+        (NORTHWEST_PARK, 'Northwest Park'),
+        (GARY_PARK, 'Gary L. Pittman Park'),
+        (PAVILION_COMPLEX, 'Pavilion Recreation Complex'),
+        (GOWER_PARK, 'Gower Park'),
+        (STEVENS_FIELD, 'Stevens Field'),
+        (LAKESIDE_PARK, 'Lakeside Park'),
+        (ABC_SPORTS_CENTER, 'ABC Sports Center'),
+        (NORTHSIDE_PARK, 'Northside Park'),
+    ]
+    location = models.CharField(
+        max_length=28,
+        choices=LOCATION_CHOICES,
+        default=NORTHWEST_PARK,
     )
 
     DRAFT = 'DRA'

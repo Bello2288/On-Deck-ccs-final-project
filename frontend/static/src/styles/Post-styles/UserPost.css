@@ -10,7 +10,7 @@
 }
 
 .view-link {
-    color: #40be7b;
+    color: #40be7b; 
 }
 .view-link:hover {
     color: #be691f;
@@ -18,4 +18,13 @@
 
 .form-control {
     background-color: #e0e0e0;
+}
+
+.user-post-title {
+    font-size: 27px;
+    padding: 0 10px 10px 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #be691f;
+    border-radius: 90%;
+    font-family: 'Caveat', Times, serif;
 }

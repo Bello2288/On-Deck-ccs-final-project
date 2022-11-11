@@ -1,12 +1,13 @@
 import "../../styles/Post-styles/CreatePost.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 
-function CreatePost() {
-    
+function CreatePost() {   
     const [state, setState] = useState({
       // image: null,
       title: "",
@@ -18,10 +19,17 @@ function CreatePost() {
       time: "",
       notes: "",
     });
+
+    const [show, setShow] = useState(false);
+
+    const navigate = useNavigate();
   
     const handleError = (err) => {
       console.warn(err);
     };
+
+  
+    const handleShow = () => setShow(true);
   
     const handleInput = (e) => {
       const { name, value } = e.target;
@@ -40,7 +48,7 @@ function CreatePost() {
     // };
   
     const handleSubmit = async (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       const formData = new FormData();
   
       // formData.append("image", state.image);
@@ -79,7 +87,13 @@ function CreatePost() {
           time: "",
           notes: "",
         });
+        navigate("/posts");
       }
+    };
+
+    const handleClose = () => {
+      setShow(false);
+      handleSubmit();
     };
   
     return ( 
@@ -101,7 +115,8 @@ function CreatePost() {
               <Form.Group className="mb-3" controlId="category">
                 <Form.Label>Select Sport</Form.Label>
                 <Form.Select className="form-control" name="category" value={state.category} onChange={handleInput}>
-                  <option value="Flag-Football">Flag Football</option>
+                  <option value="">Choose a sport</option>
+                  <option value="Flag-football">Flag-Football</option>
                   <option value="Hockey">Hockey</option>
                   <option value="Softball">Softball</option>
                   <option value="Basketball">Basketball</option>
@@ -128,25 +143,27 @@ function CreatePost() {
               </Form.Group>
               <Form.Group className="mb-3" controlId="organization">
                 <Form.Label>Sports Organization</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Sport Organization"
-                  name="organization"
-                  value={state.organization}
-                  onChange={handleInput}
-                />
+                <Form.Select className="form-control" name="organization" value={state.organization} onChange={handleInput}>
+                  <option value="">Choose a Sports Organization</option>
+                  <option value="ACMY">ACMY of Greenville </option>
+                  <option value="ABC">ABC Sports Center</option>
+                </Form.Select>
               </Form.Group>
             </div>
             <div>
               <Form.Group className="mb-3" controlId="location">
                 <Form.Label>Location / Field</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Location / Field"
-                  name="location"
-                  value={state.location}
-                  onChange={handleInput}
-                />
+                <Form.Select className="form-control" placeholder="location" name="location" value={state.location} onChange={handleInput}>
+                  <option value="">Choose a location / field</option>
+                  <option value="Northwest Park">Northwest Park (FB)</option>
+                  <option value="Gary L. Pittman Park">Gary L. Pittman Park (FB)</option>
+                  <option value="Pavilion Recreation Complex">Pavilion Recreation Complex (HO)</option>
+                  <option value="Gower Park">Gower Park (SB)</option>
+                  <option value="Stevens Field">Stevens Field (SB)</option>
+                  <option value="Lakeside Park">Lakeside Park (SB)</option>
+                  <option value="ABC Sports Center">ABC Sports Center (BB)</option>
+                  <option value="Northside Park">Northside Park (BB)</option>
+                </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3" controlId="date">
                 <Form.Label>Game Date</Form.Label>
@@ -168,6 +185,37 @@ function CreatePost() {
                   onChange={handleInput}
                 />
               </Form.Group>
+              <div className="create-form-footer">
+                <Button
+                  className="form-button-pairs"
+                  variant="secondary"
+                  type="submit"
+                  value="DRA"
+                  onClick={handleSubmit}
+                >
+                  Save
+                </Button>
+                <Button
+                  className="form-button-pairs"
+                  variant="secondary"
+                  type="button"
+                  value="SUB"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </Button>
+                  {/* <Modal className="create-post-modal" show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Thank you</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+                    <Modal.Footer>
+                      <Button className="submit-btn" type="submit" value="SUB" variant="primary" onClick={handleClose}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal> */}
+              </div>
             </div>
             <Form.Group className="mb-3" controlId="notes">
               <Form.Label>Additional Notes</Form.Label>
@@ -181,7 +229,7 @@ function CreatePost() {
               />
             </Form.Group>
           </section>
-          <div className="form-footer">
+          {/* <div className="form-footer">
             <Button
               className="form-button-pairs"
               variant="secondary"
@@ -200,7 +248,7 @@ function CreatePost() {
             >
               Submit
             </Button>
-          </div>
+          </div> */}
         </Form>
       </div>
     );

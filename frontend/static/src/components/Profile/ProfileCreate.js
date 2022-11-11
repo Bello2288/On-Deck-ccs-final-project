@@ -89,7 +89,7 @@ function ProfileCreate(superState, setSuperState) {
     <section className="form-display">
       <Form className="profile-create-container" onSubmit={handleSubmit}>
         <div className="form-head">
-          <h1>Create Profile</h1>
+          <h1 className="form-head-title">Create Profile</h1>
           <div className="image-container">
             <img className="profile-image" src={preview} alt="" />
           </div>
