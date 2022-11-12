@@ -26,7 +26,6 @@ class PostDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Post.objects.all()
     serializer_class = serializers.PostSerializer
 
-
 class AuthorPostListAPIView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = serializers.PostSerializer
@@ -58,3 +57,13 @@ def post_reserve(request, pk):
     post.save()
     serializer = serializers.PostSerializer(post)
     return Response(serializer.data)
+
+@api_view(['PUT', 'PATCH'])    
+def remove_reserve(self,pk):
+    post = models.Post.objects.get(id=pk)
+    post.reserved_by = None
+    post.status = "PST"
+    post.save()
+    serializer = serializers.PostSerializer(post)
+    return Response(serializer.data)
+

@@ -68,7 +68,7 @@ function LoginForm({ superState, setSuperState }) {
           <Form className="form" onSubmit={handleSubmit}>
             <h1 className="form-title">Login</h1>
             <Form.Group className="mb-3" controlId="username">
-              <Form.Label>Username</Form.Label>
+              <Form.Label>Username</Form.Label> 
               <Form.Control
                 type="text"
                 placeholder="Enter username" 

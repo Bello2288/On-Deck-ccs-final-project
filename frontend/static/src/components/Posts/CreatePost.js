@@ -100,6 +100,10 @@ function CreatePost() {
 
     const handleShow = () => setShow(true);
     const handleShowSave = () => setShowSave(true);
+
+    const handleBack = () => { 
+      navigate(-1);
+    };
   
     return ( 
       <div className="main-create-area">
@@ -240,19 +244,38 @@ function CreatePost() {
                       </Button> 
                     </Modal.Footer>
                   </Modal>
+
+                  <Button
+                className="form-button-pairs cancel-btn"
+                variant="secondary"
+                type="button"
+                onClick={handleBack}
+              >
+                Cancel
+              </Button>
               </div>
             </div>
-            <Form.Group className="mb-3" controlId="notes">
-              <Form.Label>Additional Notes</Form.Label>
-              <textarea
-                rows="8"
-                className="form-control"
-                placeholder="Notes..."
-                name="notes"
-                value={state.notes}
-                onChange={handleInput}
-              />
-            </Form.Group>
+            <div>
+              <Form.Group className="mb-3" controlId="notes">
+                <Form.Label>Additional Notes</Form.Label>
+                <textarea
+                  rows="8"
+                  className="form-control"
+                  placeholder="Notes..."
+                  name="notes"
+                  value={state.notes}
+                  onChange={handleInput}
+                />
+              </Form.Group>
+              {/* <Button
+                className="form-button-pairs cancel-btn"
+                variant="secondary"
+                type="button"
+                onClick={handleBack}
+              >
+                Cancel
+              </Button> */}
+            </div>
           </section>
           {/* <div className="form-footer">
             <Button

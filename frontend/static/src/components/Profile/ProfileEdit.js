@@ -4,17 +4,17 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 
-function ProfileEdit({ superState, userProfile }) {
+function ProfileEdit({ userProfile }) {
     const [state, setState] = useState(userProfile);
     const [isEdit, setIsEdit] = useState(false);
     const [preview, setPreview] = useState(state.avatar);
+    const { superState } = useOutletContext();
 
     console.log('state', state)
     console.log('superState', superState)
-
       
     const handleInput = (e) => { 
         const { name, value } = e.target;
@@ -100,31 +100,31 @@ function ProfileEdit({ superState, userProfile }) {
                     <p>Zipcode:&nbsp;&nbsp;&nbsp;    {state.zipcode}</p>
                 </div>
             </section>
+                {/* <div className="profile-edit-buttons">
+                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
+                        Edit
+                    </Button>
+                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                        Back
+                    </Button>
+                </div> */}
+            {superState.userID === state.user && (
                 <div className="profile-edit-buttons">
-                    <Button className="form-button profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
+                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
                         Edit
                     </Button>
-                    <Button className="form-button profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
                         Back
                     </Button>
                 </div>
-            {/* {superState.userID === userProfile.user && (
-                <div>
-                    <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
-                        Edit
-                    </Button>
-                    <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
+            )}
+            {superState.userID !== state.user && (
+                <div className="profile-edit-buttons">
+                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
                         Back
                     </Button>
                 </div>
-            )} */}
-            {/* {superState.userID !== userProfile.user && (
-                <div>
-                    <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
-                        Back
-                    </Button>
-                </div>
-            )} */}
+            )}
         </div>
     );
     
@@ -133,8 +133,8 @@ function ProfileEdit({ superState, userProfile }) {
         <Form className="main-edit-container" onSubmit={handleSubmit}>
             <h1>Edit Profile</h1>
             <div className="edit-view-container">
-                <div className="image-container">
-                    <img className="profile-image" src={state.avatar} alt="" />                    
+                <div className="edit-image-container">
+                    <img className="edit-profile-image" src={state.avatar} alt="" />                    
                 </div>
                 <div className="edit-profile-content">
                     <Form.Group className="mb-3" controlId="image">
@@ -207,7 +207,7 @@ function ProfileEdit({ superState, userProfile }) {
                 </div>
             </div>    
             <div>
-                <Button className="form-button" type="submit" variant="secondary">
+                <Button className="profile-edit-btn" type="submit" variant="secondary">
                     Save
                 </Button>
             </div>

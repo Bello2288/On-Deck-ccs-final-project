@@ -39,7 +39,8 @@ function AdminPostList() {
       <div className="display">
         <section className="admin-buttons">
           <Button
-            className="form-button-pairs"
+            autoFocus
+            className="admin-button"
             variant="secondary"
             value="PST"
             onClick={(e) => changeCategory(e.target.value)}
@@ -47,7 +48,7 @@ function AdminPostList() {
             Posted Games for Users
           </Button>
           <Button
-            className="form-button-pairs"
+            className="admin-button"
             variant="secondary"
             value="SUB"
             onClick={(e) => changeCategory(e.target.value)}
@@ -55,7 +56,7 @@ function AdminPostList() {
             Submitted Games for Approval
           </Button>
           <Button
-            className="form-button-pairs"
+            className="admin-button"
             variant="secondary"
             value="ARC"
             onClick={(e) => changeCategory(e.target.value)}

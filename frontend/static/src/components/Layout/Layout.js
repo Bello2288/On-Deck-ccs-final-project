@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import "../../styles/HomePage.css";
+import "../../styles/HomePage.css"; 
 
 function Layout({ superState, setSuperState, logoutUser }) {
   return (

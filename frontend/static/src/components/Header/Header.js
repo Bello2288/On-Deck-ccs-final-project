@@ -14,7 +14,7 @@ function Header({ superState, logoutUser }) {
   const logout = (e) => {
     logoutUser(e);
     navigate("/");
-  };
+  }; 
 
   return (
     <>

@@ -96,6 +96,29 @@ function EditPost({ state, userProfile }) {
     }
   };
 
+  const handleRemoveReservation = async (e) => {
+    e.preventDefault();
+
+    const options = {
+      method: "PUT",
+      headers: {
+        "X-CSRFToken": Cookies.get("csrftoken"),
+      },
+    };
+    
+    const response = await fetch(`/api/v1/posts/${state.id}/remove-reserve/`, options).catch(handleError);
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    } else {
+      const data = await response.json();
+      console.log(data);
+      navigate("/posts/user/*");
+    }
+
+  }
+
+  console.log(state.id)
+
   const handleTakeSpot = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -105,7 +128,7 @@ function EditPost({ state, userProfile }) {
     const options = {
       method: "PUT",
       headers: {
-        "X-CSRFToken": Cookies.get("csrftoken"),
+        "X-CSRFToken": Cookies.get("csrftoken"), 
       },
       body: formData,
     };
@@ -279,7 +302,7 @@ function EditPost({ state, userProfile }) {
             variant="secondary"
             type="submit"
             value="PST"
-            onClick={(e) => handleSubmit(e)}
+            onClick={(e) => handleRemoveReservation(e)}
           > 
             Cancel Taken Spot
           </Button>
@@ -354,14 +377,14 @@ function EditPost({ state, userProfile }) {
                 <Form.Label>Location / Field</Form.Label>
                 <Form.Select className="form-control" placeholder="location" name="location" value={post.location} onChange={handleInput}>
                   <option value="">Choose a location / field</option>
-                  <option value="NWP">Northwest Park (FB)</option>
-                  <option value="GPK">Gary L. Pittman Park (FB)</option>
-                  <option value="PVC">Pavilion Recreation Complex (HO)</option>
-                  <option value="GWP">Gower Park (SB)</option>
-                  <option value="STF">Stevens Field (SB)</option>
-                  <option value="LSP">Lakeside Park (SB)</option>
-                  <option value="ABC">ABC Sports Center (BB)</option>
-                  <option value="NSP">Northside Park (BB)</option>
+                  <option value="Northwest Park">Northwest Park (FB)</option>
+                  <option value="Gary L. Pittman Park">Gary L. Pittman Park (FB)</option>
+                  <option value="Pavilion Recreation Complex">Pavilion Recreation Complex (HO)</option>
+                  <option value="Gower Park">Gower Park (SB)</option>
+                  <option value="Stevens Field">Stevens Field (SB)</option>
+                  <option value="Lakeside Park">Lakeside Park (SB)</option>
+                  <option value="ABC Sports Center">ABC Sports Center (BB)</option>
+                  <option value="Northside Park">Northside Park (BB)</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3" controlId="date">

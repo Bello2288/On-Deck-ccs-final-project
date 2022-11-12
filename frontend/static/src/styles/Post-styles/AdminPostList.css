@@ -50,7 +50,46 @@
 
 }
 
-/* .admin-buttons {
-    width: 700px;
-    border: 5px solid red;
-} */
+.admin-buttons {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:0.5s; 
+    -moz-animation-duration:0.5s;
+    animation-duration:0.5s;
+
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.admin-button {
+    color: #ffffff;
+    border-color: #515151; 
+    background-color: #515151;
+    padding: 5px 25px;
+    border-radius: 7px;
+    margin: 0 10px;
+}
+
+.admin-button:hover {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
+}
+
+.admin-button:focus {
+    color: #ffffff;
+    border-color: #be691f;
+    background-color: #be691f;
+}
