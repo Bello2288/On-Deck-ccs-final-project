@@ -25,7 +25,7 @@ function PostList({ filteredPosts }) {
         </div>
       </li> 
     ));
-  return <ul className="pst-list">{postList}</ul>;
+  return <ul className="pst-list four">{postList}</ul>;
 }
 
 
