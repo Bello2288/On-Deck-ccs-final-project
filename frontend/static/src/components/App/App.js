@@ -74,7 +74,7 @@ function App() {
 
 
   return ( 
-    <div className="App">
+    <div className="App"> 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />} >

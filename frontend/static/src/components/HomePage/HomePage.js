@@ -6,13 +6,13 @@ import Nav from "react-bootstrap/Nav";
 import Carousel from 'react-bootstrap/Carousel';
 
 
-function Home() {
+function Home() { 
     return (
     <main>
-      <Carousel className="center">
+      <Carousel fade className="center">
         <Carousel.Item>
           <img
-            className="d-block homepic"
+            className="d-block homepic pic1"
             src={homepic}
             alt="First slide"
           />
@@ -23,7 +23,7 @@ function Home() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block homepic"
+            className="d-block homepic pic2"
             src={footballpic}
             alt="Second slide"
           />
@@ -35,7 +35,7 @@ function Home() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block homepic"
+            className="d-block homepic pic3"
             src={hockeypic}
             alt="Third slide"
           />

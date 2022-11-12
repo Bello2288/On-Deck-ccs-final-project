@@ -16,10 +16,10 @@ function Header({ superState, logoutUser }) {
     navigate("/");
   }; 
 
-  return (
+  return ( 
     <>
       <Navbar className="navbar" expand="lg">
-        <Container className="navbar-container">
+        <Container className="navbar-container nav-flex">
           <Navbar.Brand className="app-name" href="/">
             On Deck
             {/* <img className="sport-icon" src={football} alt="chair" /> */}

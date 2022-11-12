@@ -33,3 +33,23 @@
 .link:hover {
   color: #000000b3;
 }
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+  .App {
+    background-image: url("../images/black-triangles-background.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+}

@@ -43,7 +43,7 @@ main {
     opacity: 1;
     filter: brightness(70%);
     z-index: 1;
-    margin-left: 160px
+    margin-left: 160px;
 }
 
 .home-page-text {
@@ -157,5 +157,49 @@ main {
         bottom: 45px;
         font-size: 38px;
         padding: 0 70px;
+    }
+}
+
+
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+    
+    .homepic {
+        height: 620px;
+        margin: 35px 0 0 260px;
+    }
+
+    .carousel-caption > h3 {
+        font-size: 55px;
+    }
+
+    .carousel-caption > p {
+        font-size: 38px;
+    }
+
+    .pic1 {
+        filter: brightness(55%);
+    }
+
+    .pic2 {
+        object-position: top;
+    }
+    
+    .pic3 {
+        object-position: bottom;     
+    }
+
+    .home-lower-buttons {
+        margin-top: 20px;
+        font-size: 20px;
     }
 }
