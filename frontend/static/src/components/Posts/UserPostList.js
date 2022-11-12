@@ -40,6 +40,7 @@ function UserPostList() {
         <section className="post-container">
           <section className="author-buttons">
             <Button
+              autoFocus
               className="author-button"
               variant="secondary"
               value="DRA"
@@ -48,7 +49,6 @@ function UserPostList() {
               Saved Game Posts
             </Button>
             <Button
-              autoFocus
               className="author-button"
               variant="secondary"
               value="SUB"

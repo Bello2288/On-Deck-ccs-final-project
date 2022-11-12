@@ -15,6 +15,8 @@ function EditPost({ state, userProfile }) {
   // const [state, setState] = useState(getUserProfile);
   const [isEdit, setIsEdit] = useState(false);
   const [show, setShow] = useState(false);
+  const [showSave, setShowSave] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
 
   const { superState } = useOutletContext();
     // console.log('superState', superState)
@@ -25,11 +27,15 @@ function EditPost({ state, userProfile }) {
   });
 
   const handleClose = () => {
-    setShow(false);
     handleSubmit();
+    setShow(false);
+    setShowSave(false);
+    setShowDelete(false);
   };
 
   const handleShow = () => setShow(true);
+  const handleShowSave = () => setShowSave(true);
+  const handleShowDelete = () => setShowDelete(true);
 
   const navigate = useNavigate();
 
@@ -104,7 +110,7 @@ function EditPost({ state, userProfile }) {
       body: formData,
     };
 
-    const response = await fetch(`/api/v1/posts/${state.author}/reserve/`, options).catch(handleError);
+    const response = await fetch(`/api/v1/posts/${state.id}/reserve/`, options).catch(handleError);
     if (!response.ok) {
       throw new Error("Network response was not OK");
     } else {
@@ -266,7 +272,7 @@ function EditPost({ state, userProfile }) {
       {state.status === "TKS" && superState.userID === state.reserved_by && (
         <div className="takeseat-buttons">
           <div>
-            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
+            <p>By <Link className="link login-link" to={`/user/profile/${state.reserved_by}`}>&nbsp;&nbsp; {state.reserved_by_username}</Link></p>
           </div>
           <Button
             className="cancel-seat-buttons"
@@ -382,30 +388,72 @@ function EditPost({ state, userProfile }) {
                 <Button
                   className="form-button-pairs"
                   variant="dark"
-                  type="submit"
+                  type="button"
                   value="SUB"
-                  onClick={(e) => handleSubmit(e)}
+                  onClick={handleShow}
                 >
                 Submit Draft
                 </Button>
+                <Modal className="create-post-modal" show={show} onHide={handleClose}>
+                  <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+                  <Modal.Footer>
+                    <Button 
+                    className="modal-button-close" 
+                    type="submit" 
+                    value="SUB" 
+                    variant="secondary" 
+                    onClick={handleSubmit}>
+                      Close
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+
                 <Button
                   className="form-button-pairs"
                   variant="dark"
-                  type="submit"
+                  type="button"
                   value="DRA"
-                  onClick={(e) => handleSubmit(e)}
+                  onClick={handleShowSave}
                 >
                   Save Draft
                 </Button>
+                <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
+                    <Modal.Body>Your post has been saved</Modal.Body>
+                    <Modal.Footer>
+                      <Button 
+                      className="modal-button-close" 
+                      type="submit" 
+                      value="DRA" 
+                      variant="secondary" 
+                      onClick={handleSubmit}>
+                        Close
+                      </Button> 
+                    </Modal.Footer>
+                  </Modal>
+
                 <Button
                   className="form-button-pairs"
                   variant="dark"
-                  type="submit"
+                  type="button"
                   value="REJ"
-                  onClick={(e) => handleSubmit(e)}
+                  onClick={handleShowDelete}
                 >
                   Delete Draft
                 </Button>
+                <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
+                  <Modal.Body>Your saved post has been deleted</Modal.Body>
+                  <Modal.Footer>
+                    <Button 
+                    className="modal-button-close" 
+                    type="submit" 
+                    value="SUB" 
+                    variant="secondary" 
+                    onClick={handleSubmit}>
+                      Close
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+
               </div>
             </div>
             <Form.Group className="mb-3" controlId="notes">

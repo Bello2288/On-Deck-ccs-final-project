@@ -12,6 +12,9 @@ function ProfileEdit({ superState, userProfile }) {
     const [isEdit, setIsEdit] = useState(false);
     const [preview, setPreview] = useState(state.avatar);
 
+    console.log('state', state)
+    console.log('superState', superState)
+
       
     const handleInput = (e) => { 
         const { name, value } = e.target;
@@ -65,7 +68,7 @@ function ProfileEdit({ superState, userProfile }) {
             body: formData,
         };
 
-        const response = await fetch(`/api/v1/profiles/${state.id}/`, options).catch(
+        const response = await fetch(`/api/v1/profiles/${state.user}/`, options).catch(
             handleError
         );
         if (!response.ok) {
@@ -97,12 +100,31 @@ function ProfileEdit({ superState, userProfile }) {
                     <p>Zipcode:&nbsp;&nbsp;&nbsp;    {state.zipcode}</p>
                 </div>
             </section>
-            <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
-                Edit
-            </Button>
-            <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
-                Back
-            </Button>
+                <div className="profile-edit-buttons">
+                    <Button className="form-button profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
+                        Edit
+                    </Button>
+                    <Button className="form-button profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                        Back
+                    </Button>
+                </div>
+            {/* {superState.userID === userProfile.user && (
+                <div>
+                    <Button className="form-button" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
+                        Edit
+                    </Button>
+                    <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                        Back
+                    </Button>
+                </div>
+            )} */}
+            {/* {superState.userID !== userProfile.user && (
+                <div>
+                    <Button className="form-button" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                        Back
+                    </Button>
+                </div>
+            )} */}
         </div>
     );
     

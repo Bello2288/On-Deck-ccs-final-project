@@ -2,6 +2,7 @@ import "../../styles/Post-styles/UserPost.css";
 import { Link } from "react-router-dom";
 
 function UserPost({ post }) {
+  console.log('post', post)
   return ( 
     <li key={post.id} className="list creator-list">
       <div className="post-info">

@@ -14,20 +14,20 @@
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
     -moz-animation:fadeIn ease-in 1;
-    animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1; 
 
     -webkit-animation-fill-mode:forwards;
     -moz-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
 
-    -webkit-animation-duration:1.5s;
-    -moz-animation-duration:1.5s;
-    animation-duration:1.5s;
+    -webkit-animation-duration:0.3s;
+    -moz-animation-duration:0.3s;
+    animation-duration:0.3s;
 }
 .pst-list.four {
-    -webkit-animation-delay: .9s;
-    -moz-animation-delay: .9s;
-    animation-delay: .9s;
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    animation-delay: .2s;
   }
 
 .post-info {
