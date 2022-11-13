@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function PostList({ filteredPosts }) {
   const postList = filteredPosts
     .map((post) => (
-      <li key={post.id}>
+      <li key={post.id} className="post-spacing">
         <div className="post-info">
             <div>
               <h2 className="post-list-title">{post.title}</h2>
