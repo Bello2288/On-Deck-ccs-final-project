@@ -84,13 +84,13 @@
 .create-post-modal {
     background-color: transparent;
     padding-top: 170px;
-    
+    border-color: #be691f;
 }
 
 .modal-content {
     background-color: #212121;
     color: #ffffff;
-    border: 2px solid #000000;
+    border: 2px solid #be691f;
 }
 .modal-footer, .modal-body {
     display: flex;
@@ -107,3 +107,62 @@
 /* .cancel-btn {
     margin: 37px 0 0 60px;
 } */
+
+
+
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+    .main-create-area {
+        padding-top: 60px;
+    }
+
+    .create-form > h1 {
+        font-size: 50px;
+        margin: 0 0 25px 0;
+    }
+
+    .create-form {
+        /* border: 5px solid red; */
+        font-size: 25px;
+
+        padding: 20px 20px;
+        width: 60%;
+        margin-top: 125px;
+        margin-bottom: 45px;
+
+    }
+
+    .large-cp-btn-pair {
+        margin-top: 28px;
+    }
+
+    .form-button-pairs {
+        font-size: 18px;
+    }
+
+    /* =====================    MODAL  --  MEDIA LARGE   ====================== */
+
+    .create-post-modal {
+        padding-top: 330px;
+    }
+
+    .modal-title {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .modal-button-close {
+        font-size: 20px;
+    }
+
+}

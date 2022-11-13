@@ -111,7 +111,7 @@ function CreatePost() {
           <h1 className="form-title">Create New Post</h1>
           <section className="create-flex">
             <div className="create-groups">
-            <Form.Group className="mb-3" controlId="title">
+              <Form.Group className="mb-3" controlId="title">
                 <Form.Label>Post Title</Form.Label>
                 <Form.Control
                   type="text"
@@ -159,7 +159,7 @@ function CreatePost() {
                 </Form.Select>
               </Form.Group>
             </div>
-            <div>
+            <div className="loc-date-time-group">
               <Form.Group className="mb-3" controlId="location">
                 <Form.Label>Location / Field</Form.Label>
                 <Form.Select className="form-control" placeholder="location" name="location" value={state.location} onChange={handleInput}>
@@ -196,7 +196,7 @@ function CreatePost() {
                   onChange={handleInput}
                 />
               </Form.Group>
-              <div className="create-form-footer">
+              <div className="create-form-footer large-cp-btn-pair">
                 <Button
                   className="form-button-pairs"
                   variant="secondary"
@@ -209,18 +209,18 @@ function CreatePost() {
                   Save
                 </Button>
                 <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
-                    <Modal.Body>Your post has been saved</Modal.Body>
-                    <Modal.Footer>
-                      <Button 
-                      className="modal-button-close" 
-                      type="submit" 
-                      value="DRA" 
-                      variant="secondary" 
-                      onClick={handleSubmit}>
-                        Close
-                      </Button> 
-                    </Modal.Footer>
-                  </Modal>
+                  <Modal.Body className="modal-title">Your post has been saved</Modal.Body>
+                  <Modal.Footer>
+                    <Button 
+                    className="modal-button-close" 
+                    type="submit" 
+                    value="DRA" 
+                    variant="secondary" 
+                    onClick={handleSubmit}>
+                      Close
+                    </Button> 
+                  </Modal.Footer>
+                </Modal>
 
                 <Button
                   className="form-button-pairs"
@@ -232,7 +232,7 @@ function CreatePost() {
                   Submit
                 </Button>
                   <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                    <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+                    <Modal.Body className="modal-title">Your post has been submitted and waiting approval</Modal.Body>
                     <Modal.Footer>
                       <Button 
                       className="modal-button-close" 
@@ -250,16 +250,16 @@ function CreatePost() {
                 variant="secondary"
                 type="button"
                 onClick={handleBack}
-              >
-                Cancel
-              </Button>
+                >
+                  Cancel
+                </Button>
               </div>
             </div>
             <div>
               <Form.Group className="mb-3" controlId="notes">
                 <Form.Label>Additional Notes</Form.Label>
                 <textarea
-                  rows="8"
+                  rows="9"
                   className="form-control"
                   placeholder="Notes..."
                   name="notes"
