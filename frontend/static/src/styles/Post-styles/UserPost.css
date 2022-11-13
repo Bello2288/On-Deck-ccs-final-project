@@ -28,3 +28,36 @@
     border-radius: 90%;
     font-family: 'Caveat', Times, serif;
 }
+
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+    .creator-list {
+        display: flex;
+        justify-content: center;
+    }
+ 
+    
+    .user-post-data {
+        font-size: 15px;
+    }
+      
+    
+    .user-post-title {
+        font-size: 35px;
+        padding: 0 10px 10px 10px;
+        margin-bottom: 30px;
+        border-radius: 90%;
+    }
+
+
+}

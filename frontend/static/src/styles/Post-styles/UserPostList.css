@@ -18,7 +18,7 @@
     background-color: #515151;
     padding: 5px 25px;
     border-radius: 7px;
-    margin: 0 10px;
+    margin: 0 10px; 
 
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
@@ -48,4 +48,29 @@
     color: #ffffff;
     border-color: #be691f;
     background-color: #be691f;
+}
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+    .my-posts-display {
+        padding-top: 85px;
+    }
+    
+    .author-buttons {
+        padding: 0px 0 30px 0;
+    }
+    .author-button {
+        font-size: 22px;
+        padding: 5px 35px;
+        margin: 0 35px;
+    }
 }

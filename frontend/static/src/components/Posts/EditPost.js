@@ -157,7 +157,7 @@ function EditPost({ state, userProfile }) {
       <section className="highlight-title">
         <h2>{state.title}</h2>
         <p>
-          Creator: <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}</Link>
+          Creator: <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}{state.avatar}</Link>
         </p> 
       </section>
       <section className="edit-form-content">
