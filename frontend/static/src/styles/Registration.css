@@ -23,3 +23,38 @@
     color: #ffffff;
     font-size: 25px;
 }
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+    .reg-form-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .reg-form {
+        padding: 20px 40px;
+        width: 37%;
+        text-align: left;
+        margin-top: 160px;
+        margin-bottom: -28px;
+    }
+    
+    .reg-form-title {
+        font-size: 50px;
+    }
+
+    .create-field-label {
+        font-size: 27px;
+    }
+
+
+}

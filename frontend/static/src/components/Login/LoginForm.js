@@ -87,13 +87,13 @@ function LoginForm({ superState, setSuperState }) {
                 onChange={handleInput} 
               />
             </Form.Group>
-            <div className="form-footer">
+            <div className="form-footer"> 
               <Button className="form-button" variant="dark" type="submit">
                 Login
               </Button>
               <div className="create-link">
                 <p>
-                  Don't have an account? Click <Link className="link login-link" to={"/register"}>here</Link> to create one.
+                  Don't have an account?&nbsp;&nbsp; Click <Link className="link login-link" to={"/register"}>here</Link> to create one.
                 </p>
               </div>
             </div>

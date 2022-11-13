@@ -3,7 +3,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; 
 
 
 function RegistrationForm({ superState, setSuperState}) {
@@ -67,12 +67,12 @@ function RegistrationForm({ superState, setSuperState}) {
     };
 
     return (
-        <div className="main-display-area">
+        <div className="main-display-area main-reg-form">
           <Form className="reg-form" onSubmit={checkSamePass}>
             <h1 className="reg-form-title">Create Account</h1>
             <section className="reg-form-flex">
               <div>
-                <Form.Group className="mb-3" controlId="username">
+                <Form.Group className="mb-3 create-field-label" controlId="username">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
@@ -84,7 +84,7 @@ function RegistrationForm({ superState, setSuperState}) {
                     onChange={handleInput}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="email">
+                <Form.Group className="mb-3 create-field-label" controlId="email">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control
                     type="email"
@@ -97,7 +97,7 @@ function RegistrationForm({ superState, setSuperState}) {
                 </Form.Group>
               </div>
               <div>
-                <Form.Group className="mb-3" controlId="password1">
+                <Form.Group className="mb-3 create-field-label" controlId="password1">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -108,7 +108,7 @@ function RegistrationForm({ superState, setSuperState}) {
                     onChange={handleInput}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="password2">
+                <Form.Group className="mb-3 create-field-label" controlId="password2">
                 <Form.Label>Confirm Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -127,7 +127,7 @@ function RegistrationForm({ superState, setSuperState}) {
               </Button>
               <div className="create-link">
                 <p>
-                  Already have an account? Click <Link className="link login-link" to={"/login"}> here </Link> to login.
+                  Already have an account?&nbsp;&nbsp; Click <Link className="link login-link" to={"/login"}> here </Link> to login.
                 </p>
               </div>
             </div>

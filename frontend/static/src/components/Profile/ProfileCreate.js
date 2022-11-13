@@ -86,8 +86,8 @@ function ProfileCreate(superState, setSuperState) {
   };
 
   return (
-    <section className="form-display">
-      <Form className="profile-create-container" onSubmit={handleSubmit}>
+    <section className="form-display"> 
+      <Form className="profile-create-container create-fade" onSubmit={handleSubmit}>
         <div className="form-head">
           <h1 className="form-head-title">Create Profile</h1>
           <div className="image-container">
@@ -152,7 +152,7 @@ function ProfileCreate(superState, setSuperState) {
                     />
                 </Form.Group>
                 <div>
-                    <Button className="form-button" type="submit" variant="dark">
+                    <Button className="profile-create-save-button" type="submit" variant="secondary">
                         Save
                     </Button>
                 </div>

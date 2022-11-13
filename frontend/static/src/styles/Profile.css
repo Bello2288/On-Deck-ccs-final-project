@@ -20,7 +20,7 @@
     padding-left: 85px;
 }
 
-.image-container {
+.image-container { 
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -42,6 +42,10 @@
     padding-bottom: 20px;
     border-bottom: 2px solid #be691f;
     border-radius: 5%;
+}
+
+.profile-create-save-button:hover {
+        background-color: #be691f;
 }
 
 /* =============== ^^^^  Profile Create ^^^^ ==================== */
@@ -241,3 +245,64 @@ h1 {
 }
 
 /* =============== ^^^^  User Profile ^^^^ ==================== */
+
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+/* =========================    Profile Create   ========================== */
+
+    .form-display {
+        /* border: 2px solid red; */
+        padding-top: 95px;
+    }
+
+    .form-head-title {
+        font-size: 45px;
+        padding-top: 20px;
+        margin-bottom: -50px;
+        border: none;
+        animation: profile-pic-load 600ms ease-in-out;
+    }
+
+    .image-container {
+        height: 350px;
+        width: 350px;
+    }
+
+
+    .profile-create-inputs {
+        font-size: 20px;
+        /* border: 2px solid yellow; */
+        animation: profile-content-load 600ms ease-in-out;
+    }
+
+    .profile-create-save-button {
+        font-size: 20px;
+    }
+
+    .create-fade {
+        opacity:0;
+        -webkit-animation:fadeIn ease-in 1;
+        -moz-animation:fadeIn ease-in 1;
+        animation:fadeIn ease-in 1; 
+
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+
+        -webkit-animation-duration:0.3s;
+        -moz-animation-duration:0.3s;
+        animation-duration:0.3s;
+    }
+
+}
+

@@ -30,7 +30,7 @@ function Home() {
 
           <Carousel.Caption>
             <h3>Browse available games</h3>
-            <p>Filter through the sport you like and see if someone is in need of a player</p>
+            <p>Filter through the sports you like and see if someone is in need of a player</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
