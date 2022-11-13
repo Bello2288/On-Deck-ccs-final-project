@@ -327,7 +327,7 @@ function EditPost({ state, userProfile }) {
             <div className="create-groups">
               <Form.Group className="mb-3" controlId="title">
                   <Form.Label>Post Title</Form.Label>
-                  <Form.Control
+                  <Form.Control className="form-control"
                     type="text"
                     placeholder="Post Title"
                     name="title"
@@ -355,7 +355,7 @@ function EditPost({ state, userProfile }) {
               </Form.Group> */}
               <Form.Group className="mb-3" controlId="teamname">
                 <Form.Label>Team Name</Form.Label>
-                <Form.Control
+                <Form.Control className="form-control"
                   type="text"
                   placeholder="Team Name"
                   name="teamname"
@@ -389,7 +389,7 @@ function EditPost({ state, userProfile }) {
               </Form.Group>
               <Form.Group className="mb-3" controlId="date">
                 <Form.Label>Game Date</Form.Label>
-                <Form.Control
+                <Form.Control className="form-control"
                   type="date"
                   placeholder="Date"
                   name="date"
@@ -399,7 +399,7 @@ function EditPost({ state, userProfile }) {
               </Form.Group>
               <Form.Group className="mb-3" controlId="time">
                 <Form.Label>Game Time</Form.Label>
-                <Form.Control
+                <Form.Control className="form-control"
                   type="time"
                   placeholder="Time"
                   name="time"
@@ -418,16 +418,17 @@ function EditPost({ state, userProfile }) {
                 Submit Draft
                 </Button>
                 <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                  <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
-                  <Modal.Footer>
+                  <Modal.Body className="modal-title">Your post has been submitted and waiting approval</Modal.Body>
+                  <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 
                     type="submit" 
                     value="SUB" 
                     variant="secondary" 
                     onClick={handleSubmit}>
-                      Close
+                      Confirm
                     </Button>
+                    <h2> * Click outside the box to go back to Edit screen </h2>
                   </Modal.Footer>
                 </Modal>
 
@@ -441,16 +442,17 @@ function EditPost({ state, userProfile }) {
                   Save Draft
                 </Button>
                 <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
-                    <Modal.Body>Your post has been saved</Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Body className="modal-title">Your post has been saved</Modal.Body>
+                    <Modal.Footer className="footer-text">
                       <Button 
                       className="modal-button-close" 
                       type="submit" 
                       value="DRA" 
                       variant="secondary" 
                       onClick={handleSubmit}>
-                        Close
+                        Confirm
                       </Button> 
+                      <h2> * Click outside the box to go back to Edit screen </h2>
                     </Modal.Footer>
                   </Modal>
 
@@ -464,16 +466,17 @@ function EditPost({ state, userProfile }) {
                   Delete Draft
                 </Button>
                 <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
-                  <Modal.Body>Your saved post has been deleted</Modal.Body>
-                  <Modal.Footer>
+                  <Modal.Body className="modal-title">Are you sure you want to delete this post?</Modal.Body>
+                  <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 
                     type="submit" 
                     value="SUB" 
                     variant="secondary" 
                     onClick={handleSubmit}>
-                      Close
+                      Confirm
                     </Button>
+                    <h2> *Click outside the box to go back to Edit screen </h2>
                   </Modal.Footer>
                 </Modal>
 

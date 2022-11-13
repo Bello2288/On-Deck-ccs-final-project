@@ -120,7 +120,7 @@
 
 
 
-@media (max-width: 1935px) and (min-width: 1335px) {
+@media (max-width: 1935px) and (min-width: 1335px) { 
 
     .main-create-area {
         padding-top: 60px;
@@ -132,9 +132,7 @@
     }
 
     .create-form {
-        /* border: 5px solid red; */
         font-size: 25px;
-
         padding: 20px 20px;
         width: 60%;
         margin-top: 125px;
