@@ -12,7 +12,6 @@
     padding-top: 85px;
     padding-bottom: 45px;
 
-
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
     -moz-animation:fadeIn ease-in 1;
@@ -41,6 +40,7 @@
     /* background-color: #212121; */
     background-color: #5b5b5b;
     color: #ffffff;
+    box-shadow: 2px 2px 3px #be691f;
 }
 
 .form-title {
@@ -134,4 +134,49 @@
         width: 200px;
         height: 200px;
     }
+}
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+    .main-display-area {
+        padding-top: 85px;
+        padding-bottom: 45px;
+    }
+
+    .form {
+        margin-top: 150px;
+    }
+    
+    .form-title {
+        font-size: 50px;
+    }
+
+    .login-username, .login-password {
+        font-size: 27px;
+    }
+
+    .form-footer {
+        margin-top: 30px;
+    }
+    
+    .form-button {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+
+    .create-link {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+
 }

@@ -67,7 +67,7 @@ function LoginForm({ superState, setSuperState }) {
         <div className="main-display-area">
           <Form className="form" onSubmit={handleSubmit}>
             <h1 className="form-title">Login</h1>
-            <Form.Group className="mb-3" controlId="username">
+            <Form.Group className="mb-3 login-username" controlId="username">
               <Form.Label>Username</Form.Label> 
               <Form.Control
                 type="text"
@@ -77,14 +77,14 @@ function LoginForm({ superState, setSuperState }) {
                 onChange={handleInput}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="password">
+            <Form.Group className="mb-3 login-password" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Enter password"
                 name="password"
                 value={state.password}
-                onChange={handleInput}
+                onChange={handleInput} 
               />
             </Form.Group>
             <div className="form-footer">
