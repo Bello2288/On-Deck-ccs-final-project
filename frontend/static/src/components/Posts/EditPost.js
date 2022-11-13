@@ -157,20 +157,20 @@ function EditPost({ state, userProfile }) {
       <section className="highlight-title">
         <h2>{state.title}</h2>
         <p>
-          By <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}</Link>
-        </p>
+          Creator: <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}</Link>
+        </p> 
       </section>
       <section className="edit-form-content">
         <div className="content-box">
           <h2 className="post-captions">Team Name & Sports Type</h2>
-            <p className="highlight-post">{state.teamname} &nbsp;&nbsp;--&nbsp;&nbsp; {state.category}</p>
+            <p className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.teamname} &nbsp;&nbsp;--&nbsp;&nbsp; {state.category}</p>
           <h2 className="post-captions">Sport Organization</h2>
-            <p className="highlight-post">{state.organization}</p>
+            <p className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.organization}</p>
           <h2 className="post-captions">Game Location</h2>
-            <address className="highlight-post">{state.location}</address>
+            <address className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.location}</address>
           <h2 className="post-captions">Game Date & Time</h2>
             <time className="highlight-date">
-              {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+              &nbsp;&nbsp;&nbsp;    {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
         </div>
         <div className="notes-box">
           <h2 className="post-notes-caption">Notes Section</h2>
@@ -236,7 +236,7 @@ function EditPost({ state, userProfile }) {
       {state.status === "PST" && superState.userID !== state.author && (  
         <div className="takeseat-buttons">
             <Button
-                className="form-button-pairs"
+                className="take-button-pairs"
                 variant="secondary"
                 type="submit"
                 value="TKS"
@@ -245,7 +245,7 @@ function EditPost({ state, userProfile }) {
                 Take Spot
             </Button>
             <Button
-              className="form-button-pairs"
+              className="take-button-pairs"
               variant="secondary"
               type="button"
               onClick={handleClick}

@@ -21,6 +21,18 @@
     margin: 0 auto 20px auto;
 }
 
+.take-button-pairs {
+    margin: 10px;
+    width: 100px;
+    background-color: #515151;
+    border-color: #515151;
+}
+
+.take-button-pairs:hover {
+    background-color: #be691f;
+    border-color: #be691f;
+}
+
 .content-box {
     width: 50%;
     text-align: left;
@@ -168,7 +180,7 @@ h2 {
 }
 
 .edit-author-flex {
-    text-align: left;
+    text-align: left; 
     display: flex;
     justify-content: space-between;
 }
@@ -192,4 +204,76 @@ h2 {
     font-size: 25px;
     color: #be691f;
     font-style: italic;
+}
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) {
+
+
+    .edit-form {
+        width: 800px;
+        margin-top: 65px;
+    } 
+
+    .highlight-title > h2 {
+        margin: 10px auto 0px auto;
+        font-size: 47px;
+        font-family: 'Caveat', Times, serif;
+    }
+
+    .highlight-title > p {
+        font-size: 25px;
+    }
+
+    .login-link {
+        font-size: 25px;
+    }
+
+    .edit-form-content {
+        margin: 30px auto 20px auto;
+    }
+
+    /* .content-box {
+        line-height: 3.5rem;
+        padding-left: 205px;
+    } */
+
+    .post-captions {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .highlight-post {
+        font-size: 22px;
+    }
+    
+    .highlight-date {
+        font-size: 22px;
+    }
+
+    .post-notes-caption {
+        font-size: 31px;
+    }
+
+    .highlight-post-notes {
+        font-size: 25px;
+        line-height: 2.1rem;
+    }
+
+    .take-button-pairs {
+        font-size: 21px;
+        margin: 15px 20px;
+        width: 130px;
+    }
+
+
+
 }
