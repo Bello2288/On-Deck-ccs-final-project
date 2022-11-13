@@ -99,6 +99,7 @@
     background-color: #565759;
     border: 2px solid #212121;
     border-radius: 10px;
+    box-shadow: 2px 2px 3px #be691f;
 
     animation: profile-content-load 600ms ease-in-out;
 }
@@ -196,6 +197,7 @@ h1 {
     background-color: #565759;
     border: 2px solid #212121;
     width: 35%;
+    box-shadow: 2px 2px 3px #be691f;
 
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
@@ -258,7 +260,7 @@ h1 {
 
 @media (max-width: 1935px) and (min-width: 1335px) {
 
-/* =========================    Profile Create   ========================== */
+    /* =====================    Profile Create (MEDIA LARGE)   ====================== */
 
     .form-display {
         /* border: 2px solid red; */
@@ -281,7 +283,6 @@ h1 {
 
     .profile-create-inputs {
         font-size: 20px;
-        /* border: 2px solid yellow; */
         animation: profile-content-load 600ms ease-in-out;
     }
 
@@ -302,6 +303,59 @@ h1 {
         -webkit-animation-duration:0.3s;
         -moz-animation-duration:0.3s;
         animation-duration:0.3s;
+    }
+
+
+
+    /* ==============    User Profile / Edit Profile  (MEDIA LARGE)   =============== */   
+
+    .main-profile-container {
+        padding-top: 160px;
+    }
+
+    .profile-view-container {
+        padding-bottom: 40px;
+    }
+
+    .profile-content {
+        font-size: 26px;
+        margin-left: 25px;
+        padding: 25px 35px;
+    }
+
+    .profile-edit-btn {
+        font-size: 20px;
+        margin: 15px 35px 0 35px;
+    }
+
+
+
+    .main-edit-container {
+        padding-top: 160px;
+        margin-bottom: 55px;
+    }
+
+    .edit-view-container {
+        border-bottom: 2px solid #be691f;
+        border-radius: 5%;
+        padding-bottom: 30px;
+        margin-bottom: 25px;
+    }
+
+    .main-edit-container > h1 {
+        font-size: 55px;
+        margin: 0;
+    }
+
+    .edit-image-container {
+        width: 380px;
+        height: 380px;
+        margin: 10px 35px 0 0;
+    }
+
+    .edit-profile-content {
+        font-size: 27px;
+        padding: 20px 30px 0 30px;
     }
 
 }

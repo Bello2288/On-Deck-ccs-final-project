@@ -87,7 +87,7 @@ function ProfileEdit({ userProfile }) {
 
     
     const previewHTML = (
-        <div className="main-profile-container">
+        <div className="main-profile-container create-fade">
             <section className="profile-view-container">
                 <div className="image-container">
                     <img className="profile-image" src={preview} alt="" />
@@ -130,7 +130,7 @@ function ProfileEdit({ userProfile }) {
     
     const editHTML = (
         <>
-        <Form className="main-edit-container" onSubmit={handleSubmit}>
+        <Form className="main-edit-container create-fade" onSubmit={handleSubmit}>
             <h1>Edit Profile</h1>
             <div className="edit-view-container">
                 <div className="edit-image-container">
