@@ -210,15 +210,16 @@ function CreatePost() {
                 </Button>
                 <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
                   <Modal.Body className="modal-title">Your post has been saved</Modal.Body>
-                  <Modal.Footer>
+                  <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 
                     type="submit" 
                     value="DRA" 
                     variant="secondary" 
                     onClick={handleSubmit}>
-                      Close
+                      Confirm
                     </Button> 
+                    <h2> *Click outside the box to go back to Edit screen </h2>
                   </Modal.Footer>
                 </Modal>
 
@@ -233,15 +234,16 @@ function CreatePost() {
                 </Button>
                   <Modal className="create-post-modal" show={show} onHide={handleClose}>
                     <Modal.Body className="modal-title">Your post has been submitted and waiting approval</Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Footer className="footer-text">
                       <Button 
                       className="modal-button-close" 
                       type="submit" 
                       value="SUB" 
                       variant="secondary" 
                       onClick={handleSubmit}>
-                        Close
+                        Confirm
                       </Button> 
+                      <h2> *Click outside the box to go back to Edit screen </h2>
                     </Modal.Footer>
                   </Modal>
 
@@ -267,36 +269,8 @@ function CreatePost() {
                   onChange={handleInput}
                 />
               </Form.Group>
-              {/* <Button
-                className="form-button-pairs cancel-btn"
-                variant="secondary"
-                type="button"
-                onClick={handleBack}
-              >
-                Cancel
-              </Button> */}
             </div>
           </section>
-          {/* <div className="form-footer">
-            <Button
-              className="form-button-pairs"
-              variant="secondary"
-              type="submit"
-              value="DRA"
-              onClick={handleSubmit}
-            >
-              Save
-            </Button>
-            <Button
-              className="form-button-pairs"
-              variant="secondary"
-              type="submit"
-              value="SUB"
-              onClick={handleSubmit}
-            >
-              Submit
-            </Button>
-          </div> */}
         </Form>
       </div>
     );
