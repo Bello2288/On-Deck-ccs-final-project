@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.50811c5a.css",
-    "main.js": "/static/js/main.628d1b0e.js",
+    "main.css": "/static/css/main.c3d4c658.css",
+    "main.js": "/static/js/main.38133517.js",
     "static/js/787.9661e67c.chunk.js": "/static/js/787.9661e67c.chunk.js",
+    "static/media/flag_football.jpeg": "/static/media/flag_football.c1eb511116c39c8f1bd9.jpeg",
     "static/media/blank_avatar.jpeg": "/static/media/blank_avatar.56662fd086bc79a35b67.jpeg",
+    "static/media/hockey.webp": "/static/media/hockey.44c270a0b2c6d7c73c32.webp",
     "static/media/homepic.jpeg": "/static/media/homepic.a2d8d288e1e13d80b3d4.jpeg",
     "static/media/black-triangles-background.jpeg": "/static/media/black-triangles-background.4513771123867aa70d82.jpeg",
     "index.html": "/index.html",
-    "main.50811c5a.css.map": "/static/css/main.50811c5a.css.map",
-    "main.628d1b0e.js.map": "/static/js/main.628d1b0e.js.map",
+    "main.c3d4c658.css.map": "/static/css/main.c3d4c658.css.map",
+    "main.38133517.js.map": "/static/js/main.38133517.js.map",
     "787.9661e67c.chunk.js.map": "/static/js/787.9661e67c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50811c5a.css",
-    "static/js/main.628d1b0e.js"
+    "static/css/main.c3d4c658.css",
+    "static/js/main.38133517.js"
   ]
 }
