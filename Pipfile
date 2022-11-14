@@ -13,9 +13,9 @@ djangorestframework = "~=3.14.0"
 dj-rest-auth = "~=2.2.5"
 django-allauth = "~=0.51.0"
 pillow = "~=9.0.1"
-twilio = "~=7.15.0"
 django-phone-field = "~=1.8.1"
 django-localflavor = "~=3.1"
+twilio = "~=7.15.2"
 
 [dev-packages]
 

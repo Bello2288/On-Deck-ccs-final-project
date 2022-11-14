@@ -7,10 +7,11 @@ import Cookies from "js-cookie";
 import { useNavigate, useOutletContext, Link } from "react-router-dom";
 import moment from 'moment';
 
+
+
 function EditPost({ state, userProfile }) {
   const [profile, setProfile] = useState(userProfile);
-  console.log('userProfile', userProfile)
-  console.log('state', state)
+  console.log('state', state) 
   
   // const [state, setState] = useState(getUserProfile);
   const [isEdit, setIsEdit] = useState(false);
@@ -19,7 +20,7 @@ function EditPost({ state, userProfile }) {
   const [showDelete, setShowDelete] = useState(false);
 
   const { superState } = useOutletContext();
-    // console.log('superState', superState)
+    console.log('superState', superState)
     // console.log('state', state)
 
   const [post, setPost] = useState({
@@ -242,7 +243,7 @@ function EditPost({ state, userProfile }) {
                 value="TKS"
                 onClick={(e) => handleTakeSpot(e)}
               >
-                Take Spot
+                Commit
             </Button>
             <Button
               className="take-button-pairs"
