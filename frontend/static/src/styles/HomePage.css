@@ -12,7 +12,7 @@ main {
 
 
     opacity:0;
-    -webkit-animation:fadeIn ease-in 1;
+    -webkit-animation:fadeIn ease-in 1; 
     -moz-animation:fadeIn ease-in 1;
     animation:fadeIn ease-in 1;
 
@@ -201,5 +201,41 @@ main {
     .home-lower-buttons {
         margin-top: 20px;
         font-size: 20px;
+    }
+}
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 505px) {
+    
+    .homepic {
+        height: 280px;
+        margin: 15px 0 0 60px;
+    }
+
+    .pic1 {
+        filter: brightness(55%);
+    }
+
+    .pic2 {
+        object-position: top;
+    }
+    
+    .pic3 {
+        object-position: bottom;     
+    }
+
+    .carousel-caption > h3 {
+        font-size: 20px;
+    }
+
+    .carousel-caption > p {
+        font-size: 15px;
     }
 }

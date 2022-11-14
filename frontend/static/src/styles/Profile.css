@@ -26,6 +26,7 @@
     border-radius: 50%;
     border: 5px solid #be691f;
     margin-top: 40px;
+    background-color: #212121;
 
     animation: profile-pic-load 600ms ease-in-out;
 }
