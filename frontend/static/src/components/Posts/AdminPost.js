@@ -11,7 +11,7 @@ function AdminPost({ post }) {
         <h3 className="user-post-data">{post.teamname}</h3>
         {/* <p className="user-post-data">{post.location}</p> */}
         <p className="user-post-data">{moment(post.date).format('MMM Do, YYYY')}&nbsp; at&nbsp; {moment(post.time, "HH:mm:ss").format('h:mm a')}</p>
-        <span>By {post.author_name} : </span>
+        <span>By:&nbsp;&nbsp; {post.author_name}</span>
           <Link className="view-link" to={`/posts/editor/${post.id}`}>
             View Post
           </Link>

@@ -146,6 +146,7 @@
 
     .form-button-pairs {
         font-size: 18px;
+        box-shadow: 2px 2px 3px #0a0a0a;
     }
 
     /* =====================    MODAL  --  MEDIA LARGE   ====================== */
@@ -161,6 +162,10 @@
 
     .modal-button-close {
         font-size: 20px;
+    }
+
+    .form-button-pairs {
+        margin-bottom: 25px;
     }
 
 }

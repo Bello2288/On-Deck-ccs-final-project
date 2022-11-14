@@ -189,7 +189,7 @@ function EditPost({ state, userProfile }) {
             Submit
           </Button>
           <Modal className="create-post-modal" show={show} onHide={handleClose}>
-            <Modal.Body>Your post has been submitted and waiting approval</Modal.Body>
+            <Modal.Body>Your post has been submitted and waiting for Admin approval</Modal.Body>
             <Modal.Footer>
               <Button 
               className="modal-button-close" 
@@ -418,7 +418,7 @@ function EditPost({ state, userProfile }) {
                 Submit Draft
                 </Button>
                 <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                  <Modal.Body className="modal-title">Your post has been submitted and waiting approval</Modal.Body>
+                  <Modal.Body className="modal-title">Your post has been submitted and waiting for Admin approval</Modal.Body>
                   <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 

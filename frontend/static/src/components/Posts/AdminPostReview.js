@@ -1,7 +1,7 @@
 import "../../styles/Post-styles/AdminPostReview.css";
 import"../../styles/Post-styles/EditPost.css";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from 'react-bootstrap/Modal';  
 import Cookies from "js-cookie";
@@ -74,20 +74,27 @@ function AdminPostReview() {
     <article className="detail-view">
         {state && (
         <div className="postlist-review-view">
-            <section className="highlight-title">
+            <section className="highlight-title"> 
                 <h2>{state.title}</h2>
-                <p>By {state.author_name}</p>
-                <p> {state.reversed_by}</p>
+                <p>
+                    Creator: <Link className="link login-link" to={`/user/profile/${state.author}`}>&nbsp; {state.author_name}{state.avatar}</Link>
+                </p>
+                {/* <p> {state.reversed_by}</p> */}
             </section>
             <section className="review-form-content">
                 <div className="content-box">
-                    <p className="highlight-post">{state.teamname}</p>
-                    <p className="highlight-post">{state.organization}</p>
-                    <address className="highlight-post">{state.location}</address>
-                    <time className="highlight-date">
-                        {moment(state.date).format('MMM Do, YYYY')}&nbsp; at&nbsp; {moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+                    <h2 className="post-captions">Team Name & Sports Type</h2>
+                        <p className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.teamname} &nbsp;&nbsp;--&nbsp;&nbsp; {state.category}</p>
+                    <h2 className="post-captions">Sport Organization</h2>
+                        <p className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.organization}</p>
+                    <h2 className="post-captions">Game Location</h2>
+                        <address className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.location}</address>
+                    <h2 className="post-captions">Game Date & Time</h2>
+                        <time className="highlight-date">
+                        &nbsp;&nbsp;&nbsp;    {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
                 </div>
                 <div className="notes-box">
+                    <h2 className="post-notes-caption">Notes Section</h2>
                     <p className="highlight-post-notes">{state.notes}</p>
                 </div>
             </section>
@@ -115,16 +122,17 @@ function AdminPostReview() {
                     Approve
                 </Button>
                 <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                    <Modal.Body>The post has been approved and sent for viewing</Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Body className="modal-title">Approved post and send for viewing?</Modal.Body>
+                    <Modal.Footer className="footer-text">
                       <Button 
                         className="modal-button-close" 
                         type="submit" 
                         value="PST" 
                         variant="secondary" 
                         onClick={handleSubmit}>
-                            Close
+                            Confirm
                       </Button> 
+                      <h2> * Click outside the box to go back to Review screen </h2>
                     </Modal.Footer>
                   </Modal>
 
