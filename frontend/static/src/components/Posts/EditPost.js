@@ -169,8 +169,8 @@ function EditPost({ state, userProfile }) {
           <h2 className="post-captions">Game Location</h2>
             <address className="highlight-post">&nbsp;&nbsp;&nbsp;    {state.location}</address>
           <h2 className="post-captions">Game Date & Time</h2>
-            <time className="highlight-date">
-              &nbsp;&nbsp;&nbsp;    {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</time>
+            <p className="highlight-date">
+              &nbsp;&nbsp;&nbsp;    {moment(state.date).format('MMM Do, YYYY')}&nbsp;&nbsp; at &nbsp;&nbsp;{moment(state.time, "HH:mm:ss").format('h:mm a')}</p>
         </div>
         <div className="notes-box">
           <h2 className="post-notes-caption">Notes Section</h2>

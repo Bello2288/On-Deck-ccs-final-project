@@ -20,7 +20,7 @@
 .reg-form-title {
     font-family: 'Alfa Slab One', Arial, Helvetica, sans-serif;
     text-align: center;
-    color: #ffffff;
+    color: #c1793b;
     font-size: 25px;
 }
 
@@ -56,5 +56,37 @@
         font-size: 27px;
     }
 
+
+}
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 505px) {
+
+    .reg-form-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .reg-form {
+        /* padding: 20px 40px; */
+        width: 90%;
+        margin: 16px 0 0 0;
+        /* margin-bottom: -28px; */
+    }
+
+    .create-field-label {
+        font-size: 17px;
+    }
+
+    .login-link {
+        margin: 0;
+    }
 
 }

@@ -256,7 +256,8 @@ h2 {
     }
     
     .highlight-date {
-        font-size: 22px;
+        font-size: 23px;
+        margin: 0;
     }
 
     .post-notes-caption {
@@ -321,5 +322,67 @@ h2 {
         font-family: sans-serif;
     }
 
+
+}
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 505px) {
+
+  /* ==================    View Post Screen  --  MEDIA - LARGE   =================== */
+
+    .edit-form {
+        width: 470px;
+        margin-top: 5px;
+    } 
+
+    .highlight-title > h2 {
+        margin: 10px auto 0px auto;
+        font-size: 27px;
+    }
+
+    .highlight-title > p {
+        font-size: 15px;
+    }
+
+    .login-link {
+        font-size: 15px;
+    }
+
+    .post-captions {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .highlight-post {
+        font-size: 12px;
+        line-height: 1.2rem;
+    }
+
+    .highlight-date {
+        font-size: 13px;
+        line-height: 1.2rem;
+    }
+
+    .post-notes-caption {
+        font-size: 15px;
+    }
+
+    .highlight-post-notes {
+        font-size: 12px;
+        line-height: 1.5rem;
+    }
+
+    .take-button-pairs {
+        font-size: 12px;
+        margin: 15px 20px;
+        width: 130px;
+    }
 
 }
