@@ -50,7 +50,7 @@
 
 }
 
-.admin-buttons {
+.admin-buttons { 
     padding-top: 15px;
     display: flex;
     justify-content: center;
@@ -92,4 +92,38 @@
     color: #ffffff;
     border-color: #be691f;
     background-color: #be691f;
+}
+
+
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   LARGE   ========================== */
+/* ============================================================================ */
+
+
+
+@media (max-width: 1935px) and (min-width: 1335px) { 
+
+    .display {
+        padding: 150px 0 60px 0;
+    }
+    
+    .admin-buttons { 
+        padding: 0px 0 30px 0;
+    }
+    
+    .admin-button {
+        font-size: 22px;
+        padding: 5px 35px;
+        margin: 0 35px;
+        box-shadow: 2px 2px 3px #0a0a0a;
+    }
+
+    .past-game {
+        width: 300px;
+    }
+
+
 }

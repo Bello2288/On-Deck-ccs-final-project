@@ -45,7 +45,7 @@ function AdminPostList() {
             value="PST"
             onClick={(e) => changeCategory(e.target.value)}
           >
-            Posted Games for Users
+            Posted Games for Users 
           </Button>
           <Button
             className="admin-button"
@@ -56,14 +56,14 @@ function AdminPostList() {
             Submitted Games for Approval
           </Button>
           <Button
-            className="admin-button"
+            className="admin-button past-game"
             variant="secondary"
             value="ARC"
             onClick={(e) => changeCategory(e.target.value)}
           >
             Past Games
           </Button>
-        </section>
+        </section> 
         <section className="author-article-list margin-section">
           <ul className="list-container">{postList}</ul>
         </section>

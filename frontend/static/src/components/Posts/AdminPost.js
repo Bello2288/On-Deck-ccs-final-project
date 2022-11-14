@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import moment from 'moment';
 
 
-function AdminPost({ post }) {
+function AdminPost({ post }) { 
   return (
-    <li key={post.id} className="list creator-list">
+    <li key={post.id} className="list creator-list post-spacing">
       <div className="post-info">
         <h3 className="user-post-title">{post.title}</h3>
         <h3 className="user-post-data">{post.teamname}</h3>
