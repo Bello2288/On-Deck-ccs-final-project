@@ -2,6 +2,7 @@ import "../../styles/Post-styles/Posts.css";
 import { useState, useCallback, useEffect } from "react";
 import PostList from "./PostList";
 import Button from "react-bootstrap/Button";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 function Posts() {
@@ -40,12 +41,12 @@ function Posts() {
       <section className="sort-buttons">
         <Button
           autoFocus
-          className="sort-button"
+          className="sort-button btn-all"
           variant="secondary"
           value=""
           onClick={(e) => changeCategory(e.target.value)}
         >
-          All
+          All 
         </Button>
         <Button
           className="sort-button"

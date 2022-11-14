@@ -165,7 +165,7 @@
 
 
 
-@media (max-width: 1935px) and (min-width: 1335px) {
+@media (max-width: 1935px) and (min-width: 1335px) { 
 
     .sort-buttons {
         padding: 55px 0 30px 0;
@@ -178,9 +178,32 @@
         padding: 5px 35px;
         margin: 0 15px;
     }
-
-
     
+}
 
-    
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 505px) {
+
+    .sort-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 100px;
+    }
+
+    .sort-button {
+        width: 125px;
+        font-size: 10px;
+        margin: 8px 10px;
+    }
+
+    .btn-all {
+        width: 270px;
+    }
+
 }
