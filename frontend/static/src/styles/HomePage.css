@@ -102,6 +102,13 @@ main {
     background-color: red;
 }
 
+.pic2 {
+    object-position: top;
+}
+
+.pic1 {
+    filter: brightness(55%);
+}
 
 
 /* ============================================================================ */
