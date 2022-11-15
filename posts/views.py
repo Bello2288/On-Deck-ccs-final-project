@@ -54,7 +54,7 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
 @api_view(['PUT', 'PATCH']) 
 def post_reserve(request, pk):
     post = models.Post.objects.get(id=pk)
-    post_author = models.Post.author
+    # post_author = Post.objects.all()
     post.reserved_by = request.user
     post.status = "TKS"
     post.save()
@@ -69,15 +69,15 @@ def post_reserve(request, pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="You are confirmed for the game by" 
+        body= "Thank you for you commit to (" + str(post) + "). You are confirmed for the game. We have notified " + post.author.username +  " that you are able to attend."
     )
 
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="Username:" + str(post.reserved_by) + " has reserved your post -" + str(post)
+        body="Username: " + str(post.reserved_by) + " has committed your post - (" + str(post) + ")"
     )
-    print(post_author)
+    # print(post_author)
 
     return Response(serializer.data)
 
@@ -88,6 +88,26 @@ def remove_reserve(self,pk):
     post.status = "PST"
     post.save()
     serializer = serializers.PostSerializer(post)
+
+    account_sid = os.environ['TWILIO_ACCOUNT_SID'] 
+    auth_token = os.environ['TWILIO_AUTH_TOKEN'] 
+    my_phone_number = os.environ['MY_PHONE_NUMBER']   
+    twilio_phone_number = os.environ['TWILIO_PHONE_NUMBER']  
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+        to=my_phone_number,
+        from_=twilio_phone_number,
+        body="You have cancelled your commit to (" + str(post) + "). We have notified the creator " + post.author.username + " that their post has been resubmitted."
+    )
+
+    message = client.messages.create(
+        to=my_phone_number,
+        from_=twilio_phone_number,
+        body="The player that committed to " + str(post) + " has cancelled. Your request has been reposted."
+    )
+    # print()
+
     return Response(serializer.data)
 
 @api_view(['PUT', 'PATCH']) 

@@ -17,7 +17,7 @@ function Header({ superState, logoutUser }) {
     navigate("/");
   }; 
 
-  return ( 
+  return (  
     <>
       <Navbar className="navbar" expand="lg">
         <Container className="navbar-container nav-flex">
@@ -47,9 +47,9 @@ function Header({ superState, logoutUser }) {
               {superState.auth && !superState.admin && (
               <>
                 <NavDropdown className="dropdown" title={superState.username} id="nav-dropdown" variant="primary">
-                  <NavDropdown.Item className="dropdown-opt" href={`/user/profile/${superState.userID}`}>View Profile</NavDropdown.Item>
+                  <NavDropdown.Item className="dropdown-opt bg-color" href={`/user/profile/${superState.userID}`}>View Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item className="dropdown-opt" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
+                  <NavDropdown.Item className="dropdown-opt bg-color" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                 </NavDropdown>
                 <img className="profile-picture" src={superState.avatar} alt="profile pic" />
               </>

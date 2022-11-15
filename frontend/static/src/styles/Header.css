@@ -84,9 +84,20 @@
 }
 
 .show {
-    background-color: #212529;
+    /* background-color: #212529; */
     z-index: 2;
 }
+.show:active {
+    background-color: transparent;
+}
+.dropdown-menu {
+    background-color: #212529;
+}
+
+.nav-link:active {
+    background-color: transparent;
+}
+
 .dropdown-opt:hover {
     background-color: #cf720e;
     color: #ffffff;
