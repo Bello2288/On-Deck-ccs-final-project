@@ -129,6 +129,14 @@ h2 {
         margin: 0;
     }
 
+    .postlist-review-view {
+        width: 90%;
+    }
+
+    .content-box {
+        padding: 0 8px 0 13px;
+    }
+
 
 }
 
