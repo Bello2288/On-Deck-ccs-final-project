@@ -49,16 +49,16 @@ function ProfileEdit({ userProfile }) {
         e.preventDefault();
         const formData = new FormData();
     
-        const user = { ...state };
-        if (!(user.avatar instanceof File)) {
-            delete user.avatar;
-        }
+        // const user = { ...state };
+        // if (!(user.avatar instanceof File)) {
+        //     delete user.avatar;
+        // }
     
-        for (const key in user) {
-            if (user[key]) {
-                formData.append(key, user[key]);
-            }
-        }
+        // for (const key in user) {
+        //     if (user[key]) {
+        //         formData.append(key, user[key]);
+        //     }
+        // }
      
         const options = {
             method: "PATCH",
@@ -80,11 +80,6 @@ function ProfileEdit({ userProfile }) {
             
         }
     };
-
-    const handleBack = () => { 
-        navigate('/posts/user');
-      };
-
     
     const previewHTML = (
         <div>
@@ -142,7 +137,7 @@ function ProfileEdit({ userProfile }) {
             <h1>Edit Profile</h1>
             <div className="edit-view-container">
                 <div className="edit-image-container">
-                    <img className="edit-profile-image" src={state.avatar} alt="" />                    
+                    <img className="edit-profile-image" src={preview} alt="" />                    
                 </div>
                 <div className="edit-profile-content">
                     <Form.Group className="mb-3" controlId="image">
