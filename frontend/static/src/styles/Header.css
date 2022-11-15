@@ -145,7 +145,7 @@
 
 /* ==================== media ==================== */
 
-
+/* 
 @media(max-width: 755px) {
     .app-name {
         font-size: 30px;
@@ -169,7 +169,7 @@
     .header-login, .header-logout {
         margin-right: 25px;
     }
-} 
+}  */
 
 
 

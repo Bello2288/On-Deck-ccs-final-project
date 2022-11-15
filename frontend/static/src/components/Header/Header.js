@@ -120,7 +120,7 @@ function Header({ superState, logoutUser }) {
       // </Navbar> */}
 
 
-      {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
+      {[false, 'sm', 'md', 'lg'].map((expand) => (
         <Navbar className="mb-3 navbar" key={expand} expand={expand}>
           <Container className="navbar-container nav-flex" fluid>
             <div>
@@ -131,7 +131,7 @@ function Header({ superState, logoutUser }) {
             <div>
               <div>
                 {superState.auth && !superState.admin && (
-                  <img className="profile-picture-small-scale" class="d-lg-none"  src={superState.avatar} alt="profile pic" />
+                  <img className="profile-picture-small-scale d-lg-none" src={superState.avatar} alt="profile pic" />
                 )}
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               </div>
@@ -188,21 +188,3 @@ function Header({ superState, logoutUser }) {
 }
 
 export default Header;
-
-
-
-{/* <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
