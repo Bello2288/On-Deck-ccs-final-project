@@ -388,8 +388,9 @@ h1 {
     }
 
     .image-container {
-        height: 350px;
-        width: 350px;
+        height: 250px;
+        width: 250px;
+        margin: 0;
     }
 
 
@@ -422,52 +423,60 @@ h1 {
     /* ==============    User Profile / Edit Profile  (MEDIA SMALL)   =============== */   
 
     .main-profile-container {
-        padding-top: 160px;
+        padding: 110px 0 90px;
     }
 
     .profile-view-container {
         padding-bottom: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
     }
 
     .profile-content {
-        font-size: 26px;
-        margin-left: 25px;
-        padding: 25px 35px;
+        font-size: 16px;
+        padding: 15px 25px 6px 25px;
+        width: 270px;
+        margin-top: 15px;
     }
 
     .profile-edit-btn {
-        font-size: 20px;
-        margin: 15px 35px 0 35px;
+        font-size: 14px;
+        margin: 20px 20px 0 20px;
     }
 
-
-
     .main-edit-container {
-        padding-top: 160px;
-        margin-bottom: 55px;
+        padding-top: 100px;
+        margin-bottom: 115px;
     }
 
     .edit-view-container {
-        border-bottom: 2px solid #be691f;
+
         border-radius: 5%;
-        padding-bottom: 30px;
-        margin-bottom: 25px;
+        padding-bottom: 0px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .main-edit-container > h1 {
-        font-size: 55px;
+        font-size: 35px;
         margin: 0;
     }
 
     .edit-image-container {
-        width: 380px;
-        height: 380px;
-        margin: 10px 35px 0 0;
+        width: 280px;
+        height: 280px;
+        margin: 10px 0 25px;
     }
 
     .edit-profile-content {
-        font-size: 27px;
-        padding: 20px 30px 0 30px;
+        font-size: 17px;
+        padding: 10px 20px 0 20px;
+        width: 350px;
+        margin: 0;
     }
 
 }
