@@ -149,7 +149,7 @@ function CreatePost() {
                   value={state.teamname}
                   onChange={handleInput}
                 />
-              </Form.Group>
+              </Form.Group> 
               <Form.Group className="mb-3" controlId="organization">
                 <Form.Label>Sports Organization</Form.Label>
                 <Form.Select className="form-control" name="organization" value={state.organization} onChange={handleInput}>

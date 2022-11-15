@@ -8,7 +8,7 @@ import { useNavigate, useOutletContext, Link } from "react-router-dom";
 import moment from 'moment';
 
 
-
+ 
 function EditPost({ state, userProfile }) {
   const [profile, setProfile] = useState(userProfile);
   console.log('state', state) 

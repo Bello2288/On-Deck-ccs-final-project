@@ -123,57 +123,61 @@ function Header({ superState, logoutUser }) {
       {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
         <Navbar className="mb-3 navbar" key={expand} expand={expand}>
           <Container className="navbar-container nav-flex" fluid>
-            <Navbar.Brand className="app-name navbar_lg" href="/">
-              On Deck
-            </Navbar.Brand>
             <div>
-              <img className="profile-picture-small-scale" src={superState.avatar} alt="profile pic" />
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Brand className="app-name navbar_lg" href="/">
+                On Deck
+              </Navbar.Brand>
             </div>
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header className="canvas-header" closeButton>
-                {/* <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                </Offcanvas.Title> */}
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <div id="basic-navbar-nav">
-                  <Nav className="me-auto navbar_lg">
-                    {!superState.auth && (
+            <div>
+              <div>
+                <img className="profile-picture-small-scale" class="d-lg-none"  src={superState.avatar} alt="profile pic" />
+                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              </div>
+              <Navbar.Offcanvas
+                id={`offcanvasNavbar-expand-${expand}`}
+                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                placement="end"
+              >
+                <Offcanvas.Header className="canvas-header" closeButton>
+                  {/* <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                  </Offcanvas.Title> */}
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <div id="basic-navbar-nav">
+                    <Nav className="me-auto navbar_lg">
+                      {!superState.auth && (
+                        <>
+                          <Nav.Link className="header-login" href="/login">Login</Nav.Link>
+                        </>
+                      )}
+                      {superState.auth && !superState.admin && (
+                        <>
+                          <Nav.Link autoFocus className="header-text" href="/posts">Game Posts</Nav.Link>
+                          <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
+                          <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
+                        </>
+                      )}
+                      {superState.admin && (
+                        <>
+                          <Nav.Link className="header-text" href="/posts/editor">Review Posts</Nav.Link>
+                          <Nav.Link className="header-text" href="/" onClick={(e) => logout(e)}>Logout</Nav.Link>
+                        </>
+                      )}
+                      {superState.auth && !superState.admin && (
                       <>
-                        <Nav.Link className="header-login" href="/login">Login</Nav.Link>
+                        <NavDropdown className="dropdown" title={superState.username} id="nav-dropdown" variant="primary">
+                          <NavDropdown.Item className="dropdown-opt bg-color" href={`/user/profile/${superState.userID}`}>View Profile</NavDropdown.Item>
+                          <NavDropdown.Divider />
+                          <NavDropdown.Item className="dropdown-opt bg-color" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
+                        </NavDropdown>
+                        <img className="profile-picture-large-scale" src={superState.avatar} alt="profile pic" />
                       </>
-                    )}
-                    {superState.auth && !superState.admin && (
-                      <>
-                        <Nav.Link autoFocus className="header-text" href="/posts">Game Posts</Nav.Link>
-                        <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
-                        <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
-                      </>
-                    )}
-                    {superState.admin && (
-                      <>
-                        <Nav.Link className="header-text" href="/posts/editor">Review Posts</Nav.Link>
-                        <Nav.Link className="header-text" href="/" onClick={(e) => logout(e)}>Logout</Nav.Link>
-                      </>
-                    )}
-                    {superState.auth && !superState.admin && (
-                    <>
-                      <NavDropdown className="dropdown" title={superState.username} id="nav-dropdown" variant="primary">
-                        <NavDropdown.Item className="dropdown-opt bg-color" href={`/user/profile/${superState.userID}`}>View Profile</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item className="dropdown-opt bg-color" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
-                      </NavDropdown>
-                      <img className="profile-picture-large-scale" src={superState.avatar} alt="profile pic" />
-                    </>
-                    )}
-                  </Nav>
-                </div>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
+                      )}
+                    </Nav>
+                  </div>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </div>
           </Container>
         </Navbar>
       ))}
