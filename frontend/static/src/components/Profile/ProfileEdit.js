@@ -11,10 +11,7 @@ function ProfileEdit({ userProfile }) {
     const [state, setState] = useState(userProfile);
     const [isEdit, setIsEdit] = useState(false);
     const [preview, setPreview] = useState(state.avatar);
-    const { superState } = useOutletContext();
-
-    console.log('state', state)
-    console.log('superState', superState)
+    const { superState, setSuperState } = useOutletContext();
       
     const handleInput = (e) => { 
         const { name, value } = e.target;
@@ -49,16 +46,16 @@ function ProfileEdit({ userProfile }) {
         e.preventDefault();
         const formData = new FormData();
     
-        // const user = { ...state };
-        // if (!(user.avatar instanceof File)) {
-        //     delete user.avatar;
-        // }
+        const user = { ...state };
+        if (!(user.avatar instanceof File)) {
+            delete user.avatar;
+        }
     
-        // for (const key in user) {
-        //     if (user[key]) {
-        //         formData.append(key, user[key]);
-        //     }
-        // }
+        for (const key in user) {
+            if (user[key]) {
+                formData.append(key, user[key]);
+            }
+        }
      
         const options = {
             method: "PATCH",
@@ -75,7 +72,12 @@ function ProfileEdit({ userProfile }) {
             throw new Error("Network response was not OK");
         } else {
             const data = await response.json();
-            console.log(data);
+            console.log('data', data);
+            console.log('superState', superState);
+            setSuperState({
+                ...superState,
+                avatar: data.avatar,
+            });
             setIsEdit(false);
             
         }
@@ -87,7 +89,7 @@ function ProfileEdit({ userProfile }) {
                 {superState.userID === state.user && (
                     <section className="profile-view-container">
                         <div className="image-container">
-                            <img className="profile-image" src={preview} alt="" />
+                            <img className="profile-image" src={superState.avatar} alt="" />
                         </div>
                         <div className="profile-content">
                             <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>
@@ -101,7 +103,7 @@ function ProfileEdit({ userProfile }) {
                 {superState.userID !== state.user && (
                     <section className="profile-view-container">
                         <div className="image-container">
-                            <img className="profile-image" src={preview} alt="" />
+                            <img className="profile-image" src={state.avatar} alt="" />
                         </div>
                         <div className="profile-content">
                             <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>

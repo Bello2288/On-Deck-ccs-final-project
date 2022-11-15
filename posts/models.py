@@ -34,14 +34,14 @@ class Post(models.Model):
         default=FLAGFOOTBALL,
     )
 
-    ACMY_OF_GREENVILLE = 'ACMY'
-    ABC_SPORTS_CENTER = 'ABC'
+    ACMY_OF_GREENVILLE = 'ACMY of Greenville'
+    ABC_SPORTS_CENTER = 'ABC Sports Center'
     ORGANIZATION_CHOICES = [
         (ACMY_OF_GREENVILLE, 'ACMY of Greenville'),
         (ABC_SPORTS_CENTER, 'ABC Sports Center'),
     ]
     organization = models.CharField(
-        max_length=4,
+        max_length=18,
         choices=ORGANIZATION_CHOICES,
         default=ACMY_OF_GREENVILLE,
     )

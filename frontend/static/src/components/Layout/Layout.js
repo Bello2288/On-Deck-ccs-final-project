@@ -7,10 +7,10 @@ function Layout({ superState, setSuperState, logoutUser }) {
   return (
     <>
       <Header className="header" superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />
-      <Outlet context={{superState}}/>
+      <Outlet context={{superState, setSuperState}}/>
       <Footer className="footer"/>
     </>
-  );
+  ); 
 }
 
 export default Layout;

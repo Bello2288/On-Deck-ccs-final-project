@@ -272,7 +272,7 @@ function EditPost({ state, userProfile }) {
       {state.status === "TKS" && superState.userID === state.author && (
         <div className="takeseat-buttons">
           <div>
-            <p>Reversed by :&nbsp;&nbsp;    {state.reserved_by_username}  </p>
+            <p>Reversed by :<Link className="link login-link" to={`/user/profile/${state.reserved_by}`}>&nbsp;&nbsp; {state.reserved_by_username}</Link></p>
           </div>
           <Button
             className="cancel-seat-buttons"
@@ -296,7 +296,7 @@ function EditPost({ state, userProfile }) {
       {state.status === "TKS" && superState.userID === state.reserved_by && (
         <div className="takeseat-buttons">
           <div>
-            <p>By <Link className="link login-link" to={`/user/profile/${state.reserved_by}`}>&nbsp;&nbsp; {state.reserved_by_username}</Link></p>
+            <p>Reversed by :<Link className="link login-link" to={`/user/profile/${state.reserved_by}`}>&nbsp;&nbsp; {state.reserved_by_username}</Link></p>
           </div>
           <Button
             className="cancel-seat-buttons"
@@ -305,7 +305,7 @@ function EditPost({ state, userProfile }) {
             value="PST"
             onClick={(e) => handleRemoveReservation(e)}
           > 
-            Cancel Taken Spot
+            Cancel Reserved Spot
           </Button>
           <Button
             className="cancel-seat-buttons"

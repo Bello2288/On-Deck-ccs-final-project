@@ -154,8 +154,8 @@ function CreatePost() {
                 <Form.Label>Sports Organization</Form.Label>
                 <Form.Select className="form-control" name="organization" value={state.organization} onChange={handleInput}>
                   <option value="">Choose a Sports Organization</option>
-                  <option value="ACMY">ACMY of Greenville </option>
-                  <option value="ABC">ABC Sports Center</option>
+                  <option value="ACMY of Greenville">ACMY of Greenville </option>
+                  <option value="ABC Sports Center">ABC Sports Center</option>
                 </Form.Select>
               </Form.Group>
             </div>

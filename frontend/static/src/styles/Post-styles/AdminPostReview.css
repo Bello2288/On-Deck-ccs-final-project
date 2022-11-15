@@ -61,8 +61,9 @@ h2 {
 }
 
 .highlight-post {
-    width: 80%;
+    width: 100%;
     margin: 0 0 10px 0;
+    line-height: 1.8rem;
 }
 
 .highlight-date {
