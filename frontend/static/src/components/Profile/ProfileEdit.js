@@ -86,7 +86,7 @@ function ProfileEdit({ userProfile }) {
       };
 
     
-    const previewHTML = (
+    const previewHTML = ( 
         <div className="main-profile-container create-fade">
             <section className="profile-view-container">
                 <div className="image-container">

@@ -20,7 +20,7 @@
     padding-left: 85px;
 }
 
-.image-container { 
+.image-container {  
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -361,3 +361,113 @@ h1 {
 
 }
 
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+
+@media(max-width: 505px) { 
+
+    /* =====================    Profile Create (MEDIA SMALL)   ====================== */
+
+    .form-display {
+        /* border: 2px solid red; */
+        padding-top: 95px;
+    }
+
+    .form-head-title {
+        font-size: 45px;
+        padding-top: 20px;
+        margin-bottom: -50px;
+        border: none;
+        animation: profile-pic-load 600ms ease-in-out;
+    }
+
+    .image-container {
+        height: 350px;
+        width: 350px;
+    }
+
+
+    .profile-create-inputs {
+        font-size: 20px;
+        animation: profile-content-load 600ms ease-in-out;
+    }
+
+    .profile-create-save-button {
+        font-size: 20px;
+    }
+
+    .create-fade {
+        opacity:0;
+        -webkit-animation:fadeIn ease-in 1;
+        -moz-animation:fadeIn ease-in 1;
+        animation:fadeIn ease-in 1; 
+
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+
+        -webkit-animation-duration:0.3s;
+        -moz-animation-duration:0.3s;
+        animation-duration:0.3s;
+    }
+
+
+
+    /* ==============    User Profile / Edit Profile  (MEDIA SMALL)   =============== */   
+
+    .main-profile-container {
+        padding-top: 160px;
+    }
+
+    .profile-view-container {
+        padding-bottom: 40px;
+    }
+
+    .profile-content {
+        font-size: 26px;
+        margin-left: 25px;
+        padding: 25px 35px;
+    }
+
+    .profile-edit-btn {
+        font-size: 20px;
+        margin: 15px 35px 0 35px;
+    }
+
+
+
+    .main-edit-container {
+        padding-top: 160px;
+        margin-bottom: 55px;
+    }
+
+    .edit-view-container {
+        border-bottom: 2px solid #be691f;
+        border-radius: 5%;
+        padding-bottom: 30px;
+        margin-bottom: 25px;
+    }
+
+    .main-edit-container > h1 {
+        font-size: 55px;
+        margin: 0;
+    }
+
+    .edit-image-container {
+        width: 380px;
+        height: 380px;
+        margin: 10px 35px 0 0;
+    }
+
+    .edit-profile-content {
+        font-size: 27px;
+        padding: 20px 30px 0 30px;
+    }
+
+}

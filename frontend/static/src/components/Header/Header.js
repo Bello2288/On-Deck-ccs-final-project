@@ -130,7 +130,9 @@ function Header({ superState, logoutUser }) {
             </div>
             <div>
               <div>
-                <img className="profile-picture-small-scale" class="d-lg-none"  src={superState.avatar} alt="profile pic" />
+                {superState.auth && !superState.admin && (
+                  <img className="profile-picture-small-scale" class="d-lg-none"  src={superState.avatar} alt="profile pic" />
+                )}
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               </div>
               <Navbar.Offcanvas

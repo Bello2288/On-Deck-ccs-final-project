@@ -193,13 +193,14 @@
 
     .create-form > h1 {
         font-size: 30px;
-        margin: 0 0 25px 0;
+        margin: 0 0 15px 0;
     }
 
     .create-form {
         font-size: 15px;
-        width: 90%;
-        margin-bottom: 115px;
+        width: 80%;
+        margin: 100px 0 120px 0;
+        padding: 20px 30px;
     }
 
     .large-cp-btn-pair {
@@ -209,9 +210,11 @@
     }
 
     .form-button-pairs {
-        font-size: 13px;
-        margin: 10px;
+        font-size: 12px;
+        margin: 13px 11px 20px 11px;
+        padding: 7px 0;
         box-shadow: 2px 2px 3px #0a0a0a;
+        width: 75px;
     }
 
     /* =====================    MODAL  --  MEDIA SMALL   ====================== */
@@ -227,10 +230,6 @@
 
     .modal-button-close {
         font-size: 13px;
-    }
-
-    .form-button-pairs {
-        margin-bottom: 25px;
     }
 
     .footer-text > h2 {

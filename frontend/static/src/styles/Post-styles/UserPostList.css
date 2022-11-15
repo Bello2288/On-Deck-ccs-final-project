@@ -3,7 +3,7 @@
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 
-.my-posts-display {
+.my-posts-display { 
     padding-top: 25px;
 }
 
@@ -74,4 +74,31 @@
         padding: 5px 35px;
         margin: 0 35px;
     }
+}
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   SMALL   ========================== */
+/* ============================================================================ */
+
+
+
+@media(max-width: 505px) { 
+
+    .my-posts-display {
+        padding-top: 25px;
+    }
+    
+    .author-buttons {
+        padding: 0px 0 10px 0;
+    }
+    .author-button {
+        font-size: 12px;
+        padding: 5px 7px;
+        margin: 0 7px;
+    }
+
+
+
 }

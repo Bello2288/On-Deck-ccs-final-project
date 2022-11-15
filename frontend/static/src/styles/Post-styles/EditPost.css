@@ -381,8 +381,14 @@ h2 {
 
     .take-button-pairs {
         font-size: 12px;
-        margin: 15px 20px;
-        width: 130px;
+        margin: 1px 15px;
+        width: 80px;
+    }
+
+    .cancel-seat-buttons {
+        margin: 10px;
+        width: 140px;
+        font-size: 13px;
     }
 
 }

@@ -34,7 +34,7 @@ function UserPostList() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return (
+  return ( 
     <>
       <div className="my-posts-display">
         <section className="post-container">
