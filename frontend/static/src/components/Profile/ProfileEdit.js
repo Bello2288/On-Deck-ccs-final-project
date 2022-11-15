@@ -86,45 +86,53 @@ function ProfileEdit({ userProfile }) {
       };
 
     
-    const previewHTML = ( 
-        <div className="main-profile-container create-fade">
-            <section className="profile-view-container">
-                <div className="image-container">
-                    <img className="profile-image" src={preview} alt="" />
-                </div>
-                <div className="profile-content">
-                    <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>
-                    <p>Name:&nbsp;&nbsp;&nbsp;    {state.first_name} {state.last_name}</p>
-                    <p>Email:&nbsp;&nbsp;&nbsp;    {state.email}</p>
-                    <p>Phone #:&nbsp;&nbsp;&nbsp;    {state.phone_number}</p>
-                    <p>Zipcode:&nbsp;&nbsp;&nbsp;    {state.zipcode}</p>
-                </div>
-            </section>
-                {/* <div className="profile-edit-buttons">
-                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
-                        Edit
-                    </Button>
-                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
-                        Back
-                    </Button>
-                </div> */}
-            {superState.userID === state.user && (
-                <div className="profile-edit-buttons">
-                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
-                        Edit
-                    </Button>
-                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
-                        Back
-                    </Button>
-                </div>
-            )}
-            {superState.userID !== state.user && (
-                <div className="profile-edit-buttons">
-                    <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
-                        Back
-                    </Button>
-                </div>
-            )}
+    const previewHTML = (
+        <div>
+            <div className="main-profile-container create-fade">
+                {superState.userID === state.user && (
+                    <section className="profile-view-container">
+                        <div className="image-container">
+                            <img className="profile-image" src={preview} alt="" />
+                        </div>
+                        <div className="profile-content">
+                            <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>
+                            <p>Name:&nbsp;&nbsp;&nbsp;    {state.first_name} {state.last_name}</p>
+                            <p>Email:&nbsp;&nbsp;&nbsp;    {state.email}</p>
+                            <p>Phone #:&nbsp;&nbsp;&nbsp;    {state.phone_number}</p>
+                            <p>Zipcode:&nbsp;&nbsp;&nbsp;    {state.zipcode}</p>
+                        </div>
+                    </section>
+                )}
+                {superState.userID !== state.user && (
+                    <section className="profile-view-container">
+                        <div className="image-container">
+                            <img className="profile-image" src={preview} alt="" />
+                        </div>
+                        <div className="profile-content">
+                            <p>Username:&nbsp;&nbsp;&nbsp;    {state.username}</p>
+                            <p>Name:&nbsp;&nbsp;&nbsp;    {state.first_name} {state.last_name}</p>
+                            <p>Email:&nbsp;&nbsp;&nbsp;    {state.email}</p>
+                        </div>
+                    </section>
+                )}
+                {superState.userID === state.user && (
+                    <div className="profile-edit-buttons">
+                        <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => setIsEdit(true)}>
+                            Edit
+                        </Button>
+                        <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                            Back
+                        </Button>
+                    </div>
+                )}
+                {superState.userID !== state.user && (
+                    <div className="profile-edit-buttons">
+                        <Button className="profile-edit-btn" type="button" variant="secondary" onClick={() => navigate(-1)}>
+                            Back
+                        </Button>
+                    </div>
+                )}
+            </div>
         </div>
     );
     
