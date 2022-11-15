@@ -374,49 +374,54 @@ h1 {
 
     /* =====================    Profile Create (MEDIA SMALL)   ====================== */
 
-    .form-display {
-        /* border: 2px solid red; */
+
+    .profile-create-container {
         padding-top: 95px;
     }
 
+    .form-display {
+        /* border: 2px solid red; */
+        padding: 5px 20px 105px;
+    }
+
+    .form-head {
+        margin-top: 30px;
+    }
+
     .form-head-title {
-        font-size: 45px;
+        font-size: 25px;
         padding-top: 20px;
-        margin-bottom: -50px;
+        margin-bottom: 0px;
         border: none;
-        animation: profile-pic-load 600ms ease-in-out;
     }
 
     .image-container {
-        height: 250px;
-        width: 250px;
+        height: 180px;
+        width: 180px;
         margin: 0;
     }
 
-
     .profile-create-inputs {
-        font-size: 20px;
-        animation: profile-content-load 600ms ease-in-out;
+        font-size: 14px;
+        padding-left: 15px;
     }
 
     .profile-create-save-button {
-        font-size: 20px;
+        font-size: 14px;
+        margin-top: 20px;
     }
 
-    .create-fade {
-        opacity:0;
-        -webkit-animation:fadeIn ease-in 1;
-        -moz-animation:fadeIn ease-in 1;
-        animation:fadeIn ease-in 1; 
-
-        -webkit-animation-fill-mode:forwards;
-        -moz-animation-fill-mode:forwards;
-        animation-fill-mode:forwards;
-
-        -webkit-animation-duration:0.3s;
-        -moz-animation-duration:0.3s;
-        animation-duration:0.3s;
+    .create-profile-form {
+        width: 250px;
+        height: 40px;
+        margin-top: 23px;
     }
+
+    .placehldr {
+        font-size: 13px;
+        padding: 3px 10px;
+    }
+
 
 
 
