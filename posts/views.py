@@ -69,17 +69,18 @@ def post_reserve(request, pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body= "Thank you for you commit to (" + str(post) + "). You are confirmed for the game. We have notified " + post.author.username +  " that you are able to attend."
+        body= "Thank you for your commit to (" + str(post) + "). You are reserved for the game. We have notified " + post.author.username +  " that you are able to attend."
     )
 
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="Username: " + str(post.reserved_by) + " has committed your post - (" + str(post) + ")"
+        body="Username: " + str(post.reserved_by) + " has committed to your post - (" + str(post) + ")"
     )
     # print(post_author)
 
     return Response(serializer.data)
+
 
 @api_view(['PUT', 'PATCH'])    
 def remove_reserve(self,pk):
@@ -98,17 +99,19 @@ def remove_reserve(self,pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="You have cancelled your commit to (" + str(post) + "). We have notified the creator " + post.author.username + " that their post has been resubmitted."
+        body="You have cancelled your reserved spot for (" + str(post) + "). We have notified the creator " + post.author.username + " that their post has been resubmitted."
     )
 
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="The player that committed to " + str(post) + " has cancelled. Your request has been reposted."
+        body="The player that committed to (" + str(post) + ") has cancelled. Your request has been reposted."
     )
     # print()
 
     return Response(serializer.data)
+
+
 
 @api_view(['PUT', 'PATCH']) 
 def send_message(self,pk):
@@ -121,9 +124,7 @@ def send_message(self,pk):
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        # the creator's phone number (mine for testing)
         to=my_phone_number,
-        # from the phone number set up in my free Twilio account
         from_=twilio_phone_number,
         body="Hello from Python!"
 )
@@ -132,4 +133,4 @@ def send_message(self,pk):
     serializer = serializers.PostSerializer(post)
     return Response(serializer.data)
 
-print('sent')
+# print('sent')

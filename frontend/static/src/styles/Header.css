@@ -3,7 +3,8 @@
 
 .navbar{
     border-bottom: 1px solid #000000;
-    background-color: #be691f;
+    /* background-color: #be691f; */
+    background-image: linear-gradient(to right, #d28745, #be691f, #d28745);
     color: #ffffff;     
     position: fixed;
     width: 100%;
@@ -19,9 +20,6 @@
 }
 
 .app-name {
-    /* font-family: 'Playball', Times, serif; */
-    /* font-family: 'Kaushan Script', Times, serif; */
-    /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
     font-size: 45px;
     color: #ffffff;
@@ -41,30 +39,27 @@
 
 
 .header-login {
-    /* font-family: 'Playball', Times, serif; */
-    /* font-family: 'Kaushan Script', Times, serif; */
-    /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
     font-size: 30px;
     color: #ffffff;
 }
 
-.header-login:hover, .header-logout:hover {
+.header-login:hover, .header-logout:hover, .header-text:hover {
     color: #343434;
+    /* text-decoration: underline; */
+    /* border-bottom: 3px solid #343434; */
 }
 
 .header-text {
-    /* font-family: 'Playball', Times, serif; */
-    /* font-family: 'Kaushan Script', Times, serif; */
-    /* font-family: 'Lobster', Times, serif; */
     font-family: 'Caveat', Times, serif;
     font-size: 30px;
     color: #ffffff;
     margin-right: 25px;
 }
-.header-text:hover {
+.header-text:focus {
     color: #343434;
 }
+
 
 .dropdown {
     color: #ffffff;
@@ -98,7 +93,7 @@
 }
 
 .dropdown-opt:hover {
-    background-color: #cf720e;
+    background-color: #be691f;
     color: #ffffff;
 }
 
@@ -134,7 +129,7 @@
 
 .show>.nav-link {
     color: #ffffff!important;
-    background-color: #be691f;
+    background-color: transparent;
 }
 
 /* .profile-picture-small-scale {

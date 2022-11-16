@@ -2,7 +2,7 @@ import "../../styles/Post-styles/PostList.css";
 import moment from 'moment';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CircleLoader from "react-spinners/CircleLoader"
+import FadeLoader from "react-spinners/FadeLoader"
 
 
 function PostList({ filteredPosts }) {
@@ -40,7 +40,7 @@ function PostList({ filteredPosts }) {
     <div className="spinner">
     {
       loading ? 
-      <CircleLoader color={'#be691f'} loading={loading} size={200} />
+      <FadeLoader color={'#be691f'} loading={loading} size={200} />
       :
       <ul className="pst-list four">{postList}</ul>
     }

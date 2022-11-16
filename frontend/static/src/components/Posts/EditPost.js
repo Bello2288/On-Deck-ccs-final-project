@@ -13,11 +13,12 @@ function EditPost({ state, userProfile }) {
   const [profile, setProfile] = useState(userProfile);
   console.log('state', state) 
   
-  // const [state, setState] = useState(getUserProfile);
   const [isEdit, setIsEdit] = useState(false);
   const [show, setShow] = useState(false);
   const [showSave, setShowSave] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [showCommit, setShowCommit] = useState(false);
+  const [showCancelCommit, setShowCancelCommit] = useState(false)
 
   const { superState } = useOutletContext();
     console.log('superState', superState)
@@ -34,9 +35,21 @@ function EditPost({ state, userProfile }) {
     setShowDelete(false);
   };
 
+  const handleCommit = () => {
+    handleTakeSpot();
+    setShowCommit(false);
+  };
+
+  const handleCancelCommit = () => {
+    handleRemoveReservation();
+    setShowCancelCommit(false);
+  };
+
   const handleShow = () => setShow(true);
   const handleShowSave = () => setShowSave(true);
   const handleShowDelete = () => setShowDelete(true);
+  const handleShowCommit = () => setShowCommit(true);
+  const handleShowCancelCommit = () => setShowCancelCommit(true);
 
   const navigate = useNavigate();
 
@@ -239,12 +252,27 @@ function EditPost({ state, userProfile }) {
             <Button
                 className="take-button-pairs"
                 variant="secondary"
-                type="submit"
+                type="button"
                 value="TKS"
-                onClick={(e) => handleTakeSpot(e)}
+                onClick={handleShowCommit}
               >
                 Commit
             </Button>
+            <Modal className="create-post-modal" show={showCommit} onHide={handleCommit}>
+                  <Modal.Body className="modal-title">Are you sure you want to commit to this post?</Modal.Body>
+                  <Modal.Footer className="footer-text">
+                    <Button 
+                    className="modal-button-close" 
+                    type="submit" 
+                    value="SUB" 
+                    variant="secondary" 
+                    onClick={handleTakeSpot}>
+                      Confirm
+                    </Button>
+                    <h2> *Click outside the box to go back to post screen </h2>
+                  </Modal.Footer>
+                </Modal>
+
             <Button
               className="take-button-pairs"
               variant="secondary"
@@ -301,12 +329,27 @@ function EditPost({ state, userProfile }) {
           <Button
             className="cancel-seat-buttons"
             variant="secondary"
-            type="submit"
+            type="button"
             value="PST"
-            onClick={(e) => handleRemoveReservation(e)}
+            onClick={handleShowCancelCommit}
           > 
             Cancel Reserved Spot
           </Button>
+          <Modal className="create-post-modal" show={showCancelCommit} onHide={handleCancelCommit}>
+                  <Modal.Body className="modal-title">Are you sure you want to cancel reserved spot?</Modal.Body>
+                  <Modal.Footer className="footer-text">
+                    <Button 
+                    className="modal-button-close" 
+                    type="submit" 
+                    value="SUB" 
+                    variant="secondary" 
+                    onClick={handleRemoveReservation}>
+                      Confirm
+                    </Button>
+                    <h2> *Click outside the box to go back to post screen </h2>
+                  </Modal.Footer>
+                </Modal>
+          
           <Button
             className="cancel-seat-buttons"
             variant="secondary"

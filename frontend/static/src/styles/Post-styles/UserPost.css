@@ -19,7 +19,13 @@
 .form-control {
     background-color: #e0e0e0;
 }
-
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #be691f;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem (#be691f / 25%);
+}
 .user-post-title {
     font-size: 27px;
     padding: 0 10px 10px 10px;

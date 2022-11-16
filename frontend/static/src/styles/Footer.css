@@ -11,7 +11,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-image: linear-gradient(to right, #222222, #000000, #222222);
 
 
     /* opacity:0;
