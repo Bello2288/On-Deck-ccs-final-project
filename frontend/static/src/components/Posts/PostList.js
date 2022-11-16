@@ -1,9 +1,21 @@
 import "../../styles/Post-styles/PostList.css";
 import moment from 'moment';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import CircleLoader from "react-spinners/CircleLoader"
 
 
 function PostList({ filteredPosts }) {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+
+    }, 900)
+  },[])
+
+
   const postList = filteredPosts
     .map((post) => (
       <li key={post.id} className="post-spacing">
@@ -28,3 +40,15 @@ function PostList({ filteredPosts }) {
 
 
 export default PostList;
+
+
+// (
+//   <div>
+//   {
+//     loading ? 
+//     <CircleLoader color={'#be691f'} loading={loading} size={100} />
+//     :
+//     <ul className="pst-list four">{postList}</ul>
+//   }
+//   </div>
+// )
