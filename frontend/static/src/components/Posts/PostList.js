@@ -35,20 +35,18 @@ function PostList({ filteredPosts }) {
         </div>
       </li> 
     ));
-  return <ul className="pst-list four">{postList}</ul>;
+  // return <ul className="pst-list four">{postList}</ul>;
+  return (
+    <div className="spinner">
+    {
+      loading ? 
+      <CircleLoader color={'#be691f'} loading={loading} size={200} />
+      :
+      <ul className="pst-list four">{postList}</ul>
+    }
+    </div>
+  )
 }
 
 
 export default PostList;
-
-
-// (
-//   <div>
-//   {
-//     loading ? 
-//     <CircleLoader color={'#be691f'} loading={loading} size={100} />
-//     :
-//     <ul className="pst-list four">{postList}</ul>
-//   }
-//   </div>
-// )
