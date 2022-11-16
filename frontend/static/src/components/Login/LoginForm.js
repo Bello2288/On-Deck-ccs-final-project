@@ -51,7 +51,7 @@ function LoginForm({ superState, setSuperState }) {
           userProfileId: data.user_profile_id,
           // phonenumber: data.phone_number,
         });
-        if (state.is_superuser === true) {
+        if (data.is_superuser === true) {
           navigate("/posts/editor") 
         } else if (state.is_superuser !== true) {
           // console.log('data', data)

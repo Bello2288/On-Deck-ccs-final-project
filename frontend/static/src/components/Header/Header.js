@@ -13,10 +13,6 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 
 function Header({ superState, logoutUser }) {
 
-  // const { setSuperState } = useOutletContext();
-  //   console.log('setSuperState', setSuperState)
-
-
   const navigate = useNavigate();
 
   const logout = (e) => {

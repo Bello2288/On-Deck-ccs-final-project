@@ -9,7 +9,7 @@ import moment from 'moment';
 
 
  
-function EditPost({ state, userProfile }) {
+function EditPost({ state, userProfile }) { 
   const [profile, setProfile] = useState(userProfile);
   console.log('state', state) 
   
