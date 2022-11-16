@@ -4,9 +4,13 @@ import footballpic from "../../images/flag_football.jpeg";
 import hockeypic from "../../images/hockey.webp";
 import Nav from "react-bootstrap/Nav";
 import Carousel from 'react-bootstrap/Carousel';
+import { useOutletContext } from "react-router-dom";
 
 
 function Home() { 
+
+  const { superState } = useOutletContext();
+
     return (
     <main>
       <Carousel fade className="center">
@@ -18,7 +22,7 @@ function Home() {
           />
           <Carousel.Caption>
             <h3>Welcome to On Deck</h3>
-            <p>The sports app that allows you play around your busy schedule</p>
+            <p>The sports app that allows you play games around your busy schedule</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -42,14 +46,16 @@ function Home() {
 
           <Carousel.Caption>
             <h3>On a team that will be down a player for a game?</h3>
-            <p>On Deck allows you to make a post looking for someone to fill in</p>
+            <p>On Deck allows you to make a post looking for someone to fill and empty spot</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div className="home-lower-buttons">
-        <Nav.Link className="home-create-account btn-hover" href="/register">Create Account</Nav.Link>
-        <Nav.Link className="home-login btn-hover" href="/login">Login</Nav.Link>
-      </div>
+      {superState.auth === false && (
+        <div className="home-lower-buttons"> 
+          <Nav.Link className="home-create-account btn-hover" href="/register">Create Account</Nav.Link>
+          <Nav.Link className="home-login btn-hover" href="/login">Login</Nav.Link>
+        </div>
+      )}
     </main>  
     );
   }

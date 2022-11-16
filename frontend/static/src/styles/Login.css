@@ -112,11 +112,11 @@
 }
 
 .login-link {
-    color: #40be7b;
+    color: #be691f;
     text-decoration: none;
 }
 .login-link:hover {
-    color: #be691f;
+    color: #8a4b13;
 }
 
 @media (max-width: 992px) {
