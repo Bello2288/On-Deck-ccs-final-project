@@ -211,7 +211,7 @@ function EditPost({ state, userProfile }) {
             Submit
           </Button>
           <Modal className="create-post-modal" show={show} onHide={handleClose}>
-            <Modal.Body>Would you like to submit this for approval?</Modal.Body>
+            <Modal.Body className="modal-title">Would you like to submit this for approval?</Modal.Body>
             <Modal.Footer>
               <Button 
               className="modal-button-close" 
@@ -553,7 +553,7 @@ function EditPost({ state, userProfile }) {
                     <Button 
                     className="modal-button-close" 
                     type="submit" 
-                    value="SUB" 
+                    value="REJ" 
                     variant="secondary" 
                     onClick={handleSubmit}>
                       Confirm

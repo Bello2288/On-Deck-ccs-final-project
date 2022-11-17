@@ -11,10 +11,16 @@ import moment from 'moment';
 function AdminPostReview() {
     const [state, setState] = useState(null);
     const [show, setShow] = useState(false);
+    const [showDelete, setShowDelete] = useState(false);
 
     const handleError = (err) => {
     console.warn(err);
     };
+
+    const handleCancel = () => {
+        setShow(false);
+        setShowDelete(false);
+      }
 
     const navigate = useNavigate();
 
@@ -69,6 +75,7 @@ function AdminPostReview() {
       };
   
       const handleShow = () => setShow(true);
+      const handleShowDelete = () => setShowDelete(true);
 
     return (
     <article className="detail-view">
@@ -124,27 +131,53 @@ function AdminPostReview() {
                 <Modal className="create-post-modal" show={show} onHide={handleClose}>
                     <Modal.Body className="modal-title">Approved post and send for viewing?</Modal.Body>
                     <Modal.Footer className="footer-text">
-                      <Button 
+                        <Button 
                         className="modal-button-close" 
                         type="submit" 
                         value="PST" 
                         variant="secondary" 
                         onClick={handleSubmit}>
                             Confirm
-                      </Button> 
-                      <h2> * Click outside the box to go back to Review screen </h2>
+                        </Button> 
+                        <Button 
+                            className="modal-button-close" 
+                            type="button"  
+                            variant="secondary" 
+                            onClick={handleCancel}>
+                            Cancel
+                        </Button>
                     </Modal.Footer>
-                  </Modal>
+                </Modal>
 
                 <Button
                     className="form-button-pairs"
                     variant="secondary"
-                    type="submit"
+                    type="button"
                     value="REJ"
-                    onClick={(e) => handleSubmit(e)}
+                    onClick={handleShowDelete}
                 >
                     Decline
                 </Button>
+                <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
+                    <Modal.Body className="modal-title">Decline post and delete?</Modal.Body>
+                    <Modal.Footer className="footer-text">
+                        <Button 
+                        className="modal-button-close" 
+                        type="submit" 
+                        value="REJ" 
+                        variant="secondary" 
+                        onClick={handleSubmit}>
+                            Confirm
+                        </Button> 
+                        <Button 
+                            className="modal-button-close" 
+                            type="button"  
+                            variant="secondary" 
+                            onClick={handleCancel}>
+                            Cancel
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
                 <Button
                     className="form-button-pairs"
                     variant="secondary"

@@ -69,13 +69,14 @@ def post_reserve(request, pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body= "Thank you for your commit to (" + str(post) + "). You are reserved for the game. We have notified " + post.author.username +  " that you are able to attend."
+        body= "Thank you for reserving to (" + str(post) + "). We have notified the creator " + post.author.username +  " that you are able to attend."
     )
 
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="Username: " + str(post.reserved_by) + " has committed to your post - (" + str(post) + ")"
+        # body="Username: " + str(post.reserved_by) + " has committed to your post - (" + str(post) + ")"
+        body="Your post - (" + str(post) + ") was reserved by (Username: " + str(post.reserved_by)
     )
     # print(post_author)
 
