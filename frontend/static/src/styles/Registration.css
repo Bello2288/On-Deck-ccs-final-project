@@ -59,6 +59,39 @@
 
 }
 
+/* ============================================================================ */
+/* =========================    MEDIA  ---   MED   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 929px) and (min-width: 505px) {
+
+    .main-display-area {
+        padding-bottom: 120px;
+    }
+
+    .reg-form-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .reg-form {
+        width: 90%;
+        margin: 16px 0 0 0;
+
+    }
+
+    .create-field-label {
+        font-size: 17px;
+    }
+
+    .login-link {
+        margin: 0;
+    }
+
+}
+
 
 
 /* ============================================================================ */
@@ -79,6 +112,40 @@
         width: 90%;
         margin: 16px 0 0 0;
         /* margin-bottom: -28px; */
+    }
+
+    .create-field-label {
+        font-size: 17px;
+    }
+
+    .login-link {
+        margin: 0;
+    }
+
+}
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   XS   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 380px) {
+
+    .main-display-area {
+        padding-bottom: 120px;
+    }
+
+    .reg-form-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .reg-form {
+        width: 90%;
+        margin: 16px 0 0 0;
+
     }
 
     .create-field-label {

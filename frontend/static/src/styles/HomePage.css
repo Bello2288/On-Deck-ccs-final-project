@@ -8,7 +8,9 @@
 main {
     background: transparent;
     text-align: center;
-    padding-top: 100px;
+    padding: 100px 0;
+    height: 100%;
+
 
 
     opacity:0;
@@ -178,7 +180,7 @@ main {
 
 
 
-@media (max-width: 1935px) and (min-width: 1335px) {
+@media (max-width: 2000px) and (min-width: 1335px) {
     
     .homepic {
         height: 620px;
@@ -208,6 +210,38 @@ main {
     .home-lower-buttons {
         margin-top: 20px;
         font-size: 20px;
+    }
+}
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   MED   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 755px) {
+    
+    .homepic {
+        height: 300px;
+        margin: 15px auto 0 auto;
+    }
+
+    .carousel-caption > h3 {
+        font-size: 20px;
+    }
+
+    .carousel-caption > p {
+        font-size: 15px;
+    }
+
+    .home-lower-buttons {
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .home-create-account, .home-login {
+        width: 33%;
+        margin: 0 20px;
     }
 }
 
