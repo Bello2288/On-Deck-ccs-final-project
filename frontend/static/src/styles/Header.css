@@ -3,13 +3,13 @@
 
 .navbar{
     border-bottom: 1px solid #000000;
-    /* background-color: #be691f; */
     background-image: linear-gradient(to right, #d28745, #be691f, #d28745);
     color: #ffffff;     
     position: fixed;
     width: 100%;
     z-index: 3;
     box-shadow: 0px 2px 3px #858382;
+    padding-top: 10px;
 }
 
 .navbar-container {
@@ -46,20 +46,29 @@
 
 .header-login:hover, .header-logout:hover, .header-text:hover {
     color: #343434;
-    /* text-decoration: underline; */
-    /* border-bottom: 3px solid #343434; */
+    text-decoration: none;
+    border-bottom: 3px solid #343434;
 }
 
+.header-btn {
+    margin-right: 25px;
+    margin-top: 7px;
+    background: transparent;
+    text-decoration: none;
+    border: none;
+}
 .header-text {
     font-family: 'Caveat', Times, serif;
     font-size: 30px;
     color: #ffffff;
-    margin-right: 25px;
-}
-.header-text:focus {
-    color: #343434;
+    text-decoration: none;
+    margin-right: 15px;
 }
 
+.header-btn:focus {
+    color: #343434;
+    border-bottom: 3px solid #343434;
+}
 
 .dropdown {
     color: #ffffff;
@@ -229,12 +238,12 @@
 
 
 
-/* ============================================================================ */
+/* ============================================================================
 /* =========================    MEDIA  ---   MED   ========================== */
 /* ============================================================================ */
 
 
-@media(min-width: 991px) and (max-width: 1335px) {
+@media(min-width: 991px) and (max-width: 1199px) {
     
     .navbar-container {
         padding: 0 20px;
@@ -247,18 +256,9 @@
         color: #ffffff;
     }
 
-    .offcanvas-body {
-        background-color: #212121;
-    }
-
     .header-text {
-        font-size: 40px;
-        padding: 0;
-        margin-left: 40px;
-    }
-
-    .header-text:hover {
-        color: #be691f;
+        font-size: 35px;
+        padding-top: 18px;
     }
 
     .dropdown {
@@ -273,21 +273,6 @@
         font-size: 20px;
         padding-left: 35px;
     }
-
-    .profile-picture-large-scale {
-        display: none;
-    }
- 
-    .d-lg-none {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: 1px solid #212529;
-        object-fit: cover;
-        object-position: center;
-        margin-right: 15px;
-    }
-
 
 }
 
@@ -342,9 +327,8 @@
         padding-left: 35px;
     }
 
-    .profile-picture-large-scale {
-        display: none;
-    }
+    /* .profile-picture-large-scale { 
+    } */
    
     .d-lg-none {
         width: 60px;

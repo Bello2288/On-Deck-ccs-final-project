@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, Link } from "react-router-dom";
 // import football from "../../images/football.png";
 import defaultProfileImage from "../../images/blank_avatar.jpeg";
 
@@ -21,7 +21,7 @@ function Header({ superState, logoutUser }) {
 
   return (  
     <>
-      {[false, 'xl'].map((expand) => (
+      {[false, 'lg', 'xl'].map((expand) => (
         <Navbar className="mb-3 navbar" key={expand} expand={expand}>
           <Container className="navbar-container nav-flex" fluid>
             <div>
@@ -54,10 +54,30 @@ function Header({ superState, logoutUser }) {
                         </>
                       )}
                       {superState.auth && !superState.admin && (
-                        <>
-                          <Nav.Link autoFocus className="header-text" href="/posts">Game Posts</Nav.Link>
-                          <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
-                          <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
+                        // <>
+                        //   <Nav.Link autoFocus className="header-text" href="/posts">Game Posts</Nav.Link>
+                        //   <Nav.Link className="header-text" href="/create">Create Post</Nav.Link>
+                        //   <Nav.Link className="header-text" href="/posts/user">My Posts</Nav.Link>
+                        // </>
+                        <>        
+                          <button  
+                            className="header-btn"> 
+                              <Link autoFocus className="header-text" to={"/posts"}>
+                                Game Posts
+                              </Link>
+                          </button>
+                          <button  
+                            className="header-btn"> 
+                              <Link className="header-text" to={"/create"}>
+                              Create Post
+                              </Link>
+                          </button>
+                          <button 
+                            className="header-btn"> 
+                              <Link className="header-text" to={"/posts/user"}>
+                              My Posts
+                              </Link>
+                          </button>
                         </>
                       )}
                       {superState.admin && (

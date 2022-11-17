@@ -7,8 +7,8 @@ import {useNavigate, Link} from "react-router-dom";
 
 function LoginForm({ superState, setSuperState }) {
     const [state, setState] = useState({
-      username: "",
-      password: "",
+      username: "Gregg",
+      password: "safepass1",
     });
   
     const navigate = useNavigate();

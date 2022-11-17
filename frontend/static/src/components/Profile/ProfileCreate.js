@@ -147,7 +147,6 @@ function ProfileCreate(superState, setSuperState) {
                     format="+1 (###) ###-####"
                     placeholder="Enter phone # - Only for notifications"
                     name="phone_number"
-                    required
                     value={state.phone_number}
                     onChange={handleInput}
                     />
@@ -161,7 +160,6 @@ function ProfileCreate(superState, setSuperState) {
                       maxLength="5"
                       placeholder="Enter zip code"
                       name="zipcode"
-                      required
                       value={state.zipcode}
                       onChange={handleInput}
                     />

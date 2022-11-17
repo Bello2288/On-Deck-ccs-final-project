@@ -8,10 +8,10 @@ import { useNavigate, Link } from "react-router-dom";
 
 function RegistrationForm({ superState, setSuperState}) {
     const [state, setState] = useState({
-        username: "",
-        email: "",
-        password1: "",
-        password2: "",
+        username: "testing789",
+        email: "testing789@example.com",
+        password1: "safepass1",
+        password2: "safepass1",
     });
 
     const navigate = useNavigate();

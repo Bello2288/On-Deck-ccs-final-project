@@ -188,7 +188,7 @@
 /* ============================================================================ */
 
 
-@media(min-width: 505px) {
+@media(min-width: 505px) and (max-width: 760px) {
 
     .sort-buttons {
         display: flex;

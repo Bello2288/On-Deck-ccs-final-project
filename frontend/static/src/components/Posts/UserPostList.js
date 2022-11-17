@@ -62,7 +62,7 @@ function UserPostList() {
               value="TKS"
               onClick={(e) => changeCategory(e.target.value)}
             >
-              Take Spot Game Posts
+              Reserved Game Posts
             </Button>
           </section>
           <section className="author-article-list margin-section">

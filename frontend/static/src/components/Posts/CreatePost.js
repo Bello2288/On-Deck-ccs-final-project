@@ -244,7 +244,7 @@ function CreatePost() {
                   Submit
                 </Button>
                   <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                    <Modal.Body className="modal-title">Would you like to submit this for approval?</Modal.Body>
+                    <Modal.Body className="modal-title">Would you like to submit post for approval?</Modal.Body>
                     <Modal.Footer className="footer-text">
                       <Button 
                       className="modal-button-close" 

@@ -46,7 +46,7 @@ class AdminPostListAPIView(generics.ListCreateAPIView):
     serializer_class = serializers.PostSerializer
 
     def get_queryset(self):
-        return models.Post.objects.filter(Q(status='PST') | Q(status='SUB') | Q(status='ARC') | Q(status='TKS'))
+        return models.Post.objects.filter(Q(status='PST') | Q(status='SUB') | Q(status='ARC') | Q(status='REJ') | Q(status='TKS'))
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)  
@@ -69,14 +69,14 @@ def post_reserve(request, pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body= "Thank you for reserving to (" + str(post) + "). We have notified the creator " + post.author.username +  " that you are able to attend."
+        body= "Thank you for reserving (" + str(post) + "). We have also notified the creator " + post.author.username +  "."
     )
 
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
         # body="Username: " + str(post.reserved_by) + " has committed to your post - (" + str(post) + ")"
-        body="Your post - (" + str(post) + ") was reserved by (Username: " + str(post.reserved_by)
+        body="Your post - (" + str(post) + ") was reserved by (Username: " + str(post.reserved_by) + ")"
     )
     # print(post_author)
 
@@ -100,7 +100,7 @@ def remove_reserve(self,pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="You have cancelled your reserved spot for (" + str(post) + "). We have notified the creator " + post.author.username + " that their post has been resubmitted."
+        body="You have cancelled your reserved spot for (" + str(post) + "). We have notified the creator "
     )
 
     message = client.messages.create(

@@ -97,8 +97,8 @@
     font-size: 20px;
     margin-top: 40px;
     padding: 10px 20px 0 20px;
-    background-color: #565759;
-    border: 2px solid #212121;
+    background-color: #212121;
+    border: 2px solid #000000;
     border-radius: 10px;
     box-shadow: 2px 2px 3px #be691f;
 
@@ -195,8 +195,8 @@ h1 {
     font-size: 20px;
     margin: 20px 0 15px 0;
     padding: 10px 20px 0 20px;
-    background-color: #565759;
-    border: 2px solid #212121;
+    background-color: #212121;
+    border: 2px solid #000000;
     width: 35%;
     box-shadow: 2px 2px 3px #be691f;
 
@@ -218,7 +218,10 @@ h1 {
 
 .form-button {
     margin-bottom: 10px;
-    background-color: #212121;
+    /* background-color: #212121; */
+    background-color: #515151;
+    border-color: #515151;
+    box-shadow: 2px 2px 3px #000000;
 }
 .form-button:hover {
     background-color: #be691f;

@@ -12,6 +12,7 @@ function AdminPostReview() {
     const [state, setState] = useState(null);
     const [show, setShow] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
+    const [showReject, setShowReject] = useState(false);
 
     const handleError = (err) => {
     console.warn(err);
@@ -20,6 +21,7 @@ function AdminPostReview() {
     const handleCancel = () => {
         setShow(false);
         setShowDelete(false);
+        setShowReject(false);
       }
 
     const navigate = useNavigate();
@@ -71,11 +73,13 @@ function AdminPostReview() {
       const handleClose = () => {
         handleSubmit();
         setShow(false);
+        setShowReject(false);
         // handleSubmit();
       };
   
       const handleShow = () => setShow(true);
       const handleShowDelete = () => setShowDelete(true);
+      const handleShowReject = () => setShowReject(true);
 
     return (
     <article className="detail-view">
@@ -153,18 +157,18 @@ function AdminPostReview() {
                     className="form-button-pairs"
                     variant="secondary"
                     type="button"
-                    value="REJ"
-                    onClick={handleShowDelete}
+                    value="DRA"
+                    onClick={handleShowReject}
                 >
                     Decline
                 </Button>
-                <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
-                    <Modal.Body className="modal-title">Decline post and delete?</Modal.Body>
+                <Modal className="create-post-modal" show={showReject} onHide={handleClose}>
+                    <Modal.Body className="modal-title">Decline post and send back to creator?</Modal.Body>
                     <Modal.Footer className="footer-text">
                         <Button 
                         className="modal-button-close" 
                         type="submit" 
-                        value="REJ" 
+                        value="DRA" 
                         variant="secondary" 
                         onClick={handleSubmit}>
                             Confirm
@@ -186,6 +190,35 @@ function AdminPostReview() {
                 >
                     Back
                 </Button>
+                <Button
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    value="REJ"
+                    onClick={handleShowDelete}
+                >
+                    Delete
+                </Button>
+                <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
+                    <Modal.Body className="modal-title">Delete post?</Modal.Body>
+                    <Modal.Footer className="footer-text">
+                        <Button 
+                        className="modal-button-close" 
+                        type="submit" 
+                        value="REJ" 
+                        variant="secondary" 
+                        onClick={handleSubmit}>
+                            Confirm
+                        </Button> 
+                        <Button 
+                            className="modal-button-close" 
+                            type="button"  
+                            variant="secondary" 
+                            onClick={handleCancel}>
+                            Cancel
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </>
             )}
             {state.status === "PST" && (
@@ -211,6 +244,35 @@ function AdminPostReview() {
             )}
             {state.status === "ARC" && (
             <>
+                <Button
+                    className="form-button-pairs"
+                    variant="secondary"
+                    type="button"
+                    value="REJ"
+                    onClick={handleShowDelete}
+                >
+                    Delete
+                </Button>
+                <Modal className="create-post-modal" show={showDelete} onHide={handleClose}>
+                    <Modal.Body className="modal-title">Decline post and delete?</Modal.Body>
+                    <Modal.Footer className="footer-text">
+                        <Button 
+                        className="modal-button-close" 
+                        type="submit" 
+                        value="REJ" 
+                        variant="secondary" 
+                        onClick={handleSubmit}>
+                            Confirm
+                        </Button> 
+                        <Button 
+                            className="modal-button-close" 
+                            type="button"  
+                            variant="secondary" 
+                            onClick={handleCancel}>
+                            Cancel
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
                 <Button
                     className="form-button-pairs"
                     variant="secondary"

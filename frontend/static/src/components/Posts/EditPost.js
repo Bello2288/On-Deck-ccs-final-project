@@ -251,6 +251,14 @@ function EditPost({ state, userProfile }) {
       {state.status === "SUB" && superState.userID === state.author && (
         <div>
           <Button
+            className="form-button-pairs"
+            variant="secondary"
+            type="button"
+            onClick={() => setIsEdit(true)}
+          >
+            Edit
+          </Button>
+          <Button
               className="form-button-pairs"
               variant="secondary"
               type="button"
@@ -271,7 +279,7 @@ function EditPost({ state, userProfile }) {
                 value="TKS"
                 onClick={handleShowCommit}
               >
-                Commit
+                Reserve
             </Button>
             <Modal className="create-post-modal" show={showCommit} onHide={handleCommit}>
                   <Modal.Body className="modal-title">Are you sure you want to commit to this post?</Modal.Body>
