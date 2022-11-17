@@ -7,16 +7,27 @@ import { useNavigate } from "react-router-dom";
 import defaultProfileImage from "../../images/blank_avatar.jpeg";
  
 
-const INITIAL_USER_PROFILE_STATE = {
-  avatar: null,
-  first_name: "",
-  last_name: "",
-  email: "",
-  phone_number: "",
-  zipcode: "",
-};
+// const INITIAL_USER_PROFILE_STATE = {
+//   avatar: defaultProfileImage,
+//   first_name: "",
+//   last_name: "",
+//   email: "",
+//   phone_number: "",
+//   zipcode: "",
+// };
 
 function ProfileCreate(superState, setSuperState) {
+  
+  const INITIAL_USER_PROFILE_STATE = {
+    avatar: defaultProfileImage,
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    zipcode: "",
+  };
+
+
   const [state, setState] = useState(INITIAL_USER_PROFILE_STATE);
   const [preview, setPreview] = useState(defaultProfileImage);
 

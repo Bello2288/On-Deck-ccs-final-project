@@ -92,10 +92,17 @@
     color: #ffffff;
     border: 2px solid #be691f;
 }
-.modal-footer, .modal-body {
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.modal-body {
     display: flex;
     justify-content: center;
 }
+
+
 .modal-button-close {
     background-color: #515151;
     border-color: #515151;
@@ -167,6 +174,7 @@
 
     .modal-button-close {
         font-size: 20px;
+        margin: 0 15px;
     }
 
     .form-button-pairs {

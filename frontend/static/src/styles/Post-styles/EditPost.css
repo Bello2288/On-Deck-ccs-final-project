@@ -314,7 +314,7 @@ h2 {
 
     .footer-text {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .footer-text > h2 {

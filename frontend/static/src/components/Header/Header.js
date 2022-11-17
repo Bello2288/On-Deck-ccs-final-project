@@ -1,17 +1,16 @@
 import "../../styles/Header.css"
-// import { useState } from "react";
-// import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
-// import Form from 'react-bootstrap/Form';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useNavigate, useOutletContext } from "react-router-dom";
 // import football from "../../images/football.png";
+import defaultProfileImage from "../../images/blank_avatar.jpeg";
 
 
 function Header({ superState, logoutUser }) {
+
 
   const navigate = useNavigate();
 
@@ -33,7 +32,7 @@ function Header({ superState, logoutUser }) {
             <div>
               <div>
                 {superState.auth && !superState.admin && (
-                  <img className="profile-picture-small-scale d-lg-none" src={superState.avatar} alt="profile pic" />
+                  <img className="profile-picture-small-scale d-lg-none" src={superState.avatar} alt="" />
                 )}
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               </div>
@@ -74,7 +73,7 @@ function Header({ superState, logoutUser }) {
                           <NavDropdown.Divider />
                           <NavDropdown.Item className="dropdown-opt bg-color" href="/" onClick={(e) => logout(e)}>Logout</NavDropdown.Item>
                         </NavDropdown>
-                        <img className="profile-picture-large-scale" src={superState.avatar} alt="profile pic" />
+                        <img className="profile-picture-large-scale" src={superState.avatar} alt="" />
                       </>
                       )}
                     </Nav>

@@ -272,7 +272,6 @@ function EditPost({ state, userProfile }) {
                     <h2> *Click outside the box to go back to post screen </h2>
                   </Modal.Footer>
                 </Modal>
-
             <Button
               className="take-button-pairs"
               variant="secondary"

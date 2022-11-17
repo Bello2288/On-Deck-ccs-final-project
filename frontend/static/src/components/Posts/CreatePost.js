@@ -98,6 +98,11 @@ function CreatePost() {
       // handleSubmit();
     };
 
+    const handleCancel = () => {
+      setShow(false);
+      setShowSave(false);
+    }
+
     const handleShow = () => setShow(true);
     const handleShowSave = () => setShowSave(true);
 
@@ -209,7 +214,7 @@ function CreatePost() {
                   Save
                 </Button>
                 <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
-                  <Modal.Body className="modal-title">Your post has been saved</Modal.Body>
+                  <Modal.Body className="modal-title">Would you like to save this post?</Modal.Body>
                   <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 
@@ -219,7 +224,13 @@ function CreatePost() {
                     onClick={handleSubmit}>
                       Confirm
                     </Button> 
-                    <h2> *Click outside the box to go back to Edit screen </h2>
+                    <Button 
+                      className="modal-button-close" 
+                      type="button"  
+                      variant="secondary" 
+                      onClick={handleCancel}>
+                        Cancel
+                      </Button>
                   </Modal.Footer>
                 </Modal>
 
@@ -233,7 +244,7 @@ function CreatePost() {
                   Submit
                 </Button>
                   <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                    <Modal.Body className="modal-title">Your post has been submitted and waiting approval</Modal.Body>
+                    <Modal.Body className="modal-title">Would you like to submit this for approval?</Modal.Body>
                     <Modal.Footer className="footer-text">
                       <Button 
                       className="modal-button-close" 
@@ -243,17 +254,23 @@ function CreatePost() {
                       onClick={handleSubmit}>
                         Confirm
                       </Button> 
-                      <h2> *Click outside the box to go back to Edit screen </h2>
+                      <Button 
+                      className="modal-button-close" 
+                      type="button"  
+                      variant="secondary" 
+                      onClick={handleCancel}>
+                        Cancel
+                      </Button>
                     </Modal.Footer>
                   </Modal>
 
-                  <Button
-                className="form-button-pairs cancel-btn"
-                variant="secondary"
-                type="button"
-                onClick={handleBack}
-                >
-                  Cancel
+                <Button
+                  className="form-button-pairs cancel-btn"
+                  variant="secondary"
+                  type="button"
+                  onClick={handleBack}
+                  >
+                    Cancel
                 </Button>
               </div>
             </div>
