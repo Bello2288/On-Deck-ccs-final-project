@@ -230,7 +230,7 @@ function CreatePost() {
                       variant="secondary" 
                       onClick={handleCancel}>
                         Cancel
-                      </Button>
+                    </Button>
                   </Modal.Footer>
                 </Modal>
 

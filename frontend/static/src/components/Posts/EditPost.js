@@ -10,7 +10,7 @@ import moment from 'moment';
 
  
 function EditPost({ state, userProfile }) { 
-  const [profile, setProfile] = useState(userProfile);
+  const [profile, setProfile] = useState(userProfile); 
   console.log('state', state) 
   
   const [isEdit, setIsEdit] = useState(false);
@@ -34,6 +34,14 @@ function EditPost({ state, userProfile }) {
     setShowSave(false);
     setShowDelete(false);
   };
+
+  const handleCancel = () => {
+    setShow(false);
+    setShowSave(false);
+    setShowDelete(false);
+    setShowCommit(false);
+    setShowCancelCommit(false);
+  }
 
   const handleCommit = () => {
     handleTakeSpot();
@@ -203,7 +211,7 @@ function EditPost({ state, userProfile }) {
             Submit
           </Button>
           <Modal className="create-post-modal" show={show} onHide={handleClose}>
-            <Modal.Body>Your post has been submitted and waiting for Admin approval</Modal.Body>
+            <Modal.Body>Would you like to submit this for approval?</Modal.Body>
             <Modal.Footer>
               <Button 
               className="modal-button-close" 
@@ -211,7 +219,14 @@ function EditPost({ state, userProfile }) {
               value="SUB" 
               variant="secondary" 
               onClick={handleSubmit}>
-                Close
+                Submit
+              </Button>
+              <Button 
+                className="modal-button-close" 
+                type="button"  
+                variant="secondary" 
+                onClick={handleCancel}>
+                  Cancel
               </Button>
             </Modal.Footer>
           </Modal>
@@ -269,7 +284,13 @@ function EditPost({ state, userProfile }) {
                     onClick={handleTakeSpot}>
                       Confirm
                     </Button>
-                    <h2> *Click outside the box to go back to post screen </h2>
+                    <Button 
+                      className="modal-button-close" 
+                      type="button"  
+                      variant="secondary" 
+                      onClick={handleCancel}>
+                        Cancel
+                    </Button>
                   </Modal.Footer>
                 </Modal>
             <Button
@@ -345,7 +366,13 @@ function EditPost({ state, userProfile }) {
                     onClick={handleRemoveReservation}>
                       Confirm
                     </Button>
-                    <h2> *Click outside the box to go back to post screen </h2>
+                    <Button 
+                      className="modal-button-close" 
+                      type="button"  
+                      variant="secondary" 
+                      onClick={handleCancel}>
+                        Cancel
+                    </Button>
                   </Modal.Footer>
                 </Modal>
           
@@ -461,7 +488,7 @@ function EditPost({ state, userProfile }) {
                 Submit Draft
                 </Button>
                 <Modal className="create-post-modal" show={show} onHide={handleClose}>
-                  <Modal.Body className="modal-title">Your post has been submitted and waiting for Admin approval</Modal.Body>
+                  <Modal.Body className="modal-title">Would you like to submit this for approval?</Modal.Body>
                   <Modal.Footer className="footer-text">
                     <Button 
                     className="modal-button-close" 
@@ -471,7 +498,13 @@ function EditPost({ state, userProfile }) {
                     onClick={handleSubmit}>
                       Confirm
                     </Button>
-                    <h2> * Click outside the box to go back to Edit screen </h2>
+                    <Button 
+                      className="modal-button-close" 
+                      type="button"  
+                      variant="secondary" 
+                      onClick={handleCancel}>
+                        Cancel
+                    </Button>
                   </Modal.Footer>
                 </Modal>
 
@@ -485,7 +518,7 @@ function EditPost({ state, userProfile }) {
                   Save Draft
                 </Button>
                 <Modal className="create-post-modal" show={showSave} onHide={handleClose}>
-                    <Modal.Body className="modal-title">Your post has been saved</Modal.Body>
+                    <Modal.Body className="modal-title">Would you like to save this post?</Modal.Body>
                     <Modal.Footer className="footer-text">
                       <Button 
                       className="modal-button-close" 
@@ -495,7 +528,13 @@ function EditPost({ state, userProfile }) {
                       onClick={handleSubmit}>
                         Confirm
                       </Button> 
-                      <h2> * Click outside the box to go back to Edit screen </h2>
+                      <Button 
+                        className="modal-button-close" 
+                        type="button"  
+                        variant="secondary" 
+                        onClick={handleCancel}>
+                          Cancel
+                      </Button>
                     </Modal.Footer>
                   </Modal>
 
@@ -519,7 +558,13 @@ function EditPost({ state, userProfile }) {
                     onClick={handleSubmit}>
                       Confirm
                     </Button>
-                    <h2> *Click outside the box to go back to Edit screen </h2>
+                    <Button 
+                        className="modal-button-close" 
+                        type="button"  
+                        variant="secondary" 
+                        onClick={handleCancel}>
+                          Cancel
+                      </Button>
                   </Modal.Footer>
                 </Modal>
 
