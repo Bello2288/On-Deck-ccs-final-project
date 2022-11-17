@@ -256,3 +256,39 @@ main {
         margin: 0 20px;
     }
 }
+
+
+
+/* ============================================================================ */
+/* =========================    MEDIA  ---   XS   ========================== */
+/* ============================================================================ */
+
+
+@media(max-width: 380px) {
+    
+    .homepic {
+        height: 220px;
+        margin: 15px auto 0 auto;
+    }
+
+    .carousel-caption > h3 {
+        font-size: 17px;
+    }
+
+    .carousel-caption > p {
+        font-size: 13px;
+    }
+
+    .home-lower-buttons {
+        margin-top: 10px;
+        justify-content: center;
+        
+    }
+
+    .home-create-account, .home-login {
+        font-size: 10px;
+        width: 130px;
+        margin: 0 10px;
+        align-items: center;
+    }
+}
