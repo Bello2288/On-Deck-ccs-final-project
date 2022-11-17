@@ -21,7 +21,7 @@ function Header({ superState, logoutUser }) {
 
   return (  
     <>
-      {[false, 'sm', 'md', 'lg'].map((expand) => (
+      {[false, 'xl'].map((expand) => (
         <Navbar className="mb-3 navbar" key={expand} expand={expand}>
           <Container className="navbar-container nav-flex" fluid>
             <div>
