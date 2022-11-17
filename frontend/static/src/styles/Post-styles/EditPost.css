@@ -338,9 +338,18 @@ h2 {
   /* ==================    View Post Screen  --  MEDIA - LARGE   =================== */
 
     .edit-form {
-        width: 470px;
-        margin-top: 5px;
+        width: 85%;
+        margin: 5px auto;
     } 
+
+    .edit-form-content {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .content-box {
+        border: none;
+    }
 
     .highlight-title > h2 {
         margin: 10px auto 0px auto;
@@ -391,4 +400,10 @@ h2 {
         font-size: 13px;
     }
 
+    .takeseat-buttons {
+        margin: 0 0 10px 0;
+    }
+
 }
+
+

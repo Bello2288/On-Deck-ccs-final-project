@@ -123,6 +123,9 @@ h2 {
         width: 100%;
     }
 
+    .highlight-post-notes {
+        padding-left: 15px;
+    }
 
     .highlight-date {
         width: 100%;
@@ -134,7 +137,18 @@ h2 {
     }
 
     .content-box {
-        padding: 0 8px 0 13px;
+        padding: 0 15px;
+        border: none;
+        width: 90%;
+        text-align: center;
+    }
+
+    .notes-box {
+        margin-top: 15px;
+        margin-bottom: 0;
+        border: none;
+        width: 90%;
+        text-align: center;
     }
 
 
