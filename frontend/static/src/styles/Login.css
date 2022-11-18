@@ -43,8 +43,9 @@
 }
 
 .form-title {
-    font-family: 'Alfa Slab One', Arial, Helvetica, sans-serif;
+    font-family: 'Caveat', Times, serif;
     text-align: center;
+    color: #be691f;
 }
 
 .form-footer {
@@ -72,7 +73,7 @@
     border-radius: 50%;
     border: 1px solid #212529;
     overflow: hidden;
-    background-color: #bbb;
+    background-color: #bbb; 
 }
 
 .form-image {

@@ -73,7 +73,7 @@ function RegistrationForm({ superState, setSuperState}) {
             <section className="reg-form-flex">
               <div>
                 <Form.Group className="mb-3 create-field-label" controlId="username">
-                  <Form.Label>Username</Form.Label>
+                  <Form.Label className="register-text">Username</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter username"
@@ -85,7 +85,7 @@ function RegistrationForm({ superState, setSuperState}) {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 create-field-label" controlId="email">
-                  <Form.Label>Email Address</Form.Label>
+                  <Form.Label className="register-text">Email Address</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder="Enter email"
@@ -98,7 +98,7 @@ function RegistrationForm({ superState, setSuperState}) {
               </div>
               <div> 
                 <Form.Group className="mb-3 create-field-label" controlId="password1">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label className="register-text">Password</Form.Label>
                   <Form.Control
                     type="password"
                     placeholder="Enter password"
@@ -109,7 +109,7 @@ function RegistrationForm({ superState, setSuperState}) {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 create-field-label" controlId="password2">
-                <Form.Label>Confirm Password</Form.Label>
+                <Form.Label className="register-text">Confirm Password</Form.Label>
                   <Form.Control
                     type="password"
                     placeholder="Confirm Password"

@@ -1,7 +1,7 @@
 .reg-form-flex {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; 
 }
 
 .reg-form {
@@ -18,10 +18,14 @@
 }
 
 .reg-form-title {
-    font-family: 'Alfa Slab One', Arial, Helvetica, sans-serif;
+    font-family: 'Caveat', Times, serif;
     text-align: center;
     color: #c1793b;
     font-size: 25px;
+}
+
+.register-text {
+    color: #be691f;
 }
 
 
