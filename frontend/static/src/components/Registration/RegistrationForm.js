@@ -8,10 +8,10 @@ import { useNavigate, Link } from "react-router-dom";
 
 function RegistrationForm({ superState, setSuperState}) {
     const [state, setState] = useState({
-        username: "testing789",
-        email: "testing789@example.com",
-        password1: "safepass1",
-        password2: "safepass1",
+        username: "",
+        email: "",
+        password1: "",
+        password2: "",
     });
 
     const navigate = useNavigate();
@@ -96,7 +96,7 @@ function RegistrationForm({ superState, setSuperState}) {
                   />
                 </Form.Group>
               </div>
-              <div>
+              <div> 
                 <Form.Group className="mb-3 create-field-label" controlId="password1">
                   <Form.Label>Password</Form.Label>
                   <Form.Control

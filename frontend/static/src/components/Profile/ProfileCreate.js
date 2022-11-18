@@ -147,7 +147,7 @@ function ProfileCreate(superState, setSuperState) {
                     format="+1 (###) ###-####"
                     placeholder="Enter phone # - Only for notifications"
                     name="phone_number"
-                    value={state.phone_number}
+                    value={state.phone_number} 
                     onChange={handleInput}
                     />
                 </Form.Group>
