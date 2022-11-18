@@ -317,7 +317,7 @@
 
     .dropdown {
         font-size: 35px;
-        margin-left: 40px;
+        margin: 0 auto
     }
     .dropdown:hover {
         color: #be691f;
@@ -328,8 +328,9 @@
         padding-left: 35px;
     }
 
-    /* .profile-picture-large-scale { 
-    } */
+    .profile-picture-large-scale { 
+        display: none;
+    }
    
     .d-lg-none {
         width: 60px;
