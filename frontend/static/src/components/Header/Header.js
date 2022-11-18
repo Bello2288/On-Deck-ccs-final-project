@@ -82,8 +82,21 @@ function Header({ superState, logoutUser }) {
                       )}
                       {superState.admin && (
                         <>
-                          <Nav.Link className="header-text" href="/posts/editor">Review Posts</Nav.Link>
-                          <Nav.Link className="header-text" href="/" onClick={(e) => logout(e)}>Logout</Nav.Link>
+                          <button  
+                            className="header-btn"> 
+                              <Link className="header-text" to={"/posts/editor"}>
+                                Review Posts
+                              </Link>
+                          </button>
+                          <button 
+                            className="header-btn"> 
+                              <Link className="header-text" to={"/"} onClick={(e) => logout(e)}>
+                                Logout
+                              </Link>
+                              
+                          </button>
+                          {/* <Nav.Link className="header-text" href="/posts/editor">Review Posts</Nav.Link>
+                          <Nav.Link className="header-text" href="/" onClick={(e) => logout(e)}>Logout</Nav.Link> */}
                         </>
                       )}
                       {superState.auth && !superState.admin && (

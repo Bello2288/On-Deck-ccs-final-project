@@ -10,14 +10,14 @@ import { useNavigate } from "react-router-dom";
 function CreatePost() {   
     const [state, setState] = useState({
       // image: null,
-      title: "",
-      category: "",
-      teamname: "",
-      organization: "",
-      location: "",
-      date: "",
-      time: "",
-      notes: "",
+      title: "Outfielder wanted",
+      category: "Softball",
+      teamname: "Skull Busters",
+      organization: "ABC Sports Center",
+      location: "Gower Park",
+      date: "2022-11-25",
+      time: "18:30",
+      notes: "Please bring your own equipment and water. Prefer an outfielder but can shuffle players.",
     });
 
     const [show, setShow] = useState(false);
@@ -136,15 +136,6 @@ function CreatePost() {
                   <option value="Basketball">Basketball</option>
                 </Form.Select>
               </Form.Group>
-              {/* <Form.Group className="mb-3" controlId="image">
-                <Form.Label>Post Image</Form.Label>
-                <Form.Control
-                  type="file"
-                  className="form-control-file"
-                  name="image"
-                  onChange={handleImage}
-                />
-              </Form.Group> */}
               <Form.Group className="mb-3" controlId="teamname">
                 <Form.Label>Team Name</Form.Label>
                 <Form.Control
@@ -169,14 +160,14 @@ function CreatePost() {
                 <Form.Label>Location / Field</Form.Label>
                 <Form.Select className="form-control" placeholder="location" name="location" value={state.location} onChange={handleInput}>
                   <option value="">Choose a location / field</option>
-                  <option value="Northwest Park">Northwest Park (FB)</option>
-                  <option value="Gary L. Pittman Park">Gary L. Pittman Park (FB)</option>
-                  <option value="Pavilion Recreation Complex">Pavilion Recreation Complex (HO)</option>
-                  <option value="Gower Park">Gower Park (SB)</option>
-                  <option value="Stevens Field">Stevens Field (SB)</option>
-                  <option value="Lakeside Park">Lakeside Park (SB)</option>
-                  <option value="ABC Sports Center">ABC Sports Center (BB)</option>
-                  <option value="Northside Park">Northside Park (BB)</option>
+                  <option value="Northwest Park">Northwest Park (Football)</option>
+                  <option value="Gary L. Pittman Park">Gary L. Pittman Park (Football)</option>
+                  <option value="Pavilion Recreation Complex">Pavilion Recreation Complex (Hockey)</option>
+                  <option value="Gower Park">Gower Park (Softball)</option>
+                  <option value="Stevens Field">Stevens Field (Softball)</option>
+                  <option value="Lakeside Park">Lakeside Park (Softball)</option>
+                  <option value="ABC Sports Center">ABC Sports Center (Basketball)</option>
+                  <option value="Northside Park">Northside Park (Basketball)</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3" controlId="date">

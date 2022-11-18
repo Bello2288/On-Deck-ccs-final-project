@@ -69,7 +69,7 @@ def post_reserve(request, pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body= "Thank you for reserving (" + str(post) + "). We have also notified the creator " + post.author.username +  "."
+        body= "Thank you for reserving (" + str(post) + " by " + post.author.username + ")"
     )
 
     message = client.messages.create(
@@ -100,7 +100,7 @@ def remove_reserve(self,pk):
     message = client.messages.create(
         to=my_phone_number,
         from_=twilio_phone_number,
-        body="You have cancelled your reserved spot for (" + str(post) + "). We have notified the creator "
+        body="You have cancelled your reserved spot for (" + str(post) + ")."
     )
 
     message = client.messages.create(
