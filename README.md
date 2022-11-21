@@ -5,6 +5,8 @@ to On Deck and create a post request. Other users will be able to see there post
 
 Load app here - https://on-deck-bello2288.herokuapp.com/
 
+Video walk through  -  https://www.loom.com/share/dd596fb73ab24fc785a97a547d92059f
+
 
 # Features
 
