@@ -80,7 +80,8 @@ function App() {
           <Route path="/" element={<Layout superState={superState} setSuperState={setSuperState} logoutUser={logoutUser} />} >
             <Route index element={<HomePage />} />
             <Route path="login" element={<LoginForm superState={superState} setSuperState={setSuperState} />} />
-            <Route path="register" element={<RegistrationForm superState={superState} setSuperState={setSuperState} />} />            {superState.auth && (
+            <Route path="register" element={<RegistrationForm superState={superState} setSuperState={setSuperState} />} />            
+            {superState.auth && (
               <>
                 <Route path="create" element={<CreatePosts superState={superState} setSuperState={setSuperState} />} />
                 <Route path="posts" element={<Posts superState={superState} setSuperState={setSuperState} />} />
